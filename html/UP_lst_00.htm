@@ -1,393 +1,655 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미납 목록</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-</head>
-<script></script>
-<body>
-    <div class="wrap haveAside">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/BL_db_00.htm">청구관리</a>
-                <span> > </span>
-                <a href="../html/UP_lst_00.htm">미납 목록</a>
-            </div>
-            <div class="section_tit">
-                <h3>미납 정보</h3>
-            </div>
-            <div class="type_04">
-                <div class="searchBar_wrap">
-                    <div class="searchBar">
-                        <input type="text" placeholder="검색어입력">
-                        <div class="searchIcon">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>미납 목록</title>
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
+
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
+
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+    </head>
+    <script></script>
+    <body>
+        <div class="wrap haveAside">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
+                        <button>
+                            <i class="icon_menu"></i>
+                        </button>
+                    </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
+                    </div>
+                </div>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="">
+                <ul>
+                    <li>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/BL_db_00.htm">청구관리</a>
+                    <span> > </span>
+                    <a href="../html/UP_lst_00.htm">미납 목록</a>
+                </div>
+                <div class="section_tit">
+                    <h3>미납 정보</h3>
+                </div>
+                <div class="type_04">
+                    <div class="searchBar_wrap">
+                        <div class="searchBar">
+                            <input type="text" placeholder="검색어입력" />
+                            <div class="searchIcon">
+                                <i class="icon_search"></i>
+                            </div>
+                            <div class="fitterBtn">
+                                <button class="filter">
+                                    <i class="icon_filter"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dropDown_wrap">
+                            <ul>
+                                <li>
+                                    <label for="name">납부자 명</label>
+                                    <input type="text" id="name" class="inp_01" />
+                                </li>
+                                <li>
+                                    <label for="name2">청구서 발행 번호</label>
+                                    <input type="text" id="name2" class="inp_01" />
+                                </li>
+                                <li>
+                                    <label for="name3">입금 요청 사</label>
+                                    <input type="text" id="name3" class="inp_01" />
+                                </li>
+                                <li>
+                                    <p>입금 요청 일자</p>
+                                    <div class="input_box">
+                                        <span class="input datepickerRange">
+                                            <input type="text" value="" class="inp_02 datepicker startDate" />
+                                            <span>~</span>
+                                            <input type="text" value="" class="inp_02 datepicker endDate" />
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>납기 일자</p>
+                                    <div class="input_box">
+                                        <span class="input datepickerRange">
+                                            <input type="text" value="" class="inp_02 datepicker startDate" />
+                                            <span>~</span>
+                                            <input type="text" value="" class="inp_02 datepicker endDate" />
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>입금 일자</p>
+                                    <div class="input_box">
+                                        <span class="input datepickerRange">
+                                            <input type="text" value="" class="inp_02 datepicker startDate" />
+                                            <span>~</span>
+                                            <input type="text" value="" class="inp_02 datepicker endDate" />
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="flex_type_04">
+                                    <p>과납 액 여부</p>
+                                    <label class="rd_1">
+                                        <input type="radio" name="radio_01" />
+                                        <span class="rd_1_text">예</span>
+                                    </label>
+                                    <label class="rd_1">
+                                        <input type="radio" name="radio_01" />
+                                        <span class="rd_1_text">아니오</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="searchBtn">
+                        <button>
                             <i class="icon_search"></i>
+                            <span>Search</span>
+                        </button>
+                    </div>
+                    <div class="resetBtn">
+                        <button class="reset">
+                            <i class="icon_reset"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="type_05_wrap special">
+                    <div class="txt">
+                        <p>금일데이터: 입금 일자 기준</p>
+                    </div>
+                    <div class="type_05">
+                        <div class="pg_text">
+                            <p>1 - 100</p>
+                            <span>of</span>
+                            <p>1000</p>
                         </div>
-                        <div class="fitterBtn">
-                            <button class="filter">
-                                <i class="icon_filter"></i>
-                            </button>
+                        <div class="pg_number">
+                            <ul>
+                                <li>
+                                    <button><i class="icon_aroow_left_L"></i></button>
+                                </li>
+                                <li>
+                                    <button><i class="icon_aroow_left_S"></i></button>
+                                </li>
+                                <li class="active">
+                                    <button>1</button>
+                                </li>
+                                <li>
+                                    <button>2</button>
+                                </li>
+                                <li>
+                                    <button>3</button>
+                                </li>
+                                <li>
+                                    <button>4</button>
+                                </li>
+                                <li>
+                                    <button>5</button>
+                                </li>
+                                <li>
+                                    <button><i class="icon_aroow_right_S"></i></button>
+                                </li>
+                                <li>
+                                    <button><i class="icon_aroow_right_L"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pg_list">
+                            <select>
+                                <option>100 row</option>
+                                <option>200 row</option>
+                                <option>300 row</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="dropDown_wrap">
+                </div>
+                <div class="table_type_01">
+                    <table>
+                        <colgroup>
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button>
+                                        <span>납부자 명</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>청구서 발행 번호</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>총 청구 금액</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>입금 요청 사</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>입금 요청 일자</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>납기 일자</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>미납 금액</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>미납 발송 이력</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>관리</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>홍길동</td>
+                                <td>0000000000</td>
+                                <td class="txtRight">55,000원</td>
+                                <td>다날</td>
+                                <td>2022/11/09 00:00</td>
+                                <td>2022/11/09 00:00</td>
+                                <td class="txtRight">155,000원</td>
+                                <td>2</td>
+                                <td>
+                                    <button
+                                        class="mail"
+                                        onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"
+                                    >
+                                        <i class="icon_mail"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>홍길동</td>
+                                <td>0000000000</td>
+                                <td class="txtRight">55,000원</td>
+                                <td>다날</td>
+                                <td>2022/11/09 00:00</td>
+                                <td>2022/11/09 00:00</td>
+                                <td class="txtRight">155,000원</td>
+                                <td>2</td>
+                                <td>
+                                    <button
+                                        class="mail"
+                                        onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"
+                                    >
+                                        <i class="icon_mail"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>홍길동</td>
+                                <td>0000000000</td>
+                                <td class="txtRight">55,000원</td>
+                                <td>다날</td>
+                                <td>2022/11/09 00:00</td>
+                                <td>2022/11/09 00:00</td>
+                                <td class="txtRight">155,000원</td>
+                                <td>2</td>
+                                <td>
+                                    <button
+                                        class="mail"
+                                        onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"
+                                    >
+                                        <i class="icon_mail"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>홍길동</td>
+                                <td>0000000000</td>
+                                <td class="txtRight">55,000원</td>
+                                <td>다날</td>
+                                <td>2022/11/09 00:00</td>
+                                <td>2022/11/09 00:00</td>
+                                <td class="txtRight">155,000원</td>
+                                <td>2</td>
+                                <td>
+                                    <button
+                                        class="mail"
+                                        onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"
+                                    >
+                                        <i class="icon_mail"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>홍길동</td>
+                                <td>0000000000</td>
+                                <td class="txtRight">55,000원</td>
+                                <td>다날</td>
+                                <td>2022/11/09 00:00</td>
+                                <td>2022/11/09 00:00</td>
+                                <td class="txtRight">155,000원</td>
+                                <td>2</td>
+                                <td>
+                                    <button
+                                        class="mail"
+                                        onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"
+                                    >
+                                        <i class="icon_mail"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <aside>
+                <div class="stickyNote_type_1">
+                    <div class="tickyNote_tit">
+                        <h5>미납 현황</h5>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>총 미납 금액</p>
+                        <span>999,999</span>
+                        <em>원(₩) /</em>
+                        <span>99</span>
+                        <em>건</em>
+                    </div>
+                </div>
+                <div class="stickyNote_type_4">
+                    <div class="tickyNote_tit">
+                        <h5>최근 5일 자동 결제 작업 이력</h5>
+                    </div>
+                    <div class="tickyNote_sub">
                         <ul>
                             <li>
-                                <label for="name">납부자 명</label>
-                                <input type="text" id="name" class="inp_01">
+                                <p>날짜</p>
+                                <p>결제 성공</p>
+                                <p>결제 실패</p>
                             </li>
                             <li>
-                                <label for="name2">청구서 발행 번호</label>
-                                <input type="text" id="name2" class="inp_01">
+                                <span>10/05</span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
                             </li>
                             <li>
-                                <label for="name3">입금 요청 사</label>
-                                <input type="text" id="name3" class="inp_01">
+                                <span>10/04</span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
                             </li>
                             <li>
-                                <p>입금 요청 일자</p>
-                                <div class="input_box">
-                                    <span class="input datepickerRange">
-                                        <input type="text" value="" class="inp_02 datepicker startDate">
-                                        <span>~</span>
-                                        <input type="text" value="" class="inp_02 datepicker endDate">
-                                    </span>
-                                </div>
+                                <span>10/03</span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
                             </li>
                             <li>
-                                <p>납기 일자</p>
-                                <div class="input_box">
-                                    <span class="input datepickerRange">
-                                        <input type="text" value="" class="inp_02 datepicker startDate">
-                                        <span>~</span>
-                                        <input type="text" value="" class="inp_02 datepicker endDate">
-                                    </span>
-                                </div>
+                                <span>10/02</span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
                             </li>
                             <li>
-                                <p>입금 일자</p>
-                                <div class="input_box">
-                                    <span class="input datepickerRange">
-                                        <input type="text" value="" class="inp_02 datepicker startDate">
-                                        <span>~</span>
-                                        <input type="text" value="" class="inp_02 datepicker endDate">
-                                    </span>
-                                </div>
+                                <span>10/01</span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
+                                <span>
+                                    <em>999,999건</em>
+                                    <em>99건</em>
+                                </span>
                             </li>
-                            <li class="flex_type_04">
-                                <p>과납 액 여부</p>
-                                <label class="rd_1">
-                                    <input type="radio" name="radio_01"> 
-                                    <span class="rd_1_text">예</span>
-                                </label>
-                                <label class="rd_1">
-                                    <input type="radio" name="radio_01"> 
-                                    <span class="rd_1_text">아니오</span>
-                                </label>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
-                <div class="searchBtn">
-                    <button>
-                        <i class="icon_search"></i>
-                        <span>Search</span>
-                    </button>
-                </div>
-                <div class="resetBtn">
-                    <button class="reset">
-                        <i class="icon_reset"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="type_05_wrap special">
-                <div class="txt">
-                    <p>금일데이터: 입금 일자 기준</p>
-                </div>
-                <div class="type_05">
-                    <div class="pg_text">
-                        <p>1 - 100</p>
-                        <span>of</span>
-                        <p>1000</p>
-                    </div>
-                    <div class="pg_number">
-                        <ul>
-                            <li>
-                                <button><i class="icon_aroow_left_L"></i></button>
-                            </li>
-                            <li>
-                                <button><i class="icon_aroow_left_S"></i></button>
-                            </li>
-                            <li class="active">
-                                <button>1</button>
-                            </li>
-                            <li>
-                                <button>2</button>
-                            </li>
-                            <li>
-                                <button>3</button>
-                            </li>
-                            <li>
-                                <button>4</button>
-                            </li>
-                            <li>
-                                <button>5</button>
-                            </li>
-                            <li>
-                                <button><i class="icon_aroow_right_S"></i></button>
-                            </li>
-                            <li>
-                                <button><i class="icon_aroow_right_L"></i></button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pg_list">
-                        <select>
-                            <option>100 row</option>
-                            <option>200 row</option>
-                            <option>300 row</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="table_type_01">
-                <table>
-                    <colgroup>
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                        <col style="width: 10%;">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>
-                                <button>
-                                    <span>납부자 명</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>청구서 발행 번호</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>총 청구 금액</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>입금 요청 사</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>입금 요청 일자</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>납기 일자</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>미납 금액</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>미납 발송 이력</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>관리</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>홍길동</td>
-                            <td>0000000000</td>
-                            <td class="txtRight">55,000원</td>
-                            <td>다날</td>
-                            <td>2022/11/09 00:00</td>
-                            <td>2022/11/09 00:00</td>
-                            <td class="txtRight">155,000원</td>
-                            <td>2</td>
-                            <td>
-                                <button class="mail" onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"><i class="icon_mail"></i>
-                                </button>
-                            </td>     
-                        </tr>
-                        <tr>
-                            <td>홍길동</td>
-                            <td>0000000000</td>
-                            <td class="txtRight">55,000원</td>
-                            <td>다날</td>
-                            <td>2022/11/09 00:00</td>
-                            <td>2022/11/09 00:00</td>
-                            <td class="txtRight">155,000원</td>
-                            <td>2</td>
-                            <td>
-                                <button class="mail" onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"><i class="icon_mail"></i>
-                                </button>
-                            </td>    
-                        </tr>
-                        <tr>
-                            <td>홍길동</td>
-                            <td>0000000000</td>
-                            <td class="txtRight">55,000원</td>
-                            <td>다날</td>
-                            <td>2022/11/09 00:00</td>
-                            <td>2022/11/09 00:00</td>
-                            <td class="txtRight">155,000원</td>
-                            <td>2</td>
-                            <td>
-                                <button class="mail" onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"><i class="icon_mail"></i>
-                                </button>
-                            </td>     
-                        </tr>
-                        <tr>
-                            <td>홍길동</td>
-                            <td>0000000000</td>
-                            <td class="txtRight">55,000원</td>
-                            <td>다날</td>
-                            <td>2022/11/09 00:00</td>
-                            <td>2022/11/09 00:00</td>
-                            <td class="txtRight">155,000원</td>
-                            <td>2</td>
-                            <td>
-                                <button class="mail" onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"><i class="icon_mail"></i>
-                                </button>
-                            </td>   
-                        </tr>
-                        <tr>
-                            <td>홍길동</td>
-                            <td>0000000000</td>
-                            <td class="txtRight">55,000원</td>
-                            <td>다날</td>
-                            <td>2022/11/09 00:00</td>
-                            <td>2022/11/09 00:00</td>
-                            <td class="txtRight">155,000원</td>
-                            <td>2</td>
-                            <td>
-                                <button class="mail" onclick="javascript:openModal('../html/UP_lst_00_popup_00.htm', 'UP_lst_00_popup_00', '', '400')"><i class="icon_mail"></i>
-                                </button>
-                            </td>   
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <aside>
-            <div class="stickyNote_type_1">
-                <div class="tickyNote_tit">
-                    <h5>미납 현황</h5>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>총 미납 금액</p>
-                    <span>999,999</span>
-                    <em>원(₩) /</em>
-                    <span>99</span>
-                    <em>건</em>
-                </div>
-            </div>
-            <div class="stickyNote_type_4">
-                <div class="tickyNote_tit">
-                    <h5>최근 5일 자동 결제 작업 이력</h5>
-                </div>
-                <div class="tickyNote_sub">
-                    <ul>
-                        <li>
-                            <p>날짜</p>
-                            <p>결제 성공</p>
-                            <p>결제 실패</p>
-                        </li>
-                        <li>
-                            <span>10/05</span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                        </li>
-                        <li>
-                            <span>10/04</span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                        </li>
-                        <li>
-                            <span>10/03</span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                        </li>
-                        <li>
-                            <span>10/02</span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                        </li>
-                        <li>
-                            <span>10/01</span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                            <span>
-                                <em>999,999건</em>
-                                <em>99건</em>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </aside>
-    </div>
-</body>
+            </aside>
+        </div>
+    </body>
 </html>

@@ -1,330 +1,573 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>조정 정보</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-    <script src="../js/charts/chart-08.js"></script>
-</head>
-<script></script>
-<body>
-    <div class="wrap haveAside">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/BL_db_00.htm">청구 관리</a>
-                <span> > </span>
-                <a href="../html/AJ_lst_00.htm">조정 목록</a>
-            </div>
-            <div class="section_tit">
-                <h3>조정 정보</h3>
-            </div>
-            <div class="type_04">
-                <div class="searchBar_wrap">
-                    <div class="searchBar">
-                        <input type="text" placeholder="검색어입력">
-                        <div class="searchIcon">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>조정 정보</title>
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
+
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
+
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/charts/chart-08.js"></script>
+    </head>
+    <script></script>
+    <body>
+        <div class="wrap haveAside">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
+                        <button>
+                            <i class="icon_menu"></i>
+                        </button>
+                    </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
+                    </div>
+                </div>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="">
+                <ul>
+                    <li>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/BL_db_00.htm">청구 관리</a>
+                    <span> > </span>
+                    <a href="../html/AJ_lst_00.htm">조정 목록</a>
+                </div>
+                <div class="section_tit">
+                    <h3>조정 정보</h3>
+                </div>
+                <div class="type_04">
+                    <div class="searchBar_wrap">
+                        <div class="searchBar">
+                            <input type="text" placeholder="검색어입력" />
+                            <div class="searchIcon">
+                                <i class="icon_search"></i>
+                            </div>
+                            <div class="fitterBtn">
+                                <button class="filter">
+                                    <i class="icon_filter"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="dropDown_wrap">
+                            <ul>
+                                <li>
+                                    <label for="name2">고객 명</label>
+                                    <input type="text" id="name1" class="inp_01" />
+                                </li>
+                                <li>
+                                    <label for="name">상품 명</label>
+                                    <input type="text" id="nam2" class="inp_01" />
+                                </li>
+                                <li>
+                                    <label for="name3">과금 명</label>
+                                    <input type="text" id="name3" class="inp_01" />
+                                </li>
+                                <li>
+                                    <label for="name3">조정자</label>
+                                    <input type="text" id="name4" class="inp_01" />
+                                </li>
+                                <li>
+                                    <label for="name3">조정 사유</label>
+                                    <input type="text" id="name5" class="inp_01" />
+                                </li>
+                                <li>
+                                    <p>조정 일자</p>
+                                    <div class="input_box">
+                                        <span class="input datepickerRange">
+                                            <input type="text" value="" class="inp_02 datepicker startDate" />
+                                            <span>~</span>
+                                            <input type="text" value="" class="inp_02 datepicker endDate" />
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="searchBtn">
+                        <button>
                             <i class="icon_search"></i>
-                        </div>
-                        <div class="fitterBtn">
-                            <button class="filter">
-                                <i class="icon_filter"></i>
-                            </button>
-                        </div>
+                            <span>Search</span>
+                        </button>
                     </div>
-                    <div class="dropDown_wrap">
-                        <ul>
-                            <li>
-                                <label for="name2">고객 명</label>
-                                <input type="text" id="name1" class="inp_01">
-                            </li>
-                            <li>
-                                <label for="name">상품 명</label>
-                                <input type="text" id="nam2" class="inp_01">
-                            </li>
-                            <li>
-                                <label for="name3">과금 명</label>
-                                <input type="text" id="name3" class="inp_01">
-                            </li>
-                            <li>
-                                <label for="name3">조정자</label>
-                                <input type="text" id="name4" class="inp_01">
-                            </li>
-                            <li>
-                                <label for="name3">조정 사유</label>
-                                <input type="text" id="name5" class="inp_01">
-                            </li>
-                            <li>
-                                <p>조정 일자</p>
-                                <div class="input_box">
-                                    <span class="input datepickerRange">
-                                        <input type="text" value="" class="inp_02 datepicker startDate">
-                                        <span>~</span>
-                                        <input type="text" value="" class="inp_02 datepicker endDate">
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="resetBtn">
+                        <button class="reset">
+                            <i class="icon_reset"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="searchBtn">
-                    <button>
-                        <i class="icon_search"></i>
-                        <span>Search</span>
-                    </button>
-                </div>
-                <div class="resetBtn">
-                    <button class="reset">
-                        <i class="icon_reset"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="type_05_wrap special">
-                <div class="txt">
-                    <div class="selectBox flex">
-                        <select name="" id="" class="select_01">
-                            <option>2022/11</option>
-                            <option>2022/10</option>
-                            <option>2022/09</option>
-                            <option>2022/08</option>
-                            <option>2022/07</option>
-                            <option>2022/06</option>
-                            <option>2022/05</option>
-                            <option>2022/04</option>
-                            <option>2022/03</option>
-                            <option>2022/02</option>
-                            <option>2022/01</option>
-                        </select>
-                        <div class="icon_wrap">
-                            <button><i class="icon_aroow_left_S"></i></button>
-                            <button><i class="icon_aroow_right_S"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="type_05">
-                    <div class="pg_text">
-                        <p>1 - 100</p>
-                        <span>of</span>
-                        <p>1000</p>
-                    </div>
-                    <div class="pg_number">
-                        <ul>
-                            <li>
-                                <button><i class="icon_aroow_left_L"></i></button>
-                            </li>
-                            <li>
+                <div class="type_05_wrap special">
+                    <div class="txt">
+                        <div class="selectBox flex">
+                            <select name="" id="" class="select_01">
+                                <option>2022/11</option>
+                                <option>2022/10</option>
+                                <option>2022/09</option>
+                                <option>2022/08</option>
+                                <option>2022/07</option>
+                                <option>2022/06</option>
+                                <option>2022/05</option>
+                                <option>2022/04</option>
+                                <option>2022/03</option>
+                                <option>2022/02</option>
+                                <option>2022/01</option>
+                            </select>
+                            <div class="icon_wrap">
                                 <button><i class="icon_aroow_left_S"></i></button>
-                            </li>
-                            <li class="active">
-                                <button>1</button>
-                            </li>
-                            <li>
-                                <button>2</button>
-                            </li>
-                            <li>
-                                <button>3</button>
-                            </li>
-                            <li>
-                                <button>4</button>
-                            </li>
-                            <li>
-                                <button>5</button>
-                            </li>
-                            <li>
                                 <button><i class="icon_aroow_right_S"></i></button>
-                            </li>
-                            <li>
-                                <button><i class="icon_aroow_right_L"></i></button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pg_list">
-                        <select>
-                            <option>100 row</option>
-                            <option>200 row</option>
-                            <option>300 row</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="table_type_01">
-                <table>
-                    <colgroup>
-                        <col style="width: 12%;">
-                        <col style="width: 12%;">
-                        <col style="width: 12%;">
-                        <col style="width: 12%;">
-                        <col style="width: 12%;">
-                        <col style="width: 12%;">
-                        <col style="width: 12%;">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>
-                                <button>
-                                    <span>조정 금액</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>조정 일자</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>고객</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>상품 명</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>과금항목</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>조정자</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                            <th>
-                                <button>
-                                    <span>조정사유</span>
-                                    <i class="icon_updown"></i>
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="txtRight colorRed01">-1,000원</td>
-                            <td>2022/11/09 13:15</td> 
-                            <td>홍길동</td>   
-                            <td>Wi-Fi 30일</td>
-                            <td>가입비</td>
-                            <td>admin</td>
-                            <td>과금 오류</td>    
-                        </tr>
-                        <tr>
-                            <td class="txtRight">1,000원</td>
-                            <td>2022/11/09 13:15</td> 
-                            <td>홍길동</td>   
-                            <td>홈 단말기 대여</td>
-                            <td>가입비</td>
-                            <td>admin</td>
-                            <td>일시 서비스 장애</td>    
-                        </tr>
-                        <tr>
-                            <td class="txtRight colorBlue">+1,000원</td>
-                            <td>2022/11/09 13:15</td> 
-                            <td>홍길동</td>   
-                            <td>Wi-Fi 30일</td>
-                            <td>가입비</td>
-                            <td>admin</td>
-                            <td>일시 서비스 장애</td>    
-                        </tr>
-                        <tr>
-                            <td class="txtRight">1,000원</td>
-                            <td>2022/11/09 13:15</td> 
-                            <td>홍길동</td>   
-                            <td>Wi-Fi 30일</td>
-                            <td>가입비</td>
-                            <td>admin</td>
-                            <td>과금 오류</td>    
-                        </tr>
-                        <tr>
-                            <td class="txtRight">1,000원</td>
-                            <td>2022/11/09 13:15</td> 
-                            <td>홍길동</td>   
-                            <td>홈 단말기 대여</td>
-                            <td>가입비</td>
-                            <td>admin</td>
-                            <td>일시 서비스 장애</td>    
-                        </tr>
-                        <tr>
-                            <td class="txtRight">1,000원</td>
-                            <td>2022/11/09 13:15</td> 
-                            <td>홍길동</td>   
-                            <td>Wi-Fi 30일</td>
-                            <td>가입비</td>
-                            <td>admin</td>
-                            <td>과금 오류</td>    
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <aside>
-            <div class="stickyNote_type_3">
-                <div class="tickyNote_tit">
-                    <h5>지난 30일 조정 현황</h5>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>총 조정 수</p>
-                    <span>999,999</span>
-                    <em>건</em>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>총 조정 금액</p>
-                    <span>12,000,000,000</span>
-                    <em>원</em>
-                </div>
-                <div class="chart_wrap mgT40">
-                    <div id="chart_08" class="chart_type_01 mgB10"></div>
-                    <div class="chart_txt">
-                        <div class="tit">
-                            <i class="icon_circle bgDarkBlue"></i>
-                            <p>조정사유 1</p>
-                        </div>
-                        <div class="sub">
-                            <p>1,000원 / 00건</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="chart_txt">
-                        <div class="tit">
-                            <i class="icon_circle bgSkyBlue"></i>
-                            <p>조정사유 2</p>
+                    <div class="type_05">
+                        <div class="pg_text">
+                            <p>1 - 100</p>
+                            <span>of</span>
+                            <p>1000</p>
                         </div>
-                        <div class="sub">
-                            <p>500원 / 00건</p>
+                        <div class="pg_number">
+                            <ul>
+                                <li>
+                                    <button><i class="icon_aroow_left_L"></i></button>
+                                </li>
+                                <li>
+                                    <button><i class="icon_aroow_left_S"></i></button>
+                                </li>
+                                <li class="active">
+                                    <button>1</button>
+                                </li>
+                                <li>
+                                    <button>2</button>
+                                </li>
+                                <li>
+                                    <button>3</button>
+                                </li>
+                                <li>
+                                    <button>4</button>
+                                </li>
+                                <li>
+                                    <button>5</button>
+                                </li>
+                                <li>
+                                    <button><i class="icon_aroow_right_S"></i></button>
+                                </li>
+                                <li>
+                                    <button><i class="icon_aroow_right_L"></i></button>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="chart_txt">
-                        <div class="tit">
-                            <i class="icon_circle bgYellow"></i>
-                            <p>조정사유 3</p>
-                        </div>
-                        <div class="sub">
-                            <p>10,000원 / 00건</p>
-                        </div>
-                    </div>
-                    <div class="chart_txt">
-                        <div class="tit">
-                            <i class="icon_circle bgRed"></i>
-                            <p>조정사유 4</p>
-                        </div>
-                        <div class="sub">
-                            <p>9,000원 / 00건</p>
+                        <div class="pg_list">
+                            <select>
+                                <option>100 row</option>
+                                <option>200 row</option>
+                                <option>300 row</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-            </div>
-        </aside>
-    </div>
-</body>
+                <div class="table_type_01">
+                    <table>
+                        <colgroup>
+                            <col style="width: 12%" />
+                            <col style="width: 12%" />
+                            <col style="width: 12%" />
+                            <col style="width: 12%" />
+                            <col style="width: 12%" />
+                            <col style="width: 12%" />
+                            <col style="width: 12%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button>
+                                        <span>조정 금액</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>조정 일자</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>고객</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>상품 명</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>과금항목</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>조정자</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                                <th>
+                                    <button>
+                                        <span>조정사유</span>
+                                        <i class="icon_updown"></i>
+                                    </button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="txtRight colorRed01">-1,000원</td>
+                                <td>2022/11/09 13:15</td>
+                                <td>홍길동</td>
+                                <td>Wi-Fi 30일</td>
+                                <td>가입비</td>
+                                <td>admin</td>
+                                <td>과금 오류</td>
+                            </tr>
+                            <tr>
+                                <td class="txtRight">1,000원</td>
+                                <td>2022/11/09 13:15</td>
+                                <td>홍길동</td>
+                                <td>홈 단말기 대여</td>
+                                <td>가입비</td>
+                                <td>admin</td>
+                                <td>일시 서비스 장애</td>
+                            </tr>
+                            <tr>
+                                <td class="txtRight colorBlue">+1,000원</td>
+                                <td>2022/11/09 13:15</td>
+                                <td>홍길동</td>
+                                <td>Wi-Fi 30일</td>
+                                <td>가입비</td>
+                                <td>admin</td>
+                                <td>일시 서비스 장애</td>
+                            </tr>
+                            <tr>
+                                <td class="txtRight">1,000원</td>
+                                <td>2022/11/09 13:15</td>
+                                <td>홍길동</td>
+                                <td>Wi-Fi 30일</td>
+                                <td>가입비</td>
+                                <td>admin</td>
+                                <td>과금 오류</td>
+                            </tr>
+                            <tr>
+                                <td class="txtRight">1,000원</td>
+                                <td>2022/11/09 13:15</td>
+                                <td>홍길동</td>
+                                <td>홈 단말기 대여</td>
+                                <td>가입비</td>
+                                <td>admin</td>
+                                <td>일시 서비스 장애</td>
+                            </tr>
+                            <tr>
+                                <td class="txtRight">1,000원</td>
+                                <td>2022/11/09 13:15</td>
+                                <td>홍길동</td>
+                                <td>Wi-Fi 30일</td>
+                                <td>가입비</td>
+                                <td>admin</td>
+                                <td>과금 오류</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <aside>
+                <div class="stickyNote_type_3">
+                    <div class="tickyNote_tit">
+                        <h5>지난 30일 조정 현황</h5>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>총 조정 수</p>
+                        <span>999,999</span>
+                        <em>건</em>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>총 조정 금액</p>
+                        <span>12,000,000,000</span>
+                        <em>원</em>
+                    </div>
+                    <div class="chart_wrap mgT40">
+                        <div id="chart_08" class="chart_type_01 mgB10"></div>
+                        <div class="chart_txt">
+                            <div class="tit">
+                                <i class="icon_circle bgDarkBlue"></i>
+                                <p>조정사유 1</p>
+                            </div>
+                            <div class="sub">
+                                <p>1,000원 / 00건</p>
+                            </div>
+                        </div>
+                        <div class="chart_txt">
+                            <div class="tit">
+                                <i class="icon_circle bgSkyBlue"></i>
+                                <p>조정사유 2</p>
+                            </div>
+                            <div class="sub">
+                                <p>500원 / 00건</p>
+                            </div>
+                        </div>
+                        <div class="chart_txt">
+                            <div class="tit">
+                                <i class="icon_circle bgYellow"></i>
+                                <p>조정사유 3</p>
+                            </div>
+                            <div class="sub">
+                                <p>10,000원 / 00건</p>
+                            </div>
+                        </div>
+                        <div class="chart_txt">
+                            <div class="tit">
+                                <i class="icon_circle bgRed"></i>
+                                <p>조정사유 4</p>
+                            </div>
+                            <div class="sub">
+                                <p>9,000원 / 00건</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </body>
 </html>

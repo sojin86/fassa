@@ -1,599 +1,849 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-</head>
-<script>
-    //main chart 스크립트
-    $(document).ready(function(){
-	var chart1 = AmCharts.makeChart("main_chart", {
-		"type": "serial", //그래프 타입
-		"columnWidth": 0.5, //그래프 가로길이
-		"color": "#5c5f66", //  하단 텍스트 색상
-		"columnSpacing":2.5, // 그래프 사이길이
-		"fontFamily":'Noto Sans KR', //그래프 폰트 종류
-		"autoMarginOffset": 0, // 그래프 왼쪽 공간 없애기
-		"fontSize": 12, //그래프 폰트 사이즈
-		"creditsPosition": "bottom-right", // 로고 링크 오른쪽 아래
-		"categoryField": "category", //그래프 하단 이름
-		"processCount": 100000000,  // 숫자 몇까지 있는지
-        "marginTop": 0, //margin-top 0
-		"categoryAxis": {
-			"gridPosition": "start", // 밑 시작 부분
-			"axisColor": "#d9dee8", // 밑 선 색상
-			"axisThickness": 2, //밑 선 두께
-			"gridThickness": 0, //  세로 선 없애기
-			"color": "#a5a8b1", //  하단 텍스트 색상
-			"fontSize": 12, // 하단 텍스트 크기
-			"boldLabels": true, // 하단 텍스트 bold
-		},
-		"trendLines": [],
-		"graphs": [
-			{   //파랑색 선 그래프
-				"balloonText": "[[title]] : [[value]]",
-			    "title": "총 매출",
-				"valueField": "column-4",
-				"id": "Graph-4", // 그래프 ID
-				"fillColors": "#4661ee", // 채우기 면 색상
-				"fillAlphas": 0.15, // 채우기 면 투명도
-				"lineColor": "#4661ee", // 채우기 선 색상
-				"bullet": "round",  // 버튼 라운드
-				"bulletAlpha": 0,  // 선 동그라미 없앰
-				"valueAxis": "ValueAxis-2",
-			},
-			{    // 파랑색 면 그래프
-				"balloonText": "[[title]] : [[value]]",
-				"type": "column", // 그래프 타입
-				"title": "정액 선물",
-				"valueField": "column-1",
-				"id": "Graph-1",
-				"fillColors": "#5d77fe", // 채우기 면 색상
-				"fillAlphas": 1, // 채우기 면 투명도
-				"lineThickness": 0, // 채우기 선 길이 없앰
-				"valueAxis": "ValueAxis-1",
-			},
-			{    // 하늘색 면 그래프
-				"balloonText": "[[title]] : [[value]]",
-				"type": "column", // 그래프 타입
-				"title": "정액 후불",
-				"valueField": "column-2",
-				"id": "Graph-2",
-				"fillColors": "#3ab5ff", // 채우기 면 색상
-				"fillAlphas": 1, // 채우기 면 투명도
-				"lineThickness": 0, // 채우기 선 길이 없앰
-				"valueAxis": "ValueAxis-1",
-			},
-			{    // 겨자색 면 그래프
-				"balloonText": "[[title]] : [[value]]",
-				"type": "column", // 그래프 타입
-				"title": "단품 선불",
-				"id": "Graph-3",
-				"valueField": "column-3",
-				"fillColors": "#ecb700", // 채우기 면 색상
-				"fillAlphas": 1, // 채우기 면 투명도
-				"lineThickness": 0, // 채우기 선 길이 없앰
-				"valueAxis": "ValueAxis-1",
-			}
-		],
-		"guides": [],
-		"valueAxes": [
-			{
-				"axisColor": "#fff", // 왼쪽 축 색상
-				"color": "#5c5f66",
-				"boldLabels": true, // 하단 텍스트 bold
-				// "gridColor": "#dae0ec", // 그리드 선 색상
-				// "gridThickness": 2, // 그리드 선 굵기
-			},
-		],
-		"allLabels": [],
-		"balloon": { //hover시 나오는 말풍선
-			"adjustBorderColor": false, //원래 그리드 색상
-			"borderAlpha": 0, //border 없앰
-			"borderThickness": 0, //border 그림자
-			"fillAlpha": 1, // 투명도 
-		    "color": "#FFF", //텍스트 색상
-		},
-		"chartCursor": {
-			"cursorColor": "#4661ee", // 커서 라인 색상
-			"avoidBalloonOverlapping": true, // 말풍선 겹치지 않게 해줌
-			"categoryBalloonEnabled": false, // 하단 말풍선 없애기
-		},
-		"legend": { //하단 설명 
-			// "enabled" : false, //legend 리스트 없애기
-			"enabled": true, // 리스트 나타내기
-			"useGraphSettings": true, // 리스트 나타내기2
-			"position": "top", // top 위치
-			"align": "right", // right 위치
-			"valueWidth": 0 // value 없애기
-		},
-		"titles": [
-			{ //상단 title
-				"size": 0, //타이틀 없애기
-			}
-		],
-		"dataProvider": [
-			{
-				"category": "01",
-				"column-1": 400000000,
-				"column-2": 300000000,
-				"column-3": 200000000,
-				"column-4": 800000000
-			},
-			{
-				"category": "02",
-				"column-1": 100000000,
-				"column-2": 200000000,
-				"column-3": 200000000,
-				"column-4": 900000000,
-			},
-			{
-				"category": "03",
-				"column-1": 200000000,
-				"column-2": 300000000,
-				"column-3": 500000000,
-				"column-4": 600000000,
-			},
-			{
-				"category": "04",
-				"column-1": 100000000,
-				"column-2": 300000000,
-				"column-3": 500000000,
-				"column-4": 500000000,
-			},
-			{
-				"category": "05",
-				"column-1": 400000000,
-				"column-2": 300000000,
-				"column-3": 200000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "06",
-				"column-1": 500000000,
-				"column-2": 700000000,
-				"column-3": 800000000,
-				"column-4": 700000000,
-			},
-			{
-				"category": "07",
-				"column-1": 100000000,
-				"column-2": 300000000,
-				"column-3": 600000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "08",
-				"column-1": 300000000,
-				"column-2": 200000000,
-				"column-3": 100000000,
-				"column-4": 900000000,
-			},
-			{
-				"category": "09",
-				"column-1": 100000000,
-				"column-2": 200000000,
-				"column-3": 100000000,
-				"column-4": 600000000,
-			},
-			{
-				"category": "10",
-				"column-1": 300000000,
-				"column-2": 500000000,
-				"column-3": 400000000,
-				"column-4": 500000000,
-			},
-			{
-				"category": "11",
-				"column-1": 300000000,
-				"column-2": 400000000,
-				"column-3": 500000000,
-				"column-4": 400000000,
-			},
-			{
-				"category": "12",
-				"column-1": 600000000,
-				"column-2": 600000000,
-				"column-3": 600000000,
-				"column-4": 700000000,
-			},
-			{
-				"category": "13",
-				"column-1": 500000000,
-				"column-2": 500000000,
-				"column-3": 600000000,
-				"column-4": 600000000,
-			},
-			{
-				"category": "14",
-				"column-1": 400000000,
-				"column-2": 500000000,
-				"column-3": 600000000,
-				"column-4": 700000000,
-			},
-			{
-				"category": "15",
-				"column-1": 200000000,
-				"column-2": 300000000,
-				"column-3": 300000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "16",
-				"column-1": 300000000,
-				"column-2": 600000000,
-				"column-3": 400000000,
-				"column-4": 600000000,
-			},
-			{
-				"category": "17",
-				"column-1": 100000000,
-				"column-2": 200000000,
-				"column-3": 500000000,
-				"column-4": 500000000,
-			},
-			{
-				"category": "18",
-				"column-1": 300000000,
-				"column-2": 400000000,
-				"column-3": 500000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "19",
-				"column-1": 200000000,
-				"column-2": 200000000,
-				"column-3": 500000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "20",
-				"column-1": 100000000,
-				"column-2": 200000000,
-				"column-3": 200000000,
-				"column-4": 900000000,
-			},
-			{
-				"category": "21",
-				"column-1": 100000000,
-				"column-2": 300000000,
-				"column-3": 400000000,
-				"column-4": 500000000,
-			},
-			{
-				"category": "22",
-				"column-1": 400000000,
-				"column-2": 400000000,
-				"column-3": 500000000,
-				"column-4": 600000000,
-			},
-			{
-				"category": "23",
-				"column-1": 300000000,
-				"column-2": 500000000,
-				"column-3": 600000000,
-				"column-4": 700000000,
-			},
-			{
-				"category": "24",
-				"column-1": 200000000,
-				"column-2": 300000000,
-				"column-3": 300000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "25",
-				"column-1": 400000000,
-				"column-2": 500000000,
-				"column-3": 500000000,
-				"column-4": 900000000,
-			},
-			{
-				"category": "26",
-				"column-1": 300000000,
-				"column-2": 400000000,
-				"column-3": 500000000,
-				"column-4": 500000000,
-			},
-			{
-				"category": "27",
-				"column-1": 200000000,
-				"column-2": 200000000,
-				"column-3": 300000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "28",
-				"column-1": 100000000,
-				"column-2": 200000000,
-				"column-3": 400000000,
-				"column-4": 700000000,
-			},
-			{
-				"category": "29",
-				"column-1": 500000000,
-				"column-2": 200000000,
-				"column-3": 100000000,
-				"column-4": 800000000,
-			},
-			{
-				"category": "30",
-				"column-1": 300000000,
-				"column-2": 400000000,
-				"column-3": 500000000,
-				"column-4": 900000000,
-			},
-		]
-	});
-});
-</script>
-<body class="modal-open">
-    <div class="wrap">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/MD_db_00.htm">Dashboard</a>
-            </div>
-            <div class="section_tit">
-                <h3>Dashboard</h3>
-            </div>
-            <div class="type_01">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>메인</title>
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
+
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
+
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+    </head>
+    <script>
+        //main chart 스크립트
+        $(document).ready(function () {
+            var chart1 = AmCharts.makeChart('main_chart', {
+                type: 'serial', //그래프 타입
+                columnWidth: 0.5, //그래프 가로길이
+                color: '#5c5f66', //  하단 텍스트 색상
+                columnSpacing: 2.5, // 그래프 사이길이
+                fontFamily: 'Noto Sans KR', //그래프 폰트 종류
+                autoMarginOffset: 0, // 그래프 왼쪽 공간 없애기
+                fontSize: 12, //그래프 폰트 사이즈
+                creditsPosition: 'bottom-right', // 로고 링크 오른쪽 아래
+                categoryField: 'category', //그래프 하단 이름
+                processCount: 100000000, // 숫자 몇까지 있는지
+                marginTop: 0, //margin-top 0
+                categoryAxis: {
+                    gridPosition: 'start', // 밑 시작 부분
+                    axisColor: '#d9dee8', // 밑 선 색상
+                    axisThickness: 2, //밑 선 두께
+                    gridThickness: 0, //  세로 선 없애기
+                    color: '#a5a8b1', //  하단 텍스트 색상
+                    fontSize: 12, // 하단 텍스트 크기
+                    boldLabels: true, // 하단 텍스트 bold
+                },
+                trendLines: [],
+                graphs: [
+                    {
+                        //파랑색 선 그래프
+                        balloonText: '[[title]] : [[value]]',
+                        title: '총 매출',
+                        valueField: 'column-4',
+                        id: 'Graph-4', // 그래프 ID
+                        fillColors: '#4661ee', // 채우기 면 색상
+                        fillAlphas: 0.15, // 채우기 면 투명도
+                        lineColor: '#4661ee', // 채우기 선 색상
+                        bullet: 'round', // 버튼 라운드
+                        bulletAlpha: 0, // 선 동그라미 없앰
+                        valueAxis: 'ValueAxis-2',
+                    },
+                    {
+                        // 파랑색 면 그래프
+                        balloonText: '[[title]] : [[value]]',
+                        type: 'column', // 그래프 타입
+                        title: '정액 선물',
+                        valueField: 'column-1',
+                        id: 'Graph-1',
+                        fillColors: '#5d77fe', // 채우기 면 색상
+                        fillAlphas: 1, // 채우기 면 투명도
+                        lineThickness: 0, // 채우기 선 길이 없앰
+                        valueAxis: 'ValueAxis-1',
+                    },
+                    {
+                        // 하늘색 면 그래프
+                        balloonText: '[[title]] : [[value]]',
+                        type: 'column', // 그래프 타입
+                        title: '정액 후불',
+                        valueField: 'column-2',
+                        id: 'Graph-2',
+                        fillColors: '#3ab5ff', // 채우기 면 색상
+                        fillAlphas: 1, // 채우기 면 투명도
+                        lineThickness: 0, // 채우기 선 길이 없앰
+                        valueAxis: 'ValueAxis-1',
+                    },
+                    {
+                        // 겨자색 면 그래프
+                        balloonText: '[[title]] : [[value]]',
+                        type: 'column', // 그래프 타입
+                        title: '단품 선불',
+                        id: 'Graph-3',
+                        valueField: 'column-3',
+                        fillColors: '#ecb700', // 채우기 면 색상
+                        fillAlphas: 1, // 채우기 면 투명도
+                        lineThickness: 0, // 채우기 선 길이 없앰
+                        valueAxis: 'ValueAxis-1',
+                    },
+                ],
+                guides: [],
+                valueAxes: [
+                    {
+                        axisColor: '#fff', // 왼쪽 축 색상
+                        color: '#5c5f66',
+                        boldLabels: true, // 하단 텍스트 bold
+                        // "gridColor": "#dae0ec", // 그리드 선 색상
+                        // "gridThickness": 2, // 그리드 선 굵기
+                    },
+                ],
+                allLabels: [],
+                balloon: {
+                    //hover시 나오는 말풍선
+                    adjustBorderColor: false, //원래 그리드 색상
+                    borderAlpha: 0, //border 없앰
+                    borderThickness: 0, //border 그림자
+                    fillAlpha: 1, // 투명도
+                    color: '#FFF', //텍스트 색상
+                },
+                chartCursor: {
+                    cursorColor: '#4661ee', // 커서 라인 색상
+                    avoidBalloonOverlapping: true, // 말풍선 겹치지 않게 해줌
+                    categoryBalloonEnabled: false, // 하단 말풍선 없애기
+                },
+                legend: {
+                    //하단 설명
+                    // "enabled" : false, //legend 리스트 없애기
+                    enabled: true, // 리스트 나타내기
+                    useGraphSettings: true, // 리스트 나타내기2
+                    position: 'top', // top 위치
+                    align: 'right', // right 위치
+                    valueWidth: 0, // value 없애기
+                },
+                titles: [
+                    {
+                        //상단 title
+                        size: 0, //타이틀 없애기
+                    },
+                ],
+                dataProvider: [
+                    {
+                        category: '01',
+                        'column-1': 400000000,
+                        'column-2': 300000000,
+                        'column-3': 200000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '02',
+                        'column-1': 100000000,
+                        'column-2': 200000000,
+                        'column-3': 200000000,
+                        'column-4': 900000000,
+                    },
+                    {
+                        category: '03',
+                        'column-1': 200000000,
+                        'column-2': 300000000,
+                        'column-3': 500000000,
+                        'column-4': 600000000,
+                    },
+                    {
+                        category: '04',
+                        'column-1': 100000000,
+                        'column-2': 300000000,
+                        'column-3': 500000000,
+                        'column-4': 500000000,
+                    },
+                    {
+                        category: '05',
+                        'column-1': 400000000,
+                        'column-2': 300000000,
+                        'column-3': 200000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '06',
+                        'column-1': 500000000,
+                        'column-2': 700000000,
+                        'column-3': 800000000,
+                        'column-4': 700000000,
+                    },
+                    {
+                        category: '07',
+                        'column-1': 100000000,
+                        'column-2': 300000000,
+                        'column-3': 600000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '08',
+                        'column-1': 300000000,
+                        'column-2': 200000000,
+                        'column-3': 100000000,
+                        'column-4': 900000000,
+                    },
+                    {
+                        category: '09',
+                        'column-1': 100000000,
+                        'column-2': 200000000,
+                        'column-3': 100000000,
+                        'column-4': 600000000,
+                    },
+                    {
+                        category: '10',
+                        'column-1': 300000000,
+                        'column-2': 500000000,
+                        'column-3': 400000000,
+                        'column-4': 500000000,
+                    },
+                    {
+                        category: '11',
+                        'column-1': 300000000,
+                        'column-2': 400000000,
+                        'column-3': 500000000,
+                        'column-4': 400000000,
+                    },
+                    {
+                        category: '12',
+                        'column-1': 600000000,
+                        'column-2': 600000000,
+                        'column-3': 600000000,
+                        'column-4': 700000000,
+                    },
+                    {
+                        category: '13',
+                        'column-1': 500000000,
+                        'column-2': 500000000,
+                        'column-3': 600000000,
+                        'column-4': 600000000,
+                    },
+                    {
+                        category: '14',
+                        'column-1': 400000000,
+                        'column-2': 500000000,
+                        'column-3': 600000000,
+                        'column-4': 700000000,
+                    },
+                    {
+                        category: '15',
+                        'column-1': 200000000,
+                        'column-2': 300000000,
+                        'column-3': 300000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '16',
+                        'column-1': 300000000,
+                        'column-2': 600000000,
+                        'column-3': 400000000,
+                        'column-4': 600000000,
+                    },
+                    {
+                        category: '17',
+                        'column-1': 100000000,
+                        'column-2': 200000000,
+                        'column-3': 500000000,
+                        'column-4': 500000000,
+                    },
+                    {
+                        category: '18',
+                        'column-1': 300000000,
+                        'column-2': 400000000,
+                        'column-3': 500000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '19',
+                        'column-1': 200000000,
+                        'column-2': 200000000,
+                        'column-3': 500000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '20',
+                        'column-1': 100000000,
+                        'column-2': 200000000,
+                        'column-3': 200000000,
+                        'column-4': 900000000,
+                    },
+                    {
+                        category: '21',
+                        'column-1': 100000000,
+                        'column-2': 300000000,
+                        'column-3': 400000000,
+                        'column-4': 500000000,
+                    },
+                    {
+                        category: '22',
+                        'column-1': 400000000,
+                        'column-2': 400000000,
+                        'column-3': 500000000,
+                        'column-4': 600000000,
+                    },
+                    {
+                        category: '23',
+                        'column-1': 300000000,
+                        'column-2': 500000000,
+                        'column-3': 600000000,
+                        'column-4': 700000000,
+                    },
+                    {
+                        category: '24',
+                        'column-1': 200000000,
+                        'column-2': 300000000,
+                        'column-3': 300000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '25',
+                        'column-1': 400000000,
+                        'column-2': 500000000,
+                        'column-3': 500000000,
+                        'column-4': 900000000,
+                    },
+                    {
+                        category: '26',
+                        'column-1': 300000000,
+                        'column-2': 400000000,
+                        'column-3': 500000000,
+                        'column-4': 500000000,
+                    },
+                    {
+                        category: '27',
+                        'column-1': 200000000,
+                        'column-2': 200000000,
+                        'column-3': 300000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '28',
+                        'column-1': 100000000,
+                        'column-2': 200000000,
+                        'column-3': 400000000,
+                        'column-4': 700000000,
+                    },
+                    {
+                        category: '29',
+                        'column-1': 500000000,
+                        'column-2': 200000000,
+                        'column-3': 100000000,
+                        'column-4': 800000000,
+                    },
+                    {
+                        category: '30',
+                        'column-1': 300000000,
+                        'column-2': 400000000,
+                        'column-3': 500000000,
+                        'column-4': 900000000,
+                    },
+                ],
+            });
+        });
+    </script>
+    <body class="modal-open">
+        <div class="wrap">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
+                        <button>
+                            <i class="icon_menu"></i>
+                        </button>
+                    </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
+                    </div>
+                </div>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="">
                 <ul>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_user"></i>
-                                <span>총 가입 수</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>100,000</p>
-                            </div>
-                            <div class="type_01_sub">
-                                <span>금일가입</span>
-                                <i class="colorGreen">120</i>
-                                <span>/ 탈퇴</span>
-                                <i class="colorRed">21</i>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_file"></i>
-                                <span>유효 계약 건</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>110,000</p>
-                            </div>
-                            <div class="type_01_sub">
-                                <span>금일 계약 건</span>
-                                <i class="colorGreen">100</i>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_dollar"></i>
-                                <span>금일 총 매출</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>980,000</p>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_mail"></i>
-                                <span class="span">금일 청구서 발행</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>1,120</p>
-                                <span>/ 1,270</span>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_money"></i>
-                                <span>금일 입금 처리</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>1,300</p>
-                                <span>/ 1,350</span>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-            </div>
-            <div class="chart_wrap">
-                <div class="chart_hd">
-                    <div class="chart_tit">
-                        <h4>지난 30일 매출 현황</h4>
-                        <span>2022.09.27 - 2022.10.27</span> 
-                    </div>
+            </nav>
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/MD_db_00.htm">Dashboard</a>
                 </div>
-                <div class="chart_text">
-                    <p>금액</p>
+                <div class="section_tit">
+                    <h3>Dashboard</h3>
                 </div>
-                <div id="main_chart" class="chart_00"></div>
-            </div>
-            <div class="main_content">
-                <div class="type_02">
-                    <div class="type_02_hd">
-                        <h4>지난 30일 상품 가입 TOP 5</h4>
-                        <span>2022.09.27 - 2022.10.27</span> 
-                    </div>
+                <div class="type_01">
                     <ul>
                         <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 30일 무제한 Wi-Fi 30일 무제한 Wi-Fi 30일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>9,999,999</span>
-                                <i class="line_chart bgBlue"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 7일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>100</span>
-                                <i class="line_chart bgBlue01"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 15일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>80</span>
-                                <i class="line_chart bgBlue02"></i>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_user"></i>
+                                    <span>총 가입 수</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>100,000</p>
+                                </div>
+                                <div class="type_01_sub">
+                                    <span>금일가입</span>
+                                    <i class="colorGreen">120</i>
+                                    <span>/ 탈퇴</span>
+                                    <i class="colorRed">21</i>
+                                </div>
                             </div>
                         </li>
                         <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 60일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>50</span>
-                                <i class="line_chart bgBlue03"></i>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_file"></i>
+                                    <span>유효 계약 건</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>110,000</p>
+                                </div>
+                                <div class="type_01_sub">
+                                    <span>금일 계약 건</span>
+                                    <i class="colorGreen">100</i>
+                                </div>
                             </div>
                         </li>
                         <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 180일 무제한</span>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_dollar"></i>
+                                    <span>금일 총 매출</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>980,000</p>
+                                </div>
                             </div>
-                            <div class="type_02_chart">
-                                <span>30</span>
-                                <i class="line_chart bgBlue04"></i>
+                        </li>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_mail"></i>
+                                    <span class="span">금일 청구서 발행</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>1,120</p>
+                                    <span>/ 1,270</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_money"></i>
+                                    <span>금일 입금 처리</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>1,300</p>
+                                    <span>/ 1,350</span>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="type_02">
-                    <div class="type_02_hd">
-                        <h4>지난 30일 상품 매출 TOP 5</h4>
-                        <span>2022.09.27 - 2022.10.27</span> 
+                <div class="chart_wrap">
+                    <div class="chart_hd">
+                        <div class="chart_tit">
+                            <h4>지난 30일 매출 현황</h4>
+                            <span>2022.09.27 - 2022.10.27</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 30일 무제한 Wi-Fi 30일 무제한 Wi-Fi 30일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>2,024,000 원</span>
-                                <i class="line_chart bgSkyBlue01"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 7일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>2,424,000 원</span>
-                                <i class="line_chart bgSkyBlue02"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 15일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>2,054,000 원</span>
-                                <i class="line_chart bgSkyBlue03"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 60일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>1,024,000 원</span>
-                                <i class="line_chart bgSkyBlue04"></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="type_02_txt">
-                                <span>Wi-Fi 180일 무제한</span>
-                            </div>
-                            <div class="type_02_chart">
-                                <span>404,000 원</span>
-                                <i class="line_chart bgSkyBlue05"></i>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="type_03">
-                    <div class="type_03_hd">
-                        <h4>Notice</h4>
+                    <div class="chart_text">
+                        <p>금액</p>
                     </div>
-                    <ul>
-                        <li>
-                            <a href="">
-                                <div class="type_03_txt">
-                                    <span>Title Title Title</span>
-                                </div>
-                                <div class="type_03_date">
-                                    <span>2022-10-27 00:00</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="type_03_txt">
-                                    <span>Title Title Title Title Title</span>
-                                </div>
-                                <div class="type_03_date">
-                                    <span>2022-10-27 00:00</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="type_03_txt">
-                                    <span>Title Title Title Title Title Title Title</span>
-                                </div>
-                                <div class="type_03_date">
-                                    <span>2022-10-27 00:00</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="type_03_txt">
-                                    <span>Title Title Title Title Title Title Title Title</span>
-                                </div>
-                                <div class="type_03_date">
-                                    <span>2022-10-27 00:00</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <div class="type_03_txt">
-                                    <span>Title Title Title Title Title Title Title Title Title</span>
-                                </div>
-                                <div class="type_03_date">
-                                    <span>2022-10-27 00:00</span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                    <div id="main_chart" class="chart_00"></div>
                 </div>
-            </div>
-        </section>
-    </div>
-	<? include "./MD_db_00_popup_00.htm" ?>
-</body>
+                <div class="main_content">
+                    <div class="type_02">
+                        <div class="type_02_hd">
+                            <h4>지난 30일 상품 가입 TOP 5</h4>
+                            <span>2022.09.27 - 2022.10.27</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 30일 무제한 Wi-Fi 30일 무제한 Wi-Fi 30일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>9,999,999</span>
+                                    <i class="line_chart bgBlue"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 7일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>100</span>
+                                    <i class="line_chart bgBlue01"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 15일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>80</span>
+                                    <i class="line_chart bgBlue02"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 60일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>50</span>
+                                    <i class="line_chart bgBlue03"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 180일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>30</span>
+                                    <i class="line_chart bgBlue04"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="type_02">
+                        <div class="type_02_hd">
+                            <h4>지난 30일 상품 매출 TOP 5</h4>
+                            <span>2022.09.27 - 2022.10.27</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 30일 무제한 Wi-Fi 30일 무제한 Wi-Fi 30일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>2,024,000 원</span>
+                                    <i class="line_chart bgSkyBlue01"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 7일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>2,424,000 원</span>
+                                    <i class="line_chart bgSkyBlue02"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 15일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>2,054,000 원</span>
+                                    <i class="line_chart bgSkyBlue03"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 60일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>1,024,000 원</span>
+                                    <i class="line_chart bgSkyBlue04"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="type_02_txt">
+                                    <span>Wi-Fi 180일 무제한</span>
+                                </div>
+                                <div class="type_02_chart">
+                                    <span>404,000 원</span>
+                                    <i class="line_chart bgSkyBlue05"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="type_03">
+                        <div class="type_03_hd">
+                            <h4>Notice</h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div class="type_03_txt">
+                                        <span>Title Title Title</span>
+                                    </div>
+                                    <div class="type_03_date">
+                                        <span>2022-10-27 00:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="type_03_txt">
+                                        <span>Title Title Title Title Title</span>
+                                    </div>
+                                    <div class="type_03_date">
+                                        <span>2022-10-27 00:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="type_03_txt">
+                                        <span>Title Title Title Title Title Title Title</span>
+                                    </div>
+                                    <div class="type_03_date">
+                                        <span>2022-10-27 00:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="type_03_txt">
+                                        <span>Title Title Title Title Title Title Title Title</span>
+                                    </div>
+                                    <div class="type_03_date">
+                                        <span>2022-10-27 00:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="type_03_txt">
+                                        <span>Title Title Title Title Title Title Title Title Title</span>
+                                    </div>
+                                    <div class="type_03_date">
+                                        <span>2022-10-27 00:00</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <? include "./MD_db_00_popup_00.htm" ?>
+    </body>
 </html>

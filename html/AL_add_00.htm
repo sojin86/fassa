@@ -1,95 +1,336 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>알림 설정</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-</head>
-<script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>알림 설정</title>
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
 
-</script>
-<body>
-    <div class="wrap">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/PC_vw_00.htm">설정 지원 관리</a>
-                <span> > </span>
-                <a href="../html/AL_add_00.htm">알림 설정</a>
-            </div>
-            <div class="section_tit">
-                <h3>알림 설정</h3>
-            </div>
-            <div class="table_box_wrap mgT30 inline">
-                <div class="table_box_03 pd30">
-                    <ul>
-                        <li class="pdT0 pd15">
-                            <p>알림 항목 1</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_2_text wAuto mgR10">설정</span>
-                            </label>
-                        </li>
-                        <li class="pd15">
-                            <p>알림 항목 2</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_2_text wAuto mgR10">설정</span>
-                            </label>
-                        </li>
-                        <li class="pd15">
-                            <p>알림 항목 3</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_3_text wAuto mgR10">설정</span>
-                            </label>
-                        </li>
-                        <li class="pd15">
-                            <p>알림 항목 4</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_3_text wAuto mgR10">설정</span>
-                            </label>
-                        </li>
-                        <li class="pd15">
-                            <p>알림 항목 5</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_1_text wAuto mgR10 opacity50">설정</span>
-                            </label>
-                        </li>
-                        <li class="pd15">
-                            <p>알림 항목 6</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_1_text wAuto mgR10 opacity50">설정</span>
-                            </label>
-                        </li>
-                        <li class="pd15">
-                            <p>알림 항목 7</p>
-                            <label class="cb_1 mgL20">
-                                <input type="checkbox" name="checkbox_01" disabled> 
-                                <span class="cb_1_text wAuto mgR10 opacity50">설정</span>
-                            </label>
-                        </li>
-                    </ul>
-                    <div class="flex_type_03 mgT30">
-                        <div class="cancel_btn mgR10">
-                            <a href="../html/AL_vw_00.htm">취소</a>
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
+
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+    </head>
+    <script></script>
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
+                        <button>
+                            <i class="icon_menu"></i>
+                        </button>
+                    </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
+                    </div>
+                </div>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
                         </div>
-                        <div class="save_btn">
-                            <a href="../html/AL_vw_00.htm">저장</a>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="">
+                <ul>
+                    <li>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/PC_vw_00.htm">설정 지원 관리</a>
+                    <span> > </span>
+                    <a href="../html/AL_add_00.htm">알림 설정</a>
+                </div>
+                <div class="section_tit">
+                    <h3>알림 설정</h3>
+                </div>
+                <div class="table_box_wrap mgT30 inline">
+                    <div class="table_box_03 pd30">
+                        <ul>
+                            <li class="pdT0 pd15">
+                                <p>알림 항목 1</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_2_text wAuto mgR10">설정</span>
+                                </label>
+                            </li>
+                            <li class="pd15">
+                                <p>알림 항목 2</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_2_text wAuto mgR10">설정</span>
+                                </label>
+                            </li>
+                            <li class="pd15">
+                                <p>알림 항목 3</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_3_text wAuto mgR10">설정</span>
+                                </label>
+                            </li>
+                            <li class="pd15">
+                                <p>알림 항목 4</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_3_text wAuto mgR10">설정</span>
+                                </label>
+                            </li>
+                            <li class="pd15">
+                                <p>알림 항목 5</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_1_text wAuto mgR10 opacity50">설정</span>
+                                </label>
+                            </li>
+                            <li class="pd15">
+                                <p>알림 항목 6</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_1_text wAuto mgR10 opacity50">설정</span>
+                                </label>
+                            </li>
+                            <li class="pd15">
+                                <p>알림 항목 7</p>
+                                <label class="cb_1 mgL20">
+                                    <input type="checkbox" name="checkbox_01" disabled />
+                                    <span class="cb_1_text wAuto mgR10 opacity50">설정</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="flex_type_03 mgT30">
+                            <div class="cancel_btn mgR10">
+                                <a href="../html/AL_vw_00.htm">취소</a>
+                            </div>
+                            <div class="save_btn">
+                                <a href="../html/AL_vw_00.htm">저장</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</body>
+            </section>
+        </div>
+    </body>
 </html>

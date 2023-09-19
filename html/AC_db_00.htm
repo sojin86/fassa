@@ -1,144 +1,385 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객현황</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-    <script src="../js/charts/chart-01.js"></script>
-    <script src="../js/charts/chart-02.js"></script>
-    <script src="../js/charts/chart-03.js"></script>
-    <script src="../js/charts/chart-04.js"></script>
-</head>
-<script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>고객현황</title>
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
 
-</script>
-<body>
-    <div class="wrap">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/AC_db_00.htm">고객 관리</a>
-                <span> > </span>
-                <a href="../html/AC_db_00.htm">고객 현황</a>
-            </div>
-            <div class="section_tit">
-                <h3>청구 현황</h3>
-            </div>
-            <div class="type_01">
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
+
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+
+        <script src="../js/charts/chart-01.js"></script>
+        <script src="../js/charts/chart-02.js"></script>
+        <script src="../js/charts/chart-03.js"></script>
+        <script src="../js/charts/chart-04.js"></script>
+    </head>
+    <script></script>
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
+                        <button>
+                            <i class="icon_menu"></i>
+                        </button>
+                    </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
+                    </div>
+                </div>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="">
                 <ul>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_user"></i>
-                                <span>총 고객 수</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>10,000</p>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_users"></i>
-                                <span>누적 고객 수</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>11,000</p>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_noUser"></i>
-                                <span>탈퇴 고객 수</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>1,000</p>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_moneys"></i>
-                                <span>잔고 총액</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>99,999,999</p>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <div class="type_01_box">
-                            <div class="type_01_tit">
-                                <i class="icon_userMoney"></i>
-                                <span>잔고 보유 고객 수</span>
-                            </div>
-                            <div class="type_01_number">
-                                <p>99,900</p>
-                            </div>
-                        </div>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-            </div>
-            <div class="chart_wrap">
-                <div class="chart_hd">
-                    <div class="chart_tit">
-                        <h4>지난 30일 고객 현황</h4>
-                        <span>2022.10.31 - 2022.11.31</span> 
+            </nav>
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/AC_db_00.htm">고객 관리</a>
+                    <span> > </span>
+                    <a href="../html/AC_db_00.htm">고객 현황</a>
+                </div>
+                <div class="section_tit">
+                    <h3>청구 현황</h3>
+                </div>
+                <div class="type_01">
+                    <ul>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_user"></i>
+                                    <span>총 고객 수</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>10,000</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_users"></i>
+                                    <span>누적 고객 수</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>11,000</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_noUser"></i>
+                                    <span>탈퇴 고객 수</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>1,000</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_moneys"></i>
+                                    <span>잔고 총액</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>99,999,999</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="type_01_box">
+                                <div class="type_01_tit">
+                                    <i class="icon_userMoney"></i>
+                                    <span>잔고 보유 고객 수</span>
+                                </div>
+                                <div class="type_01_number">
+                                    <p>99,900</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chart_wrap">
+                    <div class="chart_hd">
+                        <div class="chart_tit">
+                            <h4>지난 30일 고객 현황</h4>
+                            <span>2022.10.31 - 2022.11.31</span>
+                        </div>
                     </div>
-                </div>
-                <div class="chart_text">
-                    <p>person(e)</p>
-                </div>
-                <div id="chart_01" class="chart_type_01"></div>
-            </div>
-            <div class="chart_wrap">
-                <div class="chart_hd">
-                    <div class="chart_tit">
-                        <h4>지난 30일 고객 잔고 현황</h4>
-                        <span>2022.10.31 - 2022.11.31</span> 
+                    <div class="chart_text">
+                        <p>person(e)</p>
                     </div>
+                    <div id="chart_01" class="chart_type_01"></div>
                 </div>
-                <div class="chart_text">
-                    <p>원</p>
-                </div>
-                <div id="chart_02" class="chart_type_01"></div>
-            </div>
-            <div class="chart_wrap">
-                <div class="chart_hd">
-                    <div class="chart_tit">
-                        <h4>지난 30일 정액 계약 현황</h4>
-                        <span>2022.10.31 - 2022.11.31</span> 
+                <div class="chart_wrap">
+                    <div class="chart_hd">
+                        <div class="chart_tit">
+                            <h4>지난 30일 고객 잔고 현황</h4>
+                            <span>2022.10.31 - 2022.11.31</span>
+                        </div>
                     </div>
-                </div>
-                <div class="chart_text">
-                    <p>case(s)</p>
-                </div>
-                <div id="chart_03" class="chart_type_01"></div>
-            </div>
-            <div class="chart_wrap">
-                <div class="chart_hd">
-                    <div class="chart_tit">
-                        <h4>지난 30일 구매 현황</h4>
-                        <span>2022.09.27 - 2022.10.27</span> 
+                    <div class="chart_text">
+                        <p>원</p>
                     </div>
+                    <div id="chart_02" class="chart_type_01"></div>
                 </div>
-                <div class="chart_text">
-                    <p>원</p>
+                <div class="chart_wrap">
+                    <div class="chart_hd">
+                        <div class="chart_tit">
+                            <h4>지난 30일 정액 계약 현황</h4>
+                            <span>2022.10.31 - 2022.11.31</span>
+                        </div>
+                    </div>
+                    <div class="chart_text">
+                        <p>case(s)</p>
+                    </div>
+                    <div id="chart_03" class="chart_type_01"></div>
                 </div>
-                <div id="chart_04" class="chart_type_01"></div>
-            </div>
-        </section>
-    </div>
-    
-</body>
+                <div class="chart_wrap">
+                    <div class="chart_hd">
+                        <div class="chart_tit">
+                            <h4>지난 30일 구매 현황</h4>
+                            <span>2022.09.27 - 2022.10.27</span>
+                        </div>
+                    </div>
+                    <div class="chart_text">
+                        <p>원</p>
+                    </div>
+                    <div id="chart_04" class="chart_type_01"></div>
+                </div>
+            </section>
+        </div>
+    </body>
 </html>

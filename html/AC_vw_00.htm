@@ -1,1517 +1,1904 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객목록-고객정보</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-</head>
-<script></script>
-<body>
-    <div class="wrap haveAside">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/AC_lst_00.htm">고객 관리</a>
-                <span> > </span>
-                <a href="../html/AC_lst_00.htm">고객 목록</a>
-            </div>
-            <div class="section_tit">
-                <h3>고객 정보</h3>
-            </div>
-            <div class="section_btn">
-                <a href="../html/AC_lst_00.htm">
-                    <i class="icon_filter"></i>
-                    <span>고객 목록</span>
-                </a>
-            </div>
-            <div class="table_box_wrap inlineB">
-                <div class="table_box_01 notTxt">
-                    <div class="table_box_01_hd">
-                        <h5>가입자 정보</h5>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>고객목록-고객정보</title>
+        <!-- 공통 css -->
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
+
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
+
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+    </head>
+    <script></script>
+    <body>
+        <div class="wrap haveAside">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
                         <button>
-                            <i class="icon_pen"></i>
+                            <i class="icon_menu"></i>
                         </button>
                     </div>
-                    <ul>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="email">
-                                    <span>이메일</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="email" class="inp_01 pdR50" value="www@.www.com">
-                                <button>
-                                    <span>중복확인</span>
-                                </button>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>www@www.com</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="careId">
-                                    <span>셀프케어 아이디</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="careId" class="inp_01" value="fossa">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>fossa</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="name">
-                                    <span>이름</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <span>홍길동</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="parentName">
-                                    <span>부모 이름</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <span>홍길동</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="code">
-                                    <span>외부 연계 고객 코드</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="code" class="inp_01" value="abce1111">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>abce1111</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label>
-                                    <span>생년월일</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" value="" class="inp_02 datepicker" placeholder="YYMMDDDD">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>20221104</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="mobile">
-                                    <span>모바일</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="mobile" class="inp_01" value="010-1111-2222">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>010-1111-2222</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="call">
-                                    <span>유선전화</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="call" class="inp_01" value="02-1111-2222">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>02-1111-2222</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="fax">
-                                    <span>팩스</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="fax" class="inp_01" value="02-1111-0000">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>02-1111-0000</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="country">
-                                    <span>국가</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <select name="country" id="country" class="select_01">
-                                    <option>Repblic of Korea</option>
-                                    <option>U.S.A</option>
-                                    <option>India</option>
-                                </select>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>Repblic of Korea</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="postcode">
-                                    <span>우편번호</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="postcode" class="inp_01" value="252-0000">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>252-0000</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address1">
-                                    <span>주소1</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="address1" class="inp_01" value="학동로 306 금하빌딩 8층">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>학동로 306 금하빌딩 8층</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address2">
-                                    <span>주소2</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="address2" class="inp_01" value="서울시 강남구">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>서울시 강남구</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit verticalTop">
-                                <label for="agreement">
-                                    <span>고객 동의 신청서</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <label for="agreement">
-                                    <div class="file_type_01">
-                                        <span></span>
-                                    </div>
-                                </label>
-                                <input type="file" id="agreement" class="inp_01 file_upload">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>test.pdf</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="table_box_01_ft">
-                        <div class="cancel_btn">
-                            <button>취소</button>
-                        </div>
-                        <div class="save_btn">
-                            <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_04.htm', 'AC_vw_00_popup_04', '', '400')">수정</button>
-                        </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
                     </div>
                 </div>
-                <div class="table_box_01 notTxt">
-                    <div class="table_box_01_hd">
-                        <h5>납부자 정보</h5>
-                        <button>
-                            <i class="icon_pen"></i>
-                        </button>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
                     </div>
-                    <ul>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="name2">
-                                    <span>이름</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <span>홍길동</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="claim">
-                                    <span>청구방법</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <select name="claim" id="claim" class="select_01">
-                                    <option>Email</option>
-                                    <option>전화</option>
-                                    <option>직접방문</option>
-                                </select>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>Email</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="phone">
-                                    <span>휴대폰</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="phone" class="inp_01" value="010-0000-1111">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>010-0000-1111</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="claimEmail">
-                                    <span>청구 이메일</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="claimEmail" class="inp_01" value="www@wwww.wwww">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>www@wwww.wwww</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="phone2">
-                                    <span>유선전화</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="phone2" class="inp_01" value="02-0000-0000">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>02-0000-0000</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="fax2">
-                                    <span>팩스</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="fax2" class="inp_01" value="02-1111-1111">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>02-1111-1111</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="country2">
-                                    <span>청구시 수령 국가</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <select name="country2" id="country2" class="select_01">
-                                    <option>Repblic of Korea</option>
-                                    <option>U.S.A</option>
-                                    <option>India</option>
-                                </select>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>Repeblic of Korea</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="post2">
-                                    <span>청구시 수령 우편번호</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="post2" class="inp_01" value="252-0143">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>252-0143</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address3">
-                                    <span>수령시 수령 주소 1</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="address3" class="inp_01" value="학동로 306 금하빌딩">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>학동로 306 금하빌딩</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address4">
-                                    <span>수령시 수령 주소 2</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="address4" class="inp_01" value="서울시 강남구">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>서울시 강남구</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit verticalTop">
-                                <label for="agreement_02">
-                                    <span>고객 동의 신청서</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <label for="agreement_02">
-                                    <div class="file_type_01">
-                                        <span></span>
-                                    </div>
-                                </label>
-                                <input type="file" id="agreement_02" class="inp_01 file_upload">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>asdf.pdf</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="table_box_01_ft">
-                        <div class="cancel_btn">
-                            <button>취소</button>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
                         </div>
-                        <div class="save_btn">
-                            <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_04.htm', 'AC_vw_00_popup_04', '', '400')">수정</button>
-                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="table_box_01 notTxt">
-                    <div class="table_box_01_hd">
-                        <h5>결제 정보</h5>
-                        <button>
-                            <i class="icon_pen"></i>
-                        </button>
-                    </div>
-                    <ul>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="pay">
-                                    <span>납부 방법</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <select name="pay" id="pay" class="select_01">
-                                    <option>계좌 이체</option>
-                                    <option>신용 카드</option>
-                                </select>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>계좌이체</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="deposit">
-                                    <span>예금주</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="deposit" class="inp_01" value="홍길동">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>홍길동</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="bankname">
-                                    <span>은행명</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="bankname" class="inp_01" value="00은행">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>00은행</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="accountNum">
-                                    <span>계좌번호</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <input type="text" id="accountNum" class="inp_01" value="2222-2222-22222">
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>2222-2222-22222</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label>
-                                    <span class="special">자동 결제 여부</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <label class="rd_1">
-                                    <input type="radio" name="radio_01" checked> 
-                                    <span class="rd_1_text">예</span>
-                                </label>
-                                <label class="rd_1">
-                                    <input type="radio" name="radio_01"> 
-                                    <span class="rd_1_text">아니오</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>예</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label>
-                                    <span class="special">대표 결제 수단</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub txt">
-                                <label class="rd_1">
-                                    <input type="radio" name="radio_02" checked> 
-                                    <span class="rd_1_text">예</span>
-                                </label>
-                                <label class="rd_1">
-                                    <input type="radio" name="radio_02"> 
-                                    <span class="rd_1_text">아니오</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub notxt">
-                                <span>예</span>
-                            </div>
-                        </li>
-                        <div class="table_box_01_ft02">
+            </header>
+            <nav class="">
+                <ul>
+                    <li>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/AC_lst_00.htm">고객 관리</a>
+                    <span> > </span>
+                    <a href="../html/AC_lst_00.htm">고객 목록</a>
+                </div>
+                <div class="section_tit">
+                    <h3>고객 정보</h3>
+                </div>
+                <div class="section_btn">
+                    <a href="../html/AC_lst_00.htm">
+                        <i class="icon_filter"></i>
+                        <span>고객 목록</span>
+                    </a>
+                </div>
+                <div class="table_box_wrap inlineB">
+                    <div class="table_box_01 notTxt">
+                        <div class="table_box_01_hd">
+                            <h5>가입자 정보</h5>
+                            <button>
+                                <i class="icon_pen"></i>
+                            </button>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="email">
+                                        <span>이메일</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="email" class="inp_01 pdR50" value="www@.www.com" />
+                                    <button>
+                                        <span>중복확인</span>
+                                    </button>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>www@www.com</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="careId">
+                                        <span>셀프케어 아이디</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="careId" class="inp_01" value="fossa" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>fossa</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="name">
+                                        <span>이름</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <span>홍길동</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="parentName">
+                                        <span>부모 이름</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <span>홍길동</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="code">
+                                        <span>외부 연계 고객 코드</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="code" class="inp_01" value="abce1111" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>abce1111</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label>
+                                        <span>생년월일</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" value="" class="inp_02 datepicker" placeholder="YYMMDDDD" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>20221104</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="mobile">
+                                        <span>모바일</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="mobile" class="inp_01" value="010-1111-2222" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>010-1111-2222</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="call">
+                                        <span>유선전화</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="call" class="inp_01" value="02-1111-2222" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>02-1111-2222</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="fax">
+                                        <span>팩스</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="fax" class="inp_01" value="02-1111-0000" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>02-1111-0000</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="country">
+                                        <span>국가</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <select name="country" id="country" class="select_01">
+                                        <option>Repblic of Korea</option>
+                                        <option>U.S.A</option>
+                                        <option>India</option>
+                                    </select>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>Repblic of Korea</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="postcode">
+                                        <span>우편번호</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="postcode" class="inp_01" value="252-0000" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>252-0000</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address1">
+                                        <span>주소1</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="address1" class="inp_01" value="학동로 306 금하빌딩 8층" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>학동로 306 금하빌딩 8층</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address2">
+                                        <span>주소2</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="address2" class="inp_01" value="서울시 강남구" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>서울시 강남구</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit verticalTop">
+                                    <label for="agreement">
+                                        <span>고객 동의 신청서</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <label for="agreement">
+                                        <div class="file_type_01">
+                                            <span></span>
+                                        </div>
+                                    </label>
+                                    <input type="file" id="agreement" class="inp_01 file_upload" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>test.pdf</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="table_box_01_ft">
                             <div class="cancel_btn">
                                 <button>취소</button>
                             </div>
                             <div class="save_btn">
-                                <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_04.htm', 'AC_vw_00_popup_04', '', '400')">수정</button>
+                                <button
+                                    type="button"
+                                    onclick="javascript:openModal('../html/AC_vw_00_popup_04.htm', 'AC_vw_00_popup_04', '', '400')"
+                                >
+                                    수정
+                                </button>
                             </div>
                         </div>
-                    </ul>
-                    <div class="table_box_01_sc">
-                        <div class="table_box_01_sc_ct">
-                            <p>가입자 계정 잔액 정보</p>
-                            <span>Last edited Date : 30:09 09/10/2019</span>
-                        </div>
-                        <div class="table_box_01_sc_num">
-                            <p>12,000 USD</p>
-                        </div>
-                        <div class="table_box_01_sc_ct">
-                            <p>최근 잔액 내역</p>
-                            <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_00.htm', 'AC_vw_00_popup_00', '', '500')">
-                                <span>조정내역 보기 </span>
-                                <i class="icon_aroow_right_S"></i>
+                    </div>
+                    <div class="table_box_01 notTxt">
+                        <div class="table_box_01_hd">
+                            <h5>납부자 정보</h5>
+                            <button>
+                                <i class="icon_pen"></i>
                             </button>
                         </div>
-                        <div class="table_box_01_sc_table">
+                        <ul>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="name2">
+                                        <span>이름</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <span>홍길동</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="claim">
+                                        <span>청구방법</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <select name="claim" id="claim" class="select_01">
+                                        <option>Email</option>
+                                        <option>전화</option>
+                                        <option>직접방문</option>
+                                    </select>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>Email</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="phone">
+                                        <span>휴대폰</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="phone" class="inp_01" value="010-0000-1111" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>010-0000-1111</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="claimEmail">
+                                        <span>청구 이메일</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="claimEmail" class="inp_01" value="www@wwww.wwww" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>www@wwww.wwww</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="phone2">
+                                        <span>유선전화</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="phone2" class="inp_01" value="02-0000-0000" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>02-0000-0000</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="fax2">
+                                        <span>팩스</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="fax2" class="inp_01" value="02-1111-1111" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>02-1111-1111</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="country2">
+                                        <span>청구시 수령 국가</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <select name="country2" id="country2" class="select_01">
+                                        <option>Repblic of Korea</option>
+                                        <option>U.S.A</option>
+                                        <option>India</option>
+                                    </select>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>Repeblic of Korea</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="post2">
+                                        <span>청구시 수령 우편번호</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="post2" class="inp_01" value="252-0143" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>252-0143</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address3">
+                                        <span>수령시 수령 주소 1</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="address3" class="inp_01" value="학동로 306 금하빌딩" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>학동로 306 금하빌딩</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address4">
+                                        <span>수령시 수령 주소 2</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="address4" class="inp_01" value="서울시 강남구" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>서울시 강남구</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit verticalTop">
+                                    <label for="agreement_02">
+                                        <span>고객 동의 신청서</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <label for="agreement_02">
+                                        <div class="file_type_01">
+                                            <span></span>
+                                        </div>
+                                    </label>
+                                    <input type="file" id="agreement_02" class="inp_01 file_upload" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>asdf.pdf</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="table_box_01_ft">
+                            <div class="cancel_btn">
+                                <button>취소</button>
+                            </div>
+                            <div class="save_btn">
+                                <button
+                                    type="button"
+                                    onclick="javascript:openModal('../html/AC_vw_00_popup_04.htm', 'AC_vw_00_popup_04', '', '400')"
+                                >
+                                    수정
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table_box_01 notTxt">
+                        <div class="table_box_01_hd">
+                            <h5>결제 정보</h5>
+                            <button>
+                                <i class="icon_pen"></i>
+                            </button>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="pay">
+                                        <span>납부 방법</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <select name="pay" id="pay" class="select_01">
+                                        <option>계좌 이체</option>
+                                        <option>신용 카드</option>
+                                    </select>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>계좌이체</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="deposit">
+                                        <span>예금주</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="deposit" class="inp_01" value="홍길동" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>홍길동</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="bankname">
+                                        <span>은행명</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="bankname" class="inp_01" value="00은행" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>00은행</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="accountNum">
+                                        <span>계좌번호</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <input type="text" id="accountNum" class="inp_01" value="2222-2222-22222" />
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>2222-2222-22222</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label>
+                                        <span class="special">자동 결제 여부</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <label class="rd_1">
+                                        <input type="radio" name="radio_01" checked />
+                                        <span class="rd_1_text">예</span>
+                                    </label>
+                                    <label class="rd_1">
+                                        <input type="radio" name="radio_01" />
+                                        <span class="rd_1_text">아니오</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>예</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label>
+                                        <span class="special">대표 결제 수단</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub txt">
+                                    <label class="rd_1">
+                                        <input type="radio" name="radio_02" checked />
+                                        <span class="rd_1_text">예</span>
+                                    </label>
+                                    <label class="rd_1">
+                                        <input type="radio" name="radio_02" />
+                                        <span class="rd_1_text">아니오</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub notxt">
+                                    <span>예</span>
+                                </div>
+                            </li>
+                            <div class="table_box_01_ft02">
+                                <div class="cancel_btn">
+                                    <button>취소</button>
+                                </div>
+                                <div class="save_btn">
+                                    <button
+                                        type="button"
+                                        onclick="javascript:openModal('../html/AC_vw_00_popup_04.htm', 'AC_vw_00_popup_04', '', '400')"
+                                    >
+                                        수정
+                                    </button>
+                                </div>
+                            </div>
+                        </ul>
+                        <div class="table_box_01_sc">
+                            <div class="table_box_01_sc_ct">
+                                <p>가입자 계정 잔액 정보</p>
+                                <span>Last edited Date : 30:09 09/10/2019</span>
+                            </div>
+                            <div class="table_box_01_sc_num">
+                                <p>12,000 USD</p>
+                            </div>
+                            <div class="table_box_01_sc_ct">
+                                <p>최근 잔액 내역</p>
+                                <button
+                                    type="button"
+                                    onclick="javascript:openModal('../html/AC_vw_00_popup_00.htm', 'AC_vw_00_popup_00', '', '500')"
+                                >
+                                    <span>조정내역 보기 </span>
+                                    <i class="icon_aroow_right_S"></i>
+                                </button>
+                            </div>
+                            <div class="table_box_01_sc_table">
+                                <table>
+                                    <colgroup>
+                                        <col width="" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>직전 잔액</th>
+                                            <th>조정 잔액</th>
+                                            <th>조정 일시</th>
+                                            <th>현재 총 잔액</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>900 USD</td>
+                                            <td>300 USD</td>
+                                            <td>12:20 09/10/2019</td>
+                                            <td>12,000 USD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1,000 USD</td>
+                                            <td>100 USD</td>
+                                            <td>12:20 09/10/2019</td>
+                                            <td>900 USD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>0 USD</td>
+                                            <td>1,000 USD</td>
+                                            <td>12:20 09/10/2019</td>
+                                            <td>1,000 USD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table_box_wrap">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <h5>가입 상품</h5>
+                            <button
+                                type="button"
+                                class="button_type_02"
+                                onclick="javascript:openModal('../html/AC_vw_00_popup_01.htm', 'AC_vw_00_popup_01', '', '900')"
+                            >
+                                <span>신규 가입</span>
+                            </button>
+                        </div>
+                        <div class="table_type_02">
                             <table>
                                 <colgroup>
-                                    <col width="">
+                                    <col style="width: 15px" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th>직전 잔액</th>
-                                        <th>조정 잔액</th>
-                                        <th>조정 일시</th>
-                                        <th>현재 총 잔액</th>
+                                        <th class="pd0"></th>
+                                        <th>대표 상품명</th>
+                                        <th>상품명</th>
+                                        <th>상품 유형</th>
+                                        <th>과금 주기</th>
+                                        <th>결제 시점</th>
+                                        <th>가입 상태</th>
+                                        <th>가입 일시</th>
+                                        <th>해지 일시</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>900 USD</td>
-                                        <td>300 USD</td>
-                                        <td>12:20 09/10/2019</td>
-                                        <td>12,000 USD</td>
+                                    <tr class="trMain">
+                                        <td class="bgGray pd0 txtCenter">
+                                            <button class="plusBtn"><i class="icon_plus">+</i></button>
+                                        </td>
+                                        <td>Wi-Fi 무제한</td>
+                                        <td>Wi-Fi 30일 무제한</td>
+                                        <td>정액</td>
+                                        <td>30일</td>
+                                        <td>선불</td>
+                                        <td>유효</td>
+                                        <td>10:00 10/01/2019</td>
+                                        <td>10:00 10/01/2019</td>
                                     </tr>
-                                    <tr>
-                                        <td>1,000 USD</td>
-                                        <td>100 USD</td>
-                                        <td>12:20 09/10/2019</td>
-                                        <td>900 USD</td>
+                                    <tr class="trSub">
+                                        <td class="bgGreen pd0 txtCenter"></td>
+                                        <td colspan="9" class="pd0">
+                                            <ul class="type_01">
+                                                <li>
+                                                    <p>가입 계약 번호</p>
+                                                    <span>abc010203034</span>
+                                                    <p>계약 종료 기간</p>
+                                                    <span>한정 없음</span>
+                                                </li>
+                                                <li>
+                                                    <p>고객명</p>
+                                                    <span>홍길동</span>
+                                                    <p>납부자 명</p>
+                                                    <span>홍길동</span>
+                                                </li>
+                                                <li>
+                                                    <p>결제 정보</p>
+                                                    <span>신용카드 (자동)(대표)</span>
+                                                    <p></p>
+                                                    <span>홍길동</span>
+                                                </li>
+                                                <li>
+                                                    <p>가입 상품 명</p>
+                                                    <span>Wi-Fi 30일 무제한 (Wi-Fi 무제한)</span>
+                                                    <p>청구 방법</p>
+                                                    <span>이메일 (kdhong@www.com)</span>
+                                                </li>
+                                                <li>
+                                                    <p>상품 유형</p>
+                                                    <span>선불 / 정액 상품</span>
+                                                    <p>국가 (통화)</p>
+                                                    <span>대한민국 (원)</span>
+                                                </li>
+                                                <li>
+                                                    <p>과금 주기</p>
+                                                    <span>50,000원 / 30일</span>
+                                                    <p>과금 정보</p>
+                                                    <span>
+                                                        가입비 10,000원 / 과세 / 할인 10% 비 대상 (종료) 01/09/2019 -
+                                                        09/30/2019 가입 고객 한
+                                                        <br />
+                                                        기본료 50,000원 / 과세 / 할인 10% 대상 (최대 99 회 적용)
+                                                        01/09/2019 - 09/30/2019 가입 고객 한
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <p>예상 청구 금액</p>
+                                                    <span>44,000원</span>
+                                                    <p>예상 청구 일시 (금액)</p>
+                                                    <span>매달 15일 14시 00분</span>
+                                                </li>
+                                                <li class="sp">
+                                                    <button
+                                                        type="button"
+                                                        class="button_type_01"
+                                                        onclick="javascript:openModal('../html/AC_vw_00_popup_08.htm', 'AC_vw_00_popup_08', '', '400')"
+                                                    >
+                                                        <span>해지</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </td>
                                     </tr>
-                                    <tr> 
-                                        <td>0 USD</td>
-                                        <td>1,000 USD</td>
-                                        <td>12:20 09/10/2019</td>
-                                        <td>1,000 USD</td>
+                                    <tr class="trMain">
+                                        <td class="bgGray pd0 txtCenter">
+                                            <button class="plusBtn"><i class="icon_plus">+</i></button>
+                                        </td>
+                                        <td>Wi-Fi 무제한</td>
+                                        <td>Wi-Fi 30일 무제한</td>
+                                        <td>정액</td>
+                                        <td>30일</td>
+                                        <td>선불</td>
+                                        <td>유효</td>
+                                        <td>10:00 10/01/2019</td>
+                                        <td>10:00 10/01/2019</td>
+                                    </tr>
+                                    <tr class="trSub">
+                                        <td class="bgGreen pd0 txtCenter"></td>
+                                        <td colspan="9" class="pd0">
+                                            <ul class="type_01">
+                                                <li>
+                                                    <p>가입 계약 번호</p>
+                                                    <span>abc010203034</span>
+                                                    <p>계약 종료 기간</p>
+                                                    <span>한정 없음</span>
+                                                </li>
+                                                <li>
+                                                    <p>고객명</p>
+                                                    <span>홍길동</span>
+                                                    <p>납부자 명</p>
+                                                    <span>홍길동</span>
+                                                </li>
+                                                <li>
+                                                    <p>결제 정보</p>
+                                                    <span>신용카드 (자동)(대표)</span>
+                                                    <p></p>
+                                                    <span>홍길동</span>
+                                                </li>
+                                                <li>
+                                                    <p>가입 상품 명</p>
+                                                    <span>Wi-Fi 30일 무제한 (Wi-Fi 무제한)</span>
+                                                    <p>청구 방법</p>
+                                                    <span>이메일 (kdhong@www.com)</span>
+                                                </li>
+                                                <li>
+                                                    <p>상품 유형</p>
+                                                    <span>선불 / 정액 상품</span>
+                                                    <p>국가 (통화)</p>
+                                                    <span>대한민국 (원)</span>
+                                                </li>
+                                                <li>
+                                                    <p>과금 주기</p>
+                                                    <span>50,000원 / 30일</span>
+                                                    <p>과금 정보</p>
+                                                    <span>
+                                                        가입비 10,000원 / 과세 / 할인 10% 비 대상 (종료) 01/09/2019 -
+                                                        09/30/2019 가입 고객 한
+                                                        <br />
+                                                        기본료 50,000원 / 과세 / 할인 10% 대상 (최대 99 회 적용)
+                                                        01/09/2019 - 09/30/2019 가입 고객 한
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <p>예상 청구 금액</p>
+                                                    <span>44,000원</span>
+                                                    <p>예상 청구 일시 (금액)</p>
+                                                    <span>매달 15일 14시 00분</span>
+                                                </li>
+                                                <li class="sp">
+                                                    <button
+                                                        type="button"
+                                                        class="button_type_01"
+                                                        onclick="javascript:openModal('../html/AC_vw_00_popup_08.htm', 'AC_vw_00_popup_08', '', '400')"
+                                                    >
+                                                        <span>해지</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="trMain">
+                                        <td class="bgGray pd0 txtCenter">
+                                            <button class="plusBtn"><i class="icon_plus">+</i></button>
+                                        </td>
+                                        <td>Wi-Fi 무제한</td>
+                                        <td>Wi-Fi 30일 무제한</td>
+                                        <td>정액</td>
+                                        <td>30일</td>
+                                        <td>선불</td>
+                                        <td>유효</td>
+                                        <td>10:00 10/01/2019</td>
+                                        <td>10:00 10/01/2019</td>
+                                    </tr>
+                                    <tr class="trSub">
+                                        <td class="bgGreen pd0 txtCenter"></td>
+                                        <td colspan="9" class="pd0">
+                                            <ul class="type_01">
+                                                <li>
+                                                    <p>가입 계약 번호</p>
+                                                    <span>abc010203034</span>
+                                                    <p>계약 종료 기간</p>
+                                                    <span>한정 없음</span>
+                                                </li>
+                                                <li>
+                                                    <p>고객명</p>
+                                                    <span>홍길동</span>
+                                                    <p>납부자 명</p>
+                                                    <span>홍길동</span>
+                                                </li>
+                                                <li>
+                                                    <p>결제 정보</p>
+                                                    <span>신용카드 (자동)(대표)</span>
+                                                    <p></p>
+                                                    <span>홍길동</span>
+                                                </li>
+                                                <li>
+                                                    <p>가입 상품 명</p>
+                                                    <span>Wi-Fi 30일 무제한 (Wi-Fi 무제한)</span>
+                                                    <p>청구 방법</p>
+                                                    <span>이메일 (kdhong@www.com)</span>
+                                                </li>
+                                                <li>
+                                                    <p>상품 유형</p>
+                                                    <span>선불 / 정액 상품</span>
+                                                    <p>국가 (통화)</p>
+                                                    <span>대한민국 (원)</span>
+                                                </li>
+                                                <li>
+                                                    <p>과금 주기</p>
+                                                    <span>50,000원 / 30일</span>
+                                                    <p>과금 정보</p>
+                                                    <span>
+                                                        가입비 10,000원 / 과세 / 할인 10% 비 대상 (종료) 01/09/2019 -
+                                                        09/30/2019 가입 고객 한
+                                                        <br />
+                                                        기본료 50,000원 / 과세 / 할인 10% 대상 (최대 99 회 적용)
+                                                        01/09/2019 - 09/30/2019 가입 고객 한
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <p>예상 청구 금액</p>
+                                                    <span>44,000원</span>
+                                                    <p>예상 청구 일시 (금액)</p>
+                                                    <span>매달 15일 14시 00분</span>
+                                                </li>
+                                                <li class="sp">
+                                                    <button
+                                                        type="button"
+                                                        class="button_type_01"
+                                                        onclick="javascript:openModal('../html/AC_vw_00_popup_08.htm', 'AC_vw_00_popup_08', '', '400')"
+                                                    >
+                                                        <span>해지</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </td>
                                     </tr>
                                 </tbody>
-                                
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="table_box_wrap">
-                <div class="table_box_02">
-                    <div class="table_box_02_hd">
-                        <h5>가입 상품</h5>
-                        <button type="button" class="button_type_02" onclick="javascript:openModal('../html/AC_vw_00_popup_01.htm', 'AC_vw_00_popup_01', '', '900')">
-                           <span>신규 가입</span>
-                        </button>
-                    </div>
-                    <div class="table_type_02">
-                        <table>
-                            <colgroup>
-                                <col style="width: 15px">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="pd0"></th>
-                                    <th>대표 상품명</th>
-                                    <th>상품명</th>
-                                    <th>상품 유형</th>
-                                    <th>과금 주기</th>
-                                    <th>결제 시점</th>
-                                    <th>가입 상태</th>
-                                    <th>가입 일시</th>
-                                    <th>해지 일시</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="trMain">
-                                    <td class="bgGray pd0 txtCenter"><button class="plusBtn"><i class="icon_plus">+</i></button></td>
-                                    <td>Wi-Fi 무제한</td>
-                                    <td>Wi-Fi 30일 무제한</td>
-                                    <td>정액</td>
-                                    <td>30일</td>
-                                    <td>선불</td>
-                                    <td>유효</td>
-                                    <td>10:00 10/01/2019</td>
-                                    <td>10:00 10/01/2019</td>
-                                </tr>
-                                <tr class="trSub">
-                                    <td class="bgGreen pd0 txtCenter"></td>
-                                    <td colspan="9" class="pd0">
-                                        <ul class="type_01">
-                                            <li>
-                                                <p>가입 계약 번호</p>
-                                                <span>abc010203034</span>
-                                                <p>계약 종료 기간</p>
-                                                <span>한정 없음</span>
-                                            </li>
-                                            <li>
-                                                <p>고객명</p>
-                                                <span>홍길동</span>
-                                                <p>납부자 명</p>
-                                                <span>홍길동</span>
-                                            </li>
-                                            <li>
-                                                <p>결제 정보</p>
-                                                <span>신용카드 (자동)(대표)</span>
-                                                <p></p>
-                                                <span>홍길동</span>
-                                            </li>
-                                            <li>
-                                                <p>가입 상품 명</p>
-                                                <span>Wi-Fi 30일 무제한 (Wi-Fi 무제한)</span>
-                                                <p>청구 방법</p>
-                                                <span>이메일 (kdhong@www.com)</span>
-                                            </li>
-                                            <li>
-                                                <p>상품 유형</p>
-                                                <span>선불 / 정액 상품</span>
-                                                <p>국가 (통화)</p>
-                                                <span>대한민국 (원)</span>
-                                            </li>
-                                            <li>
-                                                <p>과금 주기</p>
-                                                <span>50,000원 / 30일</span>
-                                                <p>과금 정보</p>
-                                                <span>
-                                                    가입비 10,000원 / 과세 /  할인 10% 비 대상 (종료) 01/09/2019 - 09/30/2019 가입 고객 한
-                                                    <br>
-                                                    기본료 50,000원 / 과세 /  할인 10%  대상 (최대 99 회 적용) 01/09/2019 - 09/30/2019 가입 고객 한
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <p>예상 청구 금액</p>
-                                                <span>44,000원</span>
-                                                <p>예상 청구  일시 (금액)</p>
-                                                <span>매달 15일 14시 00분</span>
-                                            </li>
-                                            <li class="sp">
-                                                <button type="button" class="button_type_01" onclick="javascript:openModal('../html/AC_vw_00_popup_08.htm', 'AC_vw_00_popup_08', '', '400')">
-                                                    <span>해지</span>
-                                                </button>
 
-
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="trMain">
-                                    <td class="bgGray pd0 txtCenter"><button class="plusBtn"><i class="icon_plus">+</i></button></td>
-                                    <td>Wi-Fi 무제한</td>
-                                    <td>Wi-Fi 30일 무제한</td>
-                                    <td>정액</td>
-                                    <td>30일</td>
-                                    <td>선불</td>
-                                    <td>유효</td>
-                                    <td>10:00 10/01/2019</td>
-                                    <td>10:00 10/01/2019</td>
-                                </tr>
-                                <tr class="trSub">
-                                    <td class="bgGreen pd0 txtCenter"></td>
-                                    <td colspan="9" class="pd0">
-                                        <ul class="type_01">
-                                            <li>
-                                                <p>가입 계약 번호</p>
-                                                <span>abc010203034</span>
-                                                <p>계약 종료 기간</p>
-                                                <span>한정 없음</span>
-                                            </li>
-                                            <li>
-                                                <p>고객명</p>
-                                                <span>홍길동</span>
-                                                <p>납부자 명</p>
-                                                <span>홍길동</span>
-                                            </li>
-                                            <li>
-                                                <p>결제 정보</p>
-                                                <span>신용카드 (자동)(대표)</span>
-                                                <p></p>
-                                                <span>홍길동</span>
-                                            </li>
-                                            <li>
-                                                <p>가입 상품 명</p>
-                                                <span>Wi-Fi 30일 무제한 (Wi-Fi 무제한)</span>
-                                                <p>청구 방법</p>
-                                                <span>이메일 (kdhong@www.com)</span>
-                                            </li>
-                                            <li>
-                                                <p>상품 유형</p>
-                                                <span>선불 / 정액 상품</span>
-                                                <p>국가 (통화)</p>
-                                                <span>대한민국 (원)</span>
-                                            </li>
-                                            <li>
-                                                <p>과금 주기</p>
-                                                <span>50,000원 / 30일</span>
-                                                <p>과금 정보</p>
-                                                <span>
-                                                    가입비 10,000원 / 과세 /  할인 10% 비 대상 (종료) 01/09/2019 - 09/30/2019 가입 고객 한
-                                                    <br>
-                                                    기본료 50,000원 / 과세 /  할인 10%  대상 (최대 99 회 적용) 01/09/2019 - 09/30/2019 가입 고객 한
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <p>예상 청구 금액</p>
-                                                <span>44,000원</span>
-                                                <p>예상 청구  일시 (금액)</p>
-                                                <span>매달 15일 14시 00분</span>
-                                            </li>
-                                            <li class="sp">
-                                                <button type="button" class="button_type_01" onclick="javascript:openModal('../html/AC_vw_00_popup_08.htm', 'AC_vw_00_popup_08', '', '400')">
-                                                    <span>해지</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="trMain">
-                                    <td class="bgGray pd0 txtCenter"><button class="plusBtn"><i class="icon_plus">+</i></button></td>
-                                    <td>Wi-Fi 무제한</td>
-                                    <td>Wi-Fi 30일 무제한</td>
-                                    <td>정액</td>
-                                    <td>30일</td>
-                                    <td>선불</td>
-                                    <td>유효</td>
-                                    <td>10:00 10/01/2019</td>
-                                    <td>10:00 10/01/2019</td>
-                                </tr>
-                                <tr class="trSub">
-                                    <td class="bgGreen pd0 txtCenter"></td>
-                                    <td colspan="9" class="pd0">
-                                        <ul class="type_01">
-                                            <li>
-                                                <p>가입 계약 번호</p>
-                                                <span>abc010203034</span>
-                                                <p>계약 종료 기간</p>
-                                                <span>한정 없음</span>
-                                            </li>
-                                            <li>
-                                                <p>고객명</p>
-                                                <span>홍길동</span>
-                                                <p>납부자 명</p>
-                                                <span>홍길동</span>
-                                            </li>
-                                            <li>
-                                                <p>결제 정보</p>
-                                                <span>신용카드 (자동)(대표)</span>
-                                                <p></p>
-                                                <span>홍길동</span>
-                                            </li>
-                                            <li>
-                                                <p>가입 상품 명</p>
-                                                <span>Wi-Fi 30일 무제한 (Wi-Fi 무제한)</span>
-                                                <p>청구 방법</p>
-                                                <span>이메일 (kdhong@www.com)</span>
-                                            </li>
-                                            <li>
-                                                <p>상품 유형</p>
-                                                <span>선불 / 정액 상품</span>
-                                                <p>국가 (통화)</p>
-                                                <span>대한민국 (원)</span>
-                                            </li>
-                                            <li>
-                                                <p>과금 주기</p>
-                                                <span>50,000원 / 30일</span>
-                                                <p>과금 정보</p>
-                                                <span>
-                                                    가입비 10,000원 / 과세 /  할인 10% 비 대상 (종료) 01/09/2019 - 09/30/2019 가입 고객 한
-                                                    <br>
-                                                    기본료 50,000원 / 과세 /  할인 10%  대상 (최대 99 회 적용) 01/09/2019 - 09/30/2019 가입 고객 한
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <p>예상 청구 금액</p>
-                                                <span>44,000원</span>
-                                                <p>예상 청구  일시 (금액)</p>
-                                                <span>매달 15일 14시 00분</span>
-                                            </li>
-                                            <li class="sp">
-                                                <button type="button" class="button_type_01" onclick="javascript:openModal('../html/AC_vw_00_popup_08.htm', 'AC_vw_00_popup_08', '', '400')">
-                                                    <span>해지</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="table_box_wrap">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd-02">
+                            <div class="txt">
+                                <h5>송장 정보</h5>
+                                <div class="selectBox">
+                                    <select name="" id="" class="select_01">
+                                        <option>11/2022</option>
+                                        <option>10/2022</option>
+                                        <option>09/2022</option>
+                                        <option>08/2022</option>
+                                        <option>07/2022</option>
+                                        <option>06/2022</option>
+                                        <option>05/2022</option>
+                                        <option>04/2022</option>
+                                        <option>03/2022</option>
+                                        <option>02/2022</option>
+                                        <option>01/2022</option>
+                                    </select>
+                                    <div class="icon_wrap">
+                                        <button><i class="icon_aroow_left_S"></i></button>
+                                        <button><i class="icon_aroow_right_S"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub">
+                                <span>총 청구금액 : 80,000원</span>
+                                <span>총 건수: 2건</span>
+                            </div>
+                        </div>
+                        <div class="table_type_02">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 15px" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="" />
+                                    <col style="width: 14%" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="pd0"></th>
+                                        <th>발송 일자</th>
+                                        <th>발송 여부</th>
+                                        <th>가입 상품 명</th>
+                                        <th>고객</th>
+                                        <th>납부자</th>
+                                        <th>청구 금액</th>
+                                        <th>할인 금액</th>
+                                        <th>조정 금액</th>
+                                        <th>납기 일자</th>
+                                        <th>수납 금액</th>
+                                        <th>미납 금액</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="trMain">
+                                        <td class="bgGray pd0 txtCenter">
+                                            <button class="plusBtn"><i class="icon_plus">+</i></button>
+                                        </td>
+                                        <td>10/29/2022 13:00</td>
+                                        <td>발송 완료</td>
+                                        <td>Wi-Fi 30일 무제한</td>
+                                        <td>홍길동</td>
+                                        <td>홍길동</td>
+                                        <td>55,000원</td>
+                                        <td>-1,100원</td>
+                                        <td>-550원</td>
+                                        <td>2022/11/08 13:00</td>
+                                        <td>53,350원</td>
+                                        <td>0원</td>
+                                        <td>
+                                            <button class="btns invoice01"><i class="icon_invoice_01"></i></button>
+                                            <button
+                                                type="button"
+                                                class="btns invoice02"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_03.htm', 'AC_vw_00_popup_03', '', '500')"
+                                            >
+                                                <i class="icon_invoice_02"></i>
+                                            </button>
+                                            <button type="button" class="btns adjustment">
+                                                <i
+                                                    class="icon_adjustment"
+                                                    onclick="javascript:openModal('../html/AC_vw_00_popup_02.htm', 'AC_vw_00_popup_02', '', '900')"
+                                                ></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="trSub">
+                                        <td class="bgGreen pd0 txtCenter"></td>
+                                        <td colspan="12" class="pd0">
+                                            <ul class="type_02">
+                                                <li>
+                                                    <div class="txt">
+                                                        <p>
+                                                            청구 항목 명
+                                                            <span>기본료</span>
+                                                        </p>
+                                                        <p>
+                                                            청구금액 (세액)
+                                                            <span>30,000원 (3000 원)</span>
+                                                        </p>
+                                                        <p>
+                                                            할인 금액 (세액)
+                                                            <span>3,000원 (300원)</span>
+                                                        </p>
+                                                        <p>
+                                                            조정 금액 (세액)
+                                                            <span>2,000원 (200원)</span>
+                                                        </p>
+                                                        <p>
+                                                            입금 여부
+                                                            <span>입금</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="btn">
+                                                        <button class="underBtn">
+                                                            <i class="icon_under_arrow"></i>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>가입자 명</th>
+                                                                <th>상품 명</th>
+                                                                <th>과금항목 명</th>
+                                                                <th>과금 액</th>
+                                                                <th>할인 금액</th>
+                                                                <th>
+                                                                    조정금액
+                                                                    <button
+                                                                        type="button"
+                                                                        onclick="javascript:openModal('../html/AC_vw_00_popup_05.htm', 'AC_vw_00_popup_05', '', '500')"
+                                                                    >
+                                                                        <span>조정내역 보기</span>
+                                                                        <i class="icon_aroow_right_S"></i>
+                                                                    </button>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="trMain">
+                                        <td class="bgGray pd0 txtCenter">
+                                            <button class="plusBtn"><i class="icon_plus">+</i></button>
+                                        </td>
+                                        <td>10/29/2022 13:00</td>
+                                        <td>발송 완료</td>
+                                        <td>Wi-Fi 30일 무제한</td>
+                                        <td>홍길동</td>
+                                        <td>홍길동</td>
+                                        <td>55,000원</td>
+                                        <td>-1,100원</td>
+                                        <td>-550원</td>
+                                        <td>2022/11/08 13:00</td>
+                                        <td>53,350원</td>
+                                        <td>0원</td>
+                                        <td>
+                                            <button class="btns invoice01"><i class="icon_invoice_01"></i></button>
+                                            <button
+                                                type="button"
+                                                class="btns invoice02"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_03.htm', 'AC_vw_00_popup_03', '', '500')"
+                                            >
+                                                <i class="icon_invoice_02"></i>
+                                            </button>
+                                            <button type="button" class="btns adjustment">
+                                                <i
+                                                    class="icon_adjustment"
+                                                    onclick="javascript:openModal('../html/AC_vw_00_popup_02.htm', 'AC_vw_00_popup_02', '', '900')"
+                                                ></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="trSub">
+                                        <td class="bgGreen pd0 txtCenter"></td>
+                                        <td colspan="12" class="pd0">
+                                            <ul class="type_02">
+                                                <li>
+                                                    <div class="txt">
+                                                        <p>
+                                                            청구 항목 명
+                                                            <span>기본료</span>
+                                                        </p>
+                                                        <p>
+                                                            청구금액 (세액)
+                                                            <span>30,000원 (3000 원)</span>
+                                                        </p>
+                                                        <p>
+                                                            할인 금액 (세액)
+                                                            <span>3,000원 (300원)</span>
+                                                        </p>
+                                                        <p>
+                                                            조정 금액 (세액)
+                                                            <span>2,000원 (200원)</span>
+                                                        </p>
+                                                        <p>
+                                                            입금 여부
+                                                            <span>입금</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="btn">
+                                                        <button class="underBtn">
+                                                            <i class="icon_under_arrow"></i>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>가입자 명</th>
+                                                                <th>상품 명</th>
+                                                                <th>과금항목 명</th>
+                                                                <th>과금 액</th>
+                                                                <th>할인 금액</th>
+                                                                <th>
+                                                                    조정금액
+                                                                    <button
+                                                                        type="button"
+                                                                        onclick="javascript:openModal('../html/AC_vw_00_popup_05.htm', 'AC_vw_00_popup_05', '', '500')"
+                                                                    >
+                                                                        <span>조정내역 보기</span>
+                                                                        <i class="icon_aroow_right_S"></i>
+                                                                    </button>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="trMain">
+                                        <td class="bgGray pd0 txtCenter">
+                                            <button class="plusBtn"><i class="icon_plus">+</i></button>
+                                        </td>
+                                        <td>10/29/2022 13:00</td>
+                                        <td>발송 완료</td>
+                                        <td>Wi-Fi 30일 무제한</td>
+                                        <td>홍길동</td>
+                                        <td>홍길동</td>
+                                        <td>55,000원</td>
+                                        <td>-1,100원</td>
+                                        <td>-550원</td>
+                                        <td>2022/11/08 13:00</td>
+                                        <td>53,350원</td>
+                                        <td>0원</td>
+                                        <td>
+                                            <button class="btns invoice01"><i class="icon_invoice_01"></i></button>
+                                            <button
+                                                type="button"
+                                                class="btns invoice02"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_03.htm', 'AC_vw_00_popup_03', '', '500')"
+                                            >
+                                                <i class="icon_invoice_02"></i>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btns adjustment"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_02.htm', 'AC_vw_00_popup_02', '', '900')"
+                                            >
+                                                <i class="icon_adjustment"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="trSub">
+                                        <td class="bgGreen pd0 txtCenter"></td>
+                                        <td colspan="12" class="pd0">
+                                            <ul class="type_02">
+                                                <li>
+                                                    <div class="txt">
+                                                        <p>
+                                                            청구 항목 명
+                                                            <span>기본료</span>
+                                                        </p>
+                                                        <p>
+                                                            청구금액 (세액)
+                                                            <span>30,000원 (3000 원)</span>
+                                                        </p>
+                                                        <p>
+                                                            할인 금액 (세액)
+                                                            <span>3,000원 (300원)</span>
+                                                        </p>
+                                                        <p>
+                                                            조정 금액 (세액)
+                                                            <span>2,000원 (200원)</span>
+                                                        </p>
+                                                        <p>
+                                                            입금 여부
+                                                            <span>입금</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="btn">
+                                                        <button class="underBtn">
+                                                            <i class="icon_under_arrow"></i>
+                                                        </button>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                            <col width="15%" />
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>가입자 명</th>
+                                                                <th>상품 명</th>
+                                                                <th>과금항목 명</th>
+                                                                <th>과금 액</th>
+                                                                <th>할인 금액</th>
+                                                                <th>
+                                                                    조정금액
+                                                                    <button
+                                                                        type="button"
+                                                                        onclick="javascript:openModal('../html/AC_vw_00_popup_05.htm', 'AC_vw_00_popup_05', '', '500')"
+                                                                    >
+                                                                        <span>조정내역 보기</span>
+                                                                        <i class="icon_aroow_right_S"></i>
+                                                                    </button>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="txtLift">김희상 (남)</td>
+                                                                <td>wI-fi 30일</td>
+                                                                <td>기본료</td>
+                                                                <td>10,000원</td>
+                                                                <td>1,000원</td>
+                                                                <td>2,000원 (2건)</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="table_box_wrap">
-                <div class="table_box_02">
-                    <div class="table_box_02_hd-02">
-                        <div class="txt">
-                            <h5>송장 정보</h5>
-                            <div class="selectBox">
-                                <select name="" id="" class="select_01">
-                                    <option>11/2022</option>
-                                    <option>10/2022</option>
-                                    <option>09/2022</option>
-                                    <option>08/2022</option>
-                                    <option>07/2022</option>
-                                    <option>06/2022</option>
-                                    <option>05/2022</option>
-                                    <option>04/2022</option>
-                                    <option>03/2022</option>
-                                    <option>02/2022</option>
-                                    <option>01/2022</option>
-                                </select>
-                                <div class="icon_wrap">
-                                    <button><i class="icon_aroow_left_S"></i></button>
-                                    <button><i class="icon_aroow_right_S"></i></button>
+                <div class="table_box_wrap">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <h5>수 미납 정보</h5>
+                            <div class="type_05">
+                                <div class="pg_text">
+                                    <p>1 - 100</p>
+                                    <span>of</span>
+                                    <p>1000</p>
+                                </div>
+                                <div class="pg_number">
+                                    <ul>
+                                        <li>
+                                            <button><i class="icon_aroow_left_L"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_left_S"></i></button>
+                                        </li>
+                                        <li class="active">
+                                            <button>1</button>
+                                        </li>
+                                        <li>
+                                            <button>2</button>
+                                        </li>
+                                        <li>
+                                            <button>3</button>
+                                        </li>
+                                        <li>
+                                            <button>4</button>
+                                        </li>
+                                        <li>
+                                            <button>5</button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_S"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_L"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pg_list">
+                                    <select>
+                                        <option>100 row</option>
+                                        <option>200 row</option>
+                                        <option>300 row</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="sub">
-                            <span>총 청구금액 : 80,000원</span>
-                            <span>총 건수: 2건</span>
+                        <div class="table_type_02">
+                            <table>
+                                <colgroup>
+                                    <col style="" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="txtLift pdL30">발송 일자</th>
+                                        <th class="txtLift">가입자</th>
+                                        <th class="txtLift">청구 금액</th>
+                                        <th class="txtLift">할인 금액</th>
+                                        <th class="txtLift">조정 금액</th>
+                                        <th class="txtLift">발송 여부</th>
+                                        <th class="txtLift">납기 일자</th>
+                                        <th class="txtLift">수납 금액</th>
+                                        <th class="txtLift">미납 금액</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="txtLift pdL30">11/10/2022</td>
+                                        <td class="txtLift">홍길동(남)</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="txtLift">1,200원</td>
+                                        <td class="txtLift">2,000원</td>
+                                        <td class="txtLift">발송 완료</td>
+                                        <td class="txtLift">11/10/2022</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="flex_type_01 mgR10">
+                                            0원
+                                            <button
+                                                type="button"
+                                                class="btns mail"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_06.htm', 'AC_vw_00_popup_06', '', '500')"
+                                            >
+                                                <i class="icon_mail"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="txtLift pdL30">11/10/2022</td>
+                                        <td class="txtLift">홍길동(남)</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="txtLift">1,200원</td>
+                                        <td class="txtLift">2,000원</td>
+                                        <td class="txtLift">발송 완료</td>
+                                        <td class="txtLift">11/10/2022</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="flex_type_01 mgR10">
+                                            0원
+                                            <button
+                                                type="button"
+                                                class="btns mail"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_06.htm', 'AC_vw_00_popup_06', '', '500')"
+                                            >
+                                                <i class="icon_mail"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="txtLift pdL30">11/10/2022</td>
+                                        <td class="txtLift">홍길동(남)</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="txtLift">1,200원</td>
+                                        <td class="txtLift">2,000원</td>
+                                        <td class="txtLift">발송 완료</td>
+                                        <td class="txtLift">11/10/2022</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="flex_type_01 mgR10">
+                                            0원
+                                            <button
+                                                type="button"
+                                                class="btns mail"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_06.htm', 'AC_vw_00_popup_06', '', '500')"
+                                            >
+                                                <i class="icon_mail"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="table_type_02">
-                        <table>
-                            <colgroup>
-                                <col style="width: 15px">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="">
-                                <col style="width: 14%;">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="pd0"></th>
-                                    <th>발송 일자</th>
-                                    <th>발송 여부</th>
-                                    <th>가입 상품 명</th>
-                                    <th>고객</th>
-                                    <th>납부자</th>
-                                    <th>청구 금액</th>
-                                    <th>할인 금액</th>
-                                    <th>조정 금액</th>
-                                    <th>납기 일자</th>
-                                    <th>수납 금액</th>
-                                    <th>미납 금액</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="trMain">
-                                    <td class="bgGray pd0 txtCenter"><button class="plusBtn"><i class="icon_plus">+</i></button></td>
-                                    <td>10/29/2022 13:00</td>
-                                    <td>발송 완료</td>
-                                    <td>Wi-Fi 30일 무제한</td>
-                                    <td>홍길동</td>
-                                    <td>홍길동</td>
-                                    <td>55,000원</td>
-                                    <td>-1,100원</td>
-                                    <td>-550원</td>
-                                    <td>2022/11/08 13:00</td>
-                                    <td>53,350원</td>
-                                    <td>0원</td>
-                                    <td>
-                                        <button class="btns invoice01"><i class="icon_invoice_01"></i></button>
-                                        <button type="button" class="btns invoice02" onclick="javascript:openModal('../html/AC_vw_00_popup_03.htm', 'AC_vw_00_popup_03', '', '500')"><i class="icon_invoice_02"></i></button>
-                                        <button type="button" class="btns adjustment"><i class="icon_adjustment" onclick="javascript:openModal('../html/AC_vw_00_popup_02.htm', 'AC_vw_00_popup_02', '', '900')"></i></button>
-                                    </td>
-                                </tr>
-                                <tr class="trSub">
-                                    <td class="bgGreen pd0 txtCenter"></td>
-                                    <td colspan="12" class="pd0">
-                                        <ul class="type_02">
-                                            <li>
-                                                <div class="txt">
-                                                    <p>청구 항목 명
-                                                        <span>기본료</span>
-                                                    </p>
-                                                    <p>청구금액 (세액)	
-                                                        <span>30,000원 (3000 원)</span>
-                                                    </p>
-                                                    <p>할인 금액 (세액)
-                                                        <span>3,000원 (300원)</span>
-                                                    </p>
-                                                    <p>조정 금액 (세액)
-                                                        <span>2,000원 (200원)</span>
-                                                    </p>
-                                                    <p>입금 여부
-                                                        <span>입금</span>
-                                                    </p>
-                                                </div>
-                                                <div class="btn">
-                                                    <button class="underBtn"><i class="icon_under_arrow"></i></button>
-                                                </div>
-                                            </li>
-                                            <li class="dropdown">
-                                                <table>
-                                                    <colgroup>
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>가입자 명</th>
-                                                            <th>상품 명</th>
-                                                            <th>과금항목 명</th>
-                                                            <th>과금 액</th>
-                                                            <th>할인 금액</th>
-                                                            <th>조정금액 
-                                                                <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_05.htm', 'AC_vw_00_popup_05', '', '500')">
-                                                                    <span>조정내역 보기</span>
-                                                                    <i class="icon_aroow_right_S"></i>
-                                                                </button>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                    </tbody>
-                                                </table>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="trMain">
-                                    <td class="bgGray pd0 txtCenter"><button class="plusBtn"><i class="icon_plus">+</i></button></td>
-                                    <td>10/29/2022 13:00</td>
-                                    <td>발송 완료</td>
-                                    <td>Wi-Fi 30일 무제한</td>
-                                    <td>홍길동</td>
-                                    <td>홍길동</td>
-                                    <td>55,000원</td>
-                                    <td>-1,100원</td>
-                                    <td>-550원</td>
-                                    <td>2022/11/08 13:00</td>
-                                    <td>53,350원</td>
-                                    <td>0원</td>
-                                    <td>
-                                        <button class="btns invoice01"><i class="icon_invoice_01"></i></button>
-                                        <button type="button" class="btns invoice02" onclick="javascript:openModal('../html/AC_vw_00_popup_03.htm', 'AC_vw_00_popup_03', '', '500')"><i class="icon_invoice_02"></i></button>
-                                        <button type="button" class="btns adjustment"><i class="icon_adjustment" onclick="javascript:openModal('../html/AC_vw_00_popup_02.htm', 'AC_vw_00_popup_02', '', '900')"></i></button>
-                                    </td>
-                                </tr> 
-                                <tr class="trSub">
-                                    <td class="bgGreen pd0 txtCenter"></td>
-                                    <td colspan="12" class="pd0">
-                                        <ul class="type_02">
-                                            <li>
-                                                <div class="txt">
-                                                    <p>청구 항목 명
-                                                        <span>기본료</span>
-                                                    </p>
-                                                    <p>청구금액 (세액)	
-                                                        <span>30,000원 (3000 원)</span>
-                                                    </p>
-                                                    <p>할인 금액 (세액)
-                                                        <span>3,000원 (300원)</span>
-                                                    </p>
-                                                    <p>조정 금액 (세액)
-                                                        <span>2,000원 (200원)</span>
-                                                    </p>
-                                                    <p>입금 여부
-                                                        <span>입금</span>
-                                                    </p>
-                                                </div>
-                                                <div class="btn">
-                                                    <button class="underBtn"><i class="icon_under_arrow"></i></button>
-                                                </div>
-                                            </li>
-                                            <li class="dropdown">
-                                                <table>
-                                                    <colgroup>
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>가입자 명</th>
-                                                            <th>상품 명</th>
-                                                            <th>과금항목 명</th>
-                                                            <th>과금 액</th>
-                                                            <th>할인 금액</th>
-                                                            <th>조정금액 
-                                                                <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_05.htm', 'AC_vw_00_popup_05', '', '500')">
-                                                                    <span>조정내역 보기</span>
-                                                                    <i class="icon_aroow_right_S"></i>
-                                                                </button>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                    </tbody>
-                                                </table>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr class="trMain">
-                                    <td class="bgGray pd0 txtCenter"><button class="plusBtn"><i class="icon_plus">+</i></button></td>
-                                    <td>10/29/2022 13:00</td>
-                                    <td>발송 완료</td>
-                                    <td>Wi-Fi 30일 무제한</td>
-                                    <td>홍길동</td>
-                                    <td>홍길동</td>
-                                    <td>55,000원</td>
-                                    <td>-1,100원</td>
-                                    <td>-550원</td>
-                                    <td>2022/11/08 13:00</td>
-                                    <td>53,350원</td>
-                                    <td>0원</td>
-                                    <td>
-                                        <button class="btns invoice01"><i class="icon_invoice_01"></i></button>
-                                        <button type="button" class="btns invoice02" onclick="javascript:openModal('../html/AC_vw_00_popup_03.htm', 'AC_vw_00_popup_03', '', '500')"><i class="icon_invoice_02"></i></button>
-                                        <button type="button" class="btns adjustment" onclick="javascript:openModal('../html/AC_vw_00_popup_02.htm', 'AC_vw_00_popup_02', '', '900')"><i class="icon_adjustment"></i></button>
-                                    </td>
-                                </tr>
-                                <tr class="trSub">
-                                    <td class="bgGreen pd0 txtCenter"></td>
-                                    <td colspan="12" class="pd0">
-                                        <ul class="type_02">
-                                            <li>
-                                                <div class="txt">
-                                                    <p>청구 항목 명
-                                                        <span>기본료</span>
-                                                    </p>
-                                                    <p>청구금액 (세액)	
-                                                        <span>30,000원 (3000 원)</span>
-                                                    </p>
-                                                    <p>할인 금액 (세액)
-                                                        <span>3,000원 (300원)</span>
-                                                    </p>
-                                                    <p>조정 금액 (세액)
-                                                        <span>2,000원 (200원)</span>
-                                                    </p>
-                                                    <p>입금 여부
-                                                        <span>입금</span>
-                                                    </p>
-                                                </div>
-                                                <div class="btn">
-                                                    <button class="underBtn"><i class="icon_under_arrow"></i></button>
-                                                </div>
-                                            </li>
-                                            <li class="dropdown">
-                                                <table>
-                                                    <colgroup>
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                        <col width="15%">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>가입자 명</th>
-                                                            <th>상품 명</th>
-                                                            <th>과금항목 명</th>
-                                                            <th>과금 액</th>
-                                                            <th>할인 금액</th>
-                                                            <th>조정금액 
-                                                                <button type="button" onclick="javascript:openModal('../html/AC_vw_00_popup_05.htm', 'AC_vw_00_popup_05', '', '500')">
-                                                                    <span>조정내역 보기</span>
-                                                                    <i class="icon_aroow_right_S"></i>
-                                                                </button>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="txtLift">김희상 (남)</td>
-                                                            <td>wI-fi 30일</td>
-                                                            <td>기본료</td>
-                                                            <td>10,000원</td>
-                                                            <td>1,000원</td>
-                                                            <td>2,000원 (2건)</td>
-                                                         </tr>
-                                                    </tbody>
-                                                </table>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-            </div>
-            <div class="table_box_wrap">
-                <div class="table_box_02">
-                    <div class="table_box_02_hd">
-                        <h5>수 미납 정보</h5>
-                        <div class="type_05">
-                            <div class="pg_text">
-                                <p>1 - 100</p>
-                                <span>of</span>
-                                <p>1000</p>
-                            </div>
-                            <div class="pg_number">
-                                <ul>
-                                    <li>
-                                        <button><i class="icon_aroow_left_L"></i></button>
-                                    </li>
-                                    <li>
-                                        <button><i class="icon_aroow_left_S"></i></button>
-                                    </li>
-                                    <li class="active">
-                                        <button>1</button>
-                                    </li>
-                                    <li>
-                                        <button>2</button>
-                                    </li>
-                                    <li>
-                                        <button>3</button>
-                                    </li>
-                                    <li>
-                                        <button>4</button>
-                                    </li>
-                                    <li>
-                                        <button>5</button>
-                                    </li>
-                                    <li>
-                                        <button><i class="icon_aroow_right_S"></i></button>
-                                    </li>
-                                    <li>
-                                        <button><i class="icon_aroow_right_L"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pg_list">
-                                <select>
-                                    <option>100 row</option>
-                                    <option>200 row</option>
-                                    <option>300 row</option>
-                                </select>
+
+                <div class="table_box_wrap">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <h5>구매 정보</h5>
+                            <div class="type_05">
+                                <div class="pg_text">
+                                    <p>1 - 100</p>
+                                    <span>of</span>
+                                    <p>1000</p>
+                                </div>
+                                <div class="pg_number">
+                                    <ul>
+                                        <li>
+                                            <button><i class="icon_aroow_left_L"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_left_S"></i></button>
+                                        </li>
+                                        <li class="active">
+                                            <button>1</button>
+                                        </li>
+                                        <li>
+                                            <button>2</button>
+                                        </li>
+                                        <li>
+                                            <button>3</button>
+                                        </li>
+                                        <li>
+                                            <button>4</button>
+                                        </li>
+                                        <li>
+                                            <button>5</button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_S"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_L"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pg_list">
+                                    <select>
+                                        <option>100 row</option>
+                                        <option>200 row</option>
+                                        <option>300 row</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="table_type_02">
-                        <table>
-                            <colgroup>
-                                <col style="">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="txtLift pdL30">발송 일자</th>
-                                    <th class="txtLift">가입자</th>
-                                    <th class="txtLift">청구 금액</th>
-                                    <th class="txtLift">할인 금액</th>
-                                    <th class="txtLift">조정 금액</th>
-                                    <th class="txtLift">발송 여부</th>
-                                    <th class="txtLift">납기 일자</th>
-                                    <th class="txtLift">수납 금액</th>
-                                    <th class="txtLift">미납 금액</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="txtLift pdL30">11/10/2022</td>
-                                    <td class="txtLift">홍길동(남)</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="txtLift">1,200원</td>
-                                    <td class="txtLift">2,000원</td>
-                                    <td class="txtLift">발송 완료</td>
-                                    <td class="txtLift">11/10/2022</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="flex_type_01 mgR10">0원
-                                        <button type="button" class="btns mail" onclick="javascript:openModal('../html/AC_vw_00_popup_06.htm', 'AC_vw_00_popup_06', '', '500')"><i class="icon_mail"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="txtLift pdL30">11/10/2022</td>
-                                    <td class="txtLift">홍길동(남)</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="txtLift">1,200원</td>
-                                    <td class="txtLift">2,000원</td>
-                                    <td class="txtLift">발송 완료</td>
-                                    <td class="txtLift">11/10/2022</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="flex_type_01 mgR10">0원
-                                        <button type="button" class="btns mail" onclick="javascript:openModal('../html/AC_vw_00_popup_06.htm', 'AC_vw_00_popup_06', '', '500')"><i class="icon_mail"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="txtLift pdL30">11/10/2022</td>
-                                    <td class="txtLift">홍길동(남)</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="txtLift">1,200원</td>
-                                    <td class="txtLift">2,000원</td>
-                                    <td class="txtLift">발송 완료</td>
-                                    <td class="txtLift">11/10/2022</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="flex_type_01 mgR10">0원
-                                        <button type="button" class="btns mail" onclick="javascript:openModal('../html/AC_vw_00_popup_06.htm', 'AC_vw_00_popup_06', '', '500')"><i class="icon_mail"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="table_box_wrap">
-                <div class="table_box_02">
-                    <div class="table_box_02_hd">
-                        <h5>구매 정보</h5>
-                        <div class="type_05">
-                            <div class="pg_text">
-                                <p>1 - 100</p>
-                                <span>of</span>
-                                <p>1000</p>
-                            </div>
-                            <div class="pg_number">
-                                <ul>
-                                    <li>
-                                        <button><i class="icon_aroow_left_L"></i></button>
-                                    </li>
-                                    <li>
-                                        <button><i class="icon_aroow_left_S"></i></button>
-                                    </li>
-                                    <li class="active">
-                                        <button>1</button>
-                                    </li>
-                                    <li>
-                                        <button>2</button>
-                                    </li>
-                                    <li>
-                                        <button>3</button>
-                                    </li>
-                                    <li>
-                                        <button>4</button>
-                                    </li>
-                                    <li>
-                                        <button>5</button>
-                                    </li>
-                                    <li>
-                                        <button><i class="icon_aroow_right_S"></i></button>
-                                    </li>
-                                    <li>
-                                        <button><i class="icon_aroow_right_L"></i></button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="pg_list">
-                                <select>
-                                    <option>100 row</option>
-                                    <option>200 row</option>
-                                    <option>300 row</option>
-                                </select>
-                            </div>
+                        <div class="table_type_02">
+                            <table>
+                                <colgroup>
+                                    <col style="" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="txtLift pdL30">발송 일자</th>
+                                        <th class="txtLift">가입자</th>
+                                        <th class="txtLift">청구 금액</th>
+                                        <th class="txtLift">할인 금액</th>
+                                        <th class="txtLift">조정 금액</th>
+                                        <th class="txtLift">발송 여부</th>
+                                        <th class="txtLift">납기 일자</th>
+                                        <th class="txtLift">수납 금액</th>
+                                        <th class="txtLift">미납 금액</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="txtLift pdL30">11/10/2022</td>
+                                        <td class="txtLift">홍길동(남)</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="txtLift">1,200원</td>
+                                        <td class="txtLift">2,000원</td>
+                                        <td class="txtLift">발송 완료</td>
+                                        <td class="txtLift">11/10/2022</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="flex_type_01 mgR10">
+                                            0원
+                                            <button
+                                                type="button"
+                                                class="btns payment"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"
+                                            >
+                                                <i class="icon_payment"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="txtLift pdL30">11/10/2022</td>
+                                        <td class="txtLift">홍길동(남)</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="txtLift">1,200원</td>
+                                        <td class="txtLift">2,000원</td>
+                                        <td class="txtLift">발송 완료</td>
+                                        <td class="txtLift">11/10/2022</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="flex_type_01 mgR10">
+                                            0원
+                                            <button
+                                                type="button"
+                                                class="btns payment"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"
+                                            >
+                                                <i class="icon_payment"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="txtLift pdL30">11/10/2022</td>
+                                        <td class="txtLift">홍길동(남)</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="txtLift">1,200원</td>
+                                        <td class="txtLift">2,000원</td>
+                                        <td class="txtLift">발송 완료</td>
+                                        <td class="txtLift">11/10/2022</td>
+                                        <td class="txtLift">120,000원</td>
+                                        <td class="flex_type_01 mgR10">
+                                            0원
+                                            <button
+                                                type="button"
+                                                class="btns payment"
+                                                onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"
+                                            >
+                                                <i class="icon_payment"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="table_type_02">
-                        <table>
-                            <colgroup>
-                                <col style="">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="txtLift pdL30">발송 일자</th>
-                                    <th class="txtLift">가입자</th>
-                                    <th class="txtLift">청구 금액</th>
-                                    <th class="txtLift">할인 금액</th>
-                                    <th class="txtLift">조정 금액</th>
-                                    <th class="txtLift">발송 여부</th>
-                                    <th class="txtLift">납기 일자</th>
-                                    <th class="txtLift">수납 금액</th>
-                                    <th class="txtLift">미납 금액</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="txtLift pdL30">11/10/2022</td>
-                                    <td class="txtLift">홍길동(남)</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="txtLift">1,200원</td>
-                                    <td class="txtLift">2,000원</td>
-                                    <td class="txtLift">발송 완료</td>
-                                    <td class="txtLift">11/10/2022</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="flex_type_01 mgR10">0원
-                                        <button type="button" class="btns payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="txtLift pdL30">11/10/2022</td>
-                                    <td class="txtLift">홍길동(남)</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="txtLift">1,200원</td>
-                                    <td class="txtLift">2,000원</td>
-                                    <td class="txtLift">발송 완료</td>
-                                    <td class="txtLift">11/10/2022</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="flex_type_01 mgR10">0원
-                                        <button type="button" class="btns payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="txtLift pdL30">11/10/2022</td>
-                                    <td class="txtLift">홍길동(남)</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="txtLift">1,200원</td>
-                                    <td class="txtLift">2,000원</td>
-                                    <td class="txtLift">발송 완료</td>
-                                    <td class="txtLift">11/10/2022</td>
-                                    <td class="txtLift">120,000원</td>
-                                    <td class="flex_type_01 mgR10">0원
-                                        <button type="button" class="btns payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                </div>
+            </section>
+            <aside>
+                <div class="stickyNote_type_2">
+                    <div class="tickyNote_sub">
+                        <p>대납자</p>
+                        <span>홍길동</span>
                     </div>
                 </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </section>
-        <aside>
-            <div class="stickyNote_type_2">
-                <div class="tickyNote_sub">
-                    <p>대납자</p>
-                    <span>홍길동</span>
+                <div class="stickyNote_type_1">
+                    <div class="tickyNote_tit">
+                        <h5>가입 계약 현황</h5>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>정액 상품</p>
+                        <span>9</span>
+                        <em>건</em>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>단품 상품</p>
+                        <span>9</span>
+                        <em>건</em>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>단품 상품 구매 금액</p>
+                        <span>999,999,999</span>
+                        <em>원(₩)</em>
+                    </div>
                 </div>
-            </div>
-            <div class="stickyNote_type_1">
-                <div class="tickyNote_tit">
-                    <h5>가입 계약 현황</h5>
+                <div class="stickyNote_type_1">
+                    <div class="tickyNote_tit">
+                        <h5>청구 현황</h5>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>최근 발행 일</p>
+                        <span>2019/10/11</span>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>누적발행 건 (최근 3개월)</p>
+                        <span>99</span>
+                        <em>건</em>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>청구 금액</p>
+                        <span>999,999,999</span>
+                        <em>원(₩)</em>
+                    </div>
                 </div>
-                <div class="tickyNote_sub">
-                    <p>정액 상품</p>
-                    <span>9</span>
-                    <em>건</em>
+                <div class="stickyNote_type_1">
+                    <div class="tickyNote_tit">
+                        <h5>미납 현황</h5>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>총 미납 건</p>
+                        <span>9</span>
+                        <em>건</em>
+                    </div>
+                    <div class="tickyNote_sub">
+                        <p>총 미납 금액</p>
+                        <span>999,999,999</span>
+                        <em>원(₩)</em>
+                    </div>
                 </div>
-                <div class="tickyNote_sub">
-                    <p>단품 상품</p>
-                    <span>9</span>
-                    <em>건</em>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>단품 상품 구매 금액</p>
-                    <span>999,999,999</span>
-                    <em>원(₩)</em>
-                </div>
-            </div>
-            <div class="stickyNote_type_1">
-                <div class="tickyNote_tit">
-                    <h5>청구 현황</h5>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>최근 발행 일</p>
-                    <span>2019/10/11</span>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>누적발행 건 (최근 3개월) </p>
-                    <span>99</span>
-                    <em>건</em>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>청구 금액</p>
-                    <span>999,999,999</span>
-                    <em>원(₩)</em>
-                </div>
-            </div>
-            <div class="stickyNote_type_1">
-                <div class="tickyNote_tit">
-                    <h5>미납 현황</h5>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>총 미납 건</p>
-                    <span>9</span>
-                    <em>건</em>
-                </div>
-                <div class="tickyNote_sub">
-                    <p>총 미납 금액</p>
-                    <span>999,999,999</span>
-                    <em>원(₩)</em>
-                </div>
-            </div>
-        </aside>
-    </div>
-</body>
+            </aside>
+        </div>
+    </body>
 </html>

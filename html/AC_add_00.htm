@@ -1,367 +1,606 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고객목록-고객등록</title>
-    <!-- 공통 css -->
-    <? include "./include.htm" ?>
-</head>
-<script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>고객목록-고객등록</title>
+        <link rel="stylesheet" href="../css/import.css" />
+        <!-- jquery js -->
+        <script src="../js/plugins/jquery-3.6.0.js"></script>
+        <script src="../js/plugins/jquery-ui.min.js"></script>
+        <script src="../js/plugins/bootstrap.js"></script>
 
-</script>
-<body>
-    <div class="wrap">
-        <? include "./header.htm" ?>
-        <? include "./nav.htm" ?>
-        <section>
-            <div class="section_hd">
-                <a href="../html/MD_db_00.htm">Home</a>
-                <span> > </span>
-                <a href="../html/AC_lst_00.htm">고객관리</a>
-                <span> > </span>
-                <a href="../html/AC_lst_00.htm">고객 목록</a>
-                <span> > </span>
-                <a href="../html/AC_add_00.htm">고객 등록</a>
-            </div>
-            <div class="section_tit">
-                <h3>고객 등록</h3>
-            </div>
-            <div class="section_btn">
-                <a href="../html/AC_lst_00.htm">
-                    <i class="icon_filter"></i>
-                    <span>고객 목록</span>
-                </a>
-            </div>
-            <div class="table_box_wrap">
-                <div class="table_box_01">
-                    <h5>고객등록</h5>
-                    <ul>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="email">
-                                    <span>이메일</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="email" class="inp_01 pdR50">
-                                <button>
-                                    <span>중복확인</span>
-                                </button>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="careId">
-                                    <span>셀프케어 아이디</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="careId" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="name">
-                                    <span>이름</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="name" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="parentName">
-                                    <span>부모 이름</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="parentName" class="inp_01 pdR30">
-                                <button><i class="icon_search"></i></button>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="code">
-                                    <span>외부 연계 고객 코드</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="code" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label>
-                                    <span>생년월일</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" value="" class="inp_02 datepicker" placeholder="YYMMDDDD">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="mobile">
-                                    <span>모바일</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="mobile" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="call">
-                                    <span>유선전화</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="call" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="fax">
-                                    <span>팩스</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="fax" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="country">
-                                    <span>국가</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <select name="country" id="country" class="select_01">
-                                    <option>Repblic of Korea</option>
-                                    <option>U.S.A</option>
-                                    <option>India</option>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="postcode">
-                                    <span>우편번호</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="postcode" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address1">
-                                    <span>주소1</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="address1" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address2">
-                                    <span>주소2</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="address2" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit verticalTop">
-                                <label for="agreement02">
-                                    <span>고객 동의 신청서</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <label for="agreement02">
-                                    <div class="file_type_01">
-                                        <span></span>
-                                    </div>
-                                </label>
-                                <input type="file" id="agreement02" class="inp_01 file_upload">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="table_box_01">
-                    <h5>납부자 정보</h5>
-                    <ul>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="name2">
-                                    <span>부모 이름</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="name2" class="inp_01 pdR30">
-                                <button><i class="icon_search"></i></button>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="claim">
-                                    <span>청구방법</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <select name="claim" id="claim" class="select_01">
-                                    <option>Email</option>
-                                    <option>전화</option>
-                                    <option>직접방문</option>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="phone">
-                                    <span>휴대폰</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="phone" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="claimEmail">
-                                    <span>청구 이메일</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="claimEmail" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="phone2">
-                                    <span>유선전화</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="phone2" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="fax2">
-                                    <span>팩스</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="fax2" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="country2">
-                                    <span>청구시 수령 국가</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <select name="country2" id="country2" class="select_01">
-                                    <option>Repblic of Korea</option>
-                                    <option>U.S.A</option>
-                                    <option>India</option>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="post2">
-                                    <span>청구시 수령 우편번호</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="post2" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address3">
-                                    <span>수령시 수령 주소 1</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="address3" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="address4">
-                                    <span>수령시 수령 주소 2</span>
-                                    <em>*</em>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <input type="text" id="address4" class="inp_01">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="table_box_01_tit verticalTop">
-                                <label for="agreement">
-                                    <span>고객 동의 신청서</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <label for="agreement">
-                                    <div class="file_type_01 files">
-                                        <span></span>
-                                    </div>
-                                </label>
-                                <input type="file" id="agreement" class="inp_01 file_upload">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="table_box_01">
-                    <h5>결제 정보</h5>
-                    <ul>
-                        <li>
-                            <div class="table_box_01_tit">
-                                <label for="pay">
-                                    <span>납부 방법</span>
-                                </label>
-                            </div>
-                            <div class="table_box_01_sub">
-                                <select name="pay" id="pay" class="select_01">
-                                    <option>계좌 이체</option>
-                                    <option>신용 카드</option>
-                                </select>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="last_btn">
-                <div class="cancel_btn mgR10">
-                    <a href="../html/AC_lst_00.htm">취소</a>
-                </div>
-                <div class="save_btn">
-                    <a href="../html/AC_vw_00.htm">확인</a>
-                </div>
+        <!-- 차트 js -->
+        <script src="../js/plugins/amcharts_3.21.15/amcharts.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/pie.js"></script>
+        <script src="../js/plugins/amcharts_3.21.15/serial.js"></script>
 
-            </div>
-        </section>
-    </div>
-</body>
+        <!-- 달력 js -->
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+        <script src="../js/plugins/datapicker/bootstrap-datepicker.ko.js"></script>
+
+        <script src="../js/datepicker.js"></script>
+        <script src="../js/common.js"></script>
+    </head>
+    <script></script>
+    <body>
+        <div class="wrap">
+            <header>
+                <div class="menuInfo">
+                    <div class="menu_wrap">
+                        <button>
+                            <i class="icon_menu"></i>
+                        </button>
+                    </div>
+                    <div class="logo_wrap">
+                        <a href="../html/MD_db_00.htm">
+                            <img src="../img/main_logo.png" alt="메인 로고" />
+                        </a>
+                    </div>
+                </div>
+                <div class="loginInfo">
+                    <div class="time">
+                        <i class="icon_time"></i>
+                        <span>UTC</span>
+                        <p>13:00</p>
+                        <span>24/10/2022</span>
+                    </div>
+                    <div class="user">
+                        <button>
+                            <i class="icon_user"></i>
+                            <span>Administrator</span>
+                        </button>
+                        <div class="hdDropDown">
+                            <a href="#">test01</a>
+                            <a href="#">test02</a>
+                        </div>
+                    </div>
+                    <div class="logout">
+                        <a href="#">
+                            <i class="icon_power"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <nav class="">
+                <ul>
+                    <li>
+                        <a>
+                            <i class="icon_menu_01"></i>
+                            <span>고객 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/AC_db_00.htm">
+                                    <span>고객 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AC_lst_00.htm">
+                                    <span>고객 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/SB_lst_00.htm">
+                                    <span>가입 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_lst_00.htm">
+                                    <span>구매 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_02"></i>
+                            <span>상품 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PD_lst_00.htm">
+                                    <span>상품 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_03"></i>
+                            <span>청구 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_db_00.htm">
+                                    <span>청구 현황</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AJ_lst_00.htm">
+                                    <span>조정 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PP_lst_00.htm">
+                                    <span>수납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/UP_lst_00.htm">
+                                    <span>미납 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_00.htm">
+                                    <span>PG 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_04"></i>
+                            <span>작업 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/BL_lst_00.htm">
+                                    <span>청구 작업 목록</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PM_lst_01.htm">
+                                    <span>자동 결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>설정 지원 관리</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_vw_00.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PS_add_00.htm">
+                                    <span>파트너 서비스 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_00.htm">
+                                    <span>청구 정보 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/BI_add_01.htm">
+                                    <span>청구 항목 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/EM_add_00.htm">
+                                    <span>이메일 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_00.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AL_add_00.htm">
+                                    <span>알림 설정</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PC_add_00.htm">
+                                    <span>파트너 공통 코드 설정</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>
+                            <i class="icon_menu_05"></i>
+                            <span>관리자 설정</span>
+                        </a>
+                        <ul class="navClick">
+                            <li>
+                                <a href="../html/PC_lst_01.htm">
+                                    <span>파트너 계약 정보</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/TB_lst_01.htm">
+                                    <span>Trouble 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AM_lst_00.htm">
+                                    <span>계정 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/AG_lst_00.htm">
+                                    <span>계정 그룹 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/GR_vw_00.htm">
+                                    <span>그룹 별 권환 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/PG_lst_00.htm">
+                                    <span>PG 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/MN_lst_00.htm">
+                                    <span>메뉴 관리</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../html/CC_lst_00.htm">
+                                    <span>공통 코드 관리</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <div class="section_hd">
+                    <a href="../html/MD_db_00.htm">Home</a>
+                    <span> > </span>
+                    <a href="../html/AC_lst_00.htm">고객관리</a>
+                    <span> > </span>
+                    <a href="../html/AC_lst_00.htm">고객 목록</a>
+                    <span> > </span>
+                    <a href="../html/AC_add_00.htm">고객 등록</a>
+                </div>
+                <div class="section_tit">
+                    <h3>고객 등록</h3>
+                </div>
+                <div class="section_btn">
+                    <a href="../html/AC_lst_00.htm">
+                        <i class="icon_filter"></i>
+                        <span>고객 목록</span>
+                    </a>
+                </div>
+                <div class="table_box_wrap">
+                    <div class="table_box_01">
+                        <h5>고객등록</h5>
+                        <ul>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="email">
+                                        <span>이메일</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="email" class="inp_01 pdR50" />
+                                    <button>
+                                        <span>중복확인</span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="careId">
+                                        <span>셀프케어 아이디</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="careId" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="name">
+                                        <span>이름</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="name" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="parentName">
+                                        <span>부모 이름</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="parentName" class="inp_01 pdR30" />
+                                    <button><i class="icon_search"></i></button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="code">
+                                        <span>외부 연계 고객 코드</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="code" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label>
+                                        <span>생년월일</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" value="" class="inp_02 datepicker" placeholder="YYMMDDDD" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="mobile">
+                                        <span>모바일</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="mobile" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="call">
+                                        <span>유선전화</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="call" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="fax">
+                                        <span>팩스</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="fax" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="country">
+                                        <span>국가</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <select name="country" id="country" class="select_01">
+                                        <option>Repblic of Korea</option>
+                                        <option>U.S.A</option>
+                                        <option>India</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="postcode">
+                                        <span>우편번호</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="postcode" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address1">
+                                        <span>주소1</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="address1" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address2">
+                                        <span>주소2</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="address2" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit verticalTop">
+                                    <label for="agreement02">
+                                        <span>고객 동의 신청서</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <label for="agreement02">
+                                        <div class="file_type_01">
+                                            <span></span>
+                                        </div>
+                                    </label>
+                                    <input type="file" id="agreement02" class="inp_01 file_upload" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="table_box_01">
+                        <h5>납부자 정보</h5>
+                        <ul>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="name2">
+                                        <span>부모 이름</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="name2" class="inp_01 pdR30" />
+                                    <button><i class="icon_search"></i></button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="claim">
+                                        <span>청구방법</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <select name="claim" id="claim" class="select_01">
+                                        <option>Email</option>
+                                        <option>전화</option>
+                                        <option>직접방문</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="phone">
+                                        <span>휴대폰</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="phone" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="claimEmail">
+                                        <span>청구 이메일</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="claimEmail" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="phone2">
+                                        <span>유선전화</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="phone2" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="fax2">
+                                        <span>팩스</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="fax2" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="country2">
+                                        <span>청구시 수령 국가</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <select name="country2" id="country2" class="select_01">
+                                        <option>Repblic of Korea</option>
+                                        <option>U.S.A</option>
+                                        <option>India</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="post2">
+                                        <span>청구시 수령 우편번호</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="post2" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address3">
+                                        <span>수령시 수령 주소 1</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="address3" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="address4">
+                                        <span>수령시 수령 주소 2</span>
+                                        <em>*</em>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <input type="text" id="address4" class="inp_01" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="table_box_01_tit verticalTop">
+                                    <label for="agreement">
+                                        <span>고객 동의 신청서</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <label for="agreement">
+                                        <div class="file_type_01 files">
+                                            <span></span>
+                                        </div>
+                                    </label>
+                                    <input type="file" id="agreement" class="inp_01 file_upload" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="table_box_01">
+                        <h5>결제 정보</h5>
+                        <ul>
+                            <li>
+                                <div class="table_box_01_tit">
+                                    <label for="pay">
+                                        <span>납부 방법</span>
+                                    </label>
+                                </div>
+                                <div class="table_box_01_sub">
+                                    <select name="pay" id="pay" class="select_01">
+                                        <option>계좌 이체</option>
+                                        <option>신용 카드</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="last_btn">
+                    <div class="cancel_btn mgR10">
+                        <a href="../html/AC_lst_00.htm">취소</a>
+                    </div>
+                    <div class="save_btn">
+                        <a href="../html/AC_vw_00.htm">확인</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
 </html>
