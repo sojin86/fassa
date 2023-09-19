@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파트너 계약 정보 목록</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/PC_lst_01.htm">Home</a>
+                <span> > </span>
+                <a href="">관리자 설정</a>
+                <span> > </span>
+                <a href="../html/PC_lst_01.htm">파트너 계약 정보</a>
+            </div>
+            <div class="section_tit">
+                <h3>파트너 계약 정보 목록</h3>
+            </div>
+            <div class="section_btn">
+                <a href="../html/PC_add_01.htm">
+                    <i class="icon_add_02"></i>
+                    <span>계약 등록</span>
+                </a>
+            </div>
+            <div class="table_box_wrap inline mgT30">
+                <div class="table_box_06">
+                    <div class="table_box_06_hd">
+                        <div class="type_05">
+                            <div class="pg_text">
+                                <p>1 - 100</p>
+                                <span>of</span>
+                                <p>1000</p>
+                            </div>
+                            <div class="pg_number">
+                                <ul>
+                                    <li>
+                                        <button><i class="icon_aroow_left_L"></i></button>
+                                    </li>
+                                    <li>
+                                        <button><i class="icon_aroow_left_S"></i></button>
+                                    </li>
+                                    <li class="active">
+                                        <button>1</button>
+                                    </li>
+                                    <li>
+                                        <button>2</button>
+                                    </li>
+                                    <li>
+                                        <button>3</button>
+                                    </li>
+                                    <li>
+                                        <button>4</button>
+                                    </li>
+                                    <li>
+                                        <button>5</button>
+                                    </li>
+                                    <li>
+                                        <button><i class="icon_aroow_right_S"></i></button>
+                                    </li>
+                                    <li>
+                                        <button><i class="icon_aroow_right_L"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pg_list">
+                                <select>
+                                    <option>100 row</option>
+                                    <option>200 row</option>
+                                    <option>300 row</option>
+                                </select>
+                            </div>
+                            <div class="mgL10 btn">
+                                <button class="button">
+                                    <i class="icon_del_01"></i>
+                                </button>
+                            </div>
+                            <div class="mgL10 btn">
+                                <button class="reset button">
+                                    <i class="icon_reset"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table_type_02">
+                        <table>
+                            <colgroup>
+                                <col style="">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="txtLift pdL30">회사명</th>
+                                    <th class="txtLift">사업자 등록번호 / Tax ID</th>
+                                    <th class="txtLift">계약 담당자</th>
+                                    <th class="txtLift">등록자</th>
+                                    <th class="txtLift">등록일시</th>
+                                    <th class="txtLift">수정자</th>
+                                    <th class="txtLift">수정일시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr onClick="location.href='../html/PC_vw_00.htm'" style="cursor:pointer;">
+                                    <td class="txtLift pdL30">(주) 서비스 사3</td>
+                                    <td class="txtLift">-</td>
+                                    <td class="txtLift">홍길동</td>
+                                    <td class="txtLift">admin</td>
+                                    <td class="txtLift">2019/10/11 00:00</td>
+                                    <td class="txtLift">-</td>
+                                    <td class="txtLift">-</td>
+                                </tr>
+                                <tr onClick="location.href='../html/PC_vw_00.htm'" style="cursor:pointer;">
+                                    <td class="txtLift pdL30">(주) 서비스 사2</td>
+                                    <td class="txtLift">-</td>
+                                    <td class="txtLift">홍길동</td>
+                                    <td class="txtLift">admin</td>
+                                    <td class="txtLift">2019/10/11 00:00</td>
+                                    <td class="txtLift">-</td>
+                                    <td class="txtLift">-</td>
+                                </tr>
+                                <tr onClick="location.href='../html/PC_vw_00.htm'" style="cursor:pointer;">
+                                    <td class="txtLift pdL30">(주) 서비스 사1</td>
+                                    <td class="txtLift">-</td>
+                                    <td class="txtLift">홍길동</td>
+                                    <td class="txtLift">admin</td>
+                                    <td class="txtLift">2019/10/11 00:00</td>
+                                    <td class="txtLift">-</td>
+                                    <td class="txtLift">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

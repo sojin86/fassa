@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 등록</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/PD_lst_00.htm">상품 관리</a>
+                <span> > </span>
+                <a href="../html/PD_lst_00.htm">상품 목록</a>
+                <span> > </span>
+                <a href="../html/PD_add_00.htm">상품 등록</a>
+            </div>
+            <div class="section_tit">
+                <h3>상품 등록</h3>
+            </div>
+            <div class="section_btn">
+                <a href="../html/PD_lst_00.htm">
+                    <i class="icon_filter"></i>
+                    <span>고객 목록</span>
+                </a>
+            </div>
+            <div class="table_box_wrap mgT30 inline">
+                <div class="table_box_03 pd30">
+                    <div class="table_box_03_hd mgB10">
+                        <h5>상품 정보 등록</h5>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>대표 상품 명
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <input type="text" class="inp_01 w380px" placeholder="50 Bytes">
+                        </li>
+                        <li>
+                            <p>상품 판매 가능 기간
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <span class="input datepickerRange w380px">
+                                <input type="text" value="" class="inp_02 datepicker startDate from0 w183px">
+                                <span class="wAuto">~</span>
+                                <input type="text" value="" class="inp_02 datepicker endDate to0 w183px">
+                            </span>
+                            <label class="cb_1 mgL20">
+                                <input type="checkbox" name="checkbox_01" checked> 
+                                <span class="cb_1_text wAuto">기간 제한 없음</span>
+                            </label>
+                        </li>
+                        <li>
+                            <p>대표 상품 이미지
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <label for="agreement">
+                                <div class="file_type_01 w380px">
+                                    <span>'500px  X  500px, 500 KB, png'</span>
+                                </div>
+                            </label>
+                            <input type="file" id="agreement" class="inp_01 file_upload">
+                        </li>
+                        <li>
+                           <p>상품 전시 여부
+                            <span class="colorBlue01">*</span>
+                           </p>
+                           <button class="switchBtn">
+                               <i class="icon_switch"></i>
+                           </button>
+                        </li>
+                        <li>
+                            <p>상품 부가 설명
+                                <span class="colorBlue01">*</span>
+                            </p>
+                           <textarea class="txtarea_01 w70p"></textarea>
+                        </li>
+                    </ul>
+                    <div class="flex_type_03 mgT30">
+                        <div class="cancel_btn mgR10">
+                            <a href="../html/PD_lst_00.htm">취소</a>
+                        </div>
+                        <div class="save_btn">
+                            <a href="../html/PD_vw_00.htm">확인</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

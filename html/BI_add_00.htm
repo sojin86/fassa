@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화페 단위 설정</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/PC_vw_00.htm">설정 지원 관리</a>
+                <span> > </span>
+                <a href="../html/BI_add_00.htm">청구 정보 설정</a>
+            </div>
+            <div class="section_tit">
+                <h3>청구 정보 설정</h3>
+            </div>
+            <div class="table_box_wrap mgT30 inline">
+                <div class="table_box_03 pd30">
+                    <ul>
+                        <li class="pdT0">
+                            <p>서비스(판매) 대상 국가
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <select name="" id="" class="select_01 w380px">
+                                <option>Repblic of Korea</option>
+                                <option>U.S.A</option>
+                                <option>India</option>
+                            </select>
+                        </li>
+                        <li>
+                            <p>국가(전화)번호</p>
+                            <input type="text" class="inp_01 w380px">
+                        </li>
+                        <li>
+                            <p>화폐 단위</p>
+                            <input type="text" class="inp_01 w183px mgR10" placeholder="통화">
+                            <input type="text" class="inp_01 w183px" placeholder="문양">
+                        </li>
+                        <li>
+                           <p>세금 명</p>
+                           <div class="add_inp_wrap">
+                              <div class="add_inp_line">
+                                <div class="add_inp_line_sub">
+                                    <span class="mgR10">판매 금액의</span>
+                                    <input type="text" class="inp_01 w183px mgR10">
+                                    <span class="mgR10">%</span>
+                                    <input type="text" class="inp_01 w183px mgR10" placeholder="영문 세금 명">
+                                    <input type="text" class="inp_01 w183px" placeholder="현지어 세금 명">
+                                </div>
+                              </div>
+                           </div>
+
+                        </li>
+                        <li>
+                            <div class="subBox">
+                                <p>청구서 기재 납부 은행
+                                    <span class="colorBlue01">*</span>
+                                </p>
+                                <input type="text" class="inp_01 w380px">
+                            </div>
+                            <div class="subBox pd10">
+                                <p>계좌 번호
+                                    <span class="colorBlue01">*</span>
+                                </p>
+                                <input type="text" class="inp_01 w380px" placeholder="'-'제외">
+                            </div>
+                            <div class="subBox pd10">
+                                <p>계좌 부
+                                    <span class="colorBlue01">*</span>
+                                </p>
+                                <input type="text" class="inp_01 w380px">
+                            </div>
+                        </li>
+                        <li class="copy">
+                            <div class="addition mgL200 clone_01">
+                                <button class="button">
+                                    <i class="icon_add_01"></i>
+                                </button>
+                                <span>계좌 추가</span>
+                            </div>
+                        </li>
+                        <li>
+                            <p>청구서 기재 청구 문의 담당자
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <input type="text" class="inp_01 w183px mgR10" placeholder="담당자 명">
+                            <input type="text" class="inp_01 w183px mgR10" placeholder="연락처">
+                            <input type="text" class="inp_01 w183px" placeholder="이메일 주소">
+                        </li>
+                        <li>
+                            <p>청구서 기재 미납 문의 담당자
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <input type="text" class="inp_01 w183px mgR10" placeholder="담당자 명">
+                            <input type="text" class="inp_01 w183px mgR10" placeholder="연락처">
+                            <input type="text" class="inp_01 w183px" placeholder="이메일 주소">
+                        </li>
+                        <li>
+                            <p>청구서 템플릿</p>
+                            <button class="button_type_07">템플릿 다운로드</button>
+                        </li>
+                    </ul>
+                    <div class="flex_type_03 mgT30">
+                        <div class="cancel_btn mgR10">
+                            <a href="../html/BI_vw_00.htm">취소</a>
+                        </div>
+                        <div class="save_btn">
+                            <a href="../html/BI_vw_00.htm">저장</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

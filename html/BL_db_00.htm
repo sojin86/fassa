@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청구 현황</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+    <script src="../js/charts/chart-05.js"></script>
+    <script src="../js/charts/chart-06.js"></script>
+    <script src="../js/charts/chart-07.js"></script>
+    <script src="../js/charts/chart-08.js"></script>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/BL_db_00.htm">청구 관리</a>
+                <span> > </span>
+                <a href="../html/BL_db_00.htm">청구 현황</a>
+            </div>
+            <div class="section_tit">
+                <h3>청구 현황</h3>
+            </div>
+            <div class="type_01">
+                <ul>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_user"></i>
+                                <span>7월 청구서 발행 금액</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>10,000,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_users"></i>
+                                <span>7월 청구서 발행 예정 금액</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>90,000,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_noUser"></i>
+                                <span>7월 수납 금액</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>980,000,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_moneys"></i>
+                                <span>7월 미납 금액</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p class="colorRed01">20,000,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_userMoney"></i>
+                                <span>7월 조정 금액</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>99,999</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>7월 청구서 발행 현황</h4>
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>원</p>
+                </div>
+                <div id="chart_05" class="chart_type_01"></div>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>7월 수납 현황</h4>
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>원</p>
+                </div>
+                <div id="chart_06" class="chart_type_01"></div>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>7월 조정 현황</h4>
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>원</p>
+                </div>
+                <div id="chart_07" class="chart_type_01"></div>
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>

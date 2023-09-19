@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 정보</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/PD_lst_00.htm">상품 관리</a>
+                <span> > </span>
+                <a href="../html/PD_lst_00.htm">상품 목록</a>
+            </div>
+            <div class="section_tit">
+                <h3>상품 정보</h3>
+            </div>
+            <div class="section_btn">
+                <a href="../html/PD_lst_00.htm">
+                    <i class="icon_filter"></i>
+                    <span>상품 목록</span>
+                </a>
+            </div>
+            <div class="table_box_wrap inline mgT30">
+                <div class="table_box_03">
+                    <div class="table_box_03_hd">
+                        <h5>넷플리카 100</h5>
+                        <a href="../html/PD_add_00.htm">
+                            <i class="icon_pen"></i>
+                        </a>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>대표 상품 명</p>
+                            <span>abc1234567</span>
+                        </li>
+                        <li>
+                            <p>상품 판매 가능 기간</p>
+                            <span>17/23/19 - 17/23/22 (365일 남음)</span>
+                        </li>
+                        <li>
+                            <p>대표 상품 이미지</p>
+                            <i class="img_icon01"></i>
+                        </li>
+                        <li>
+                           <p>상품 전시 여부</p>
+                           <button class="switchBtn">
+                               <i class="icon_switch"></i>
+                           </button>
+                        </li>
+                        <li>
+                            <p>상품 부가 설명</p>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid.dunt ut labore et dolore magna aliqua. pendisse. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incid.dunt ut labore et dolore magna aliqua. pendisse 
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="table_box_04 mgT10">
+                    <div class="table_box_04_hd">
+                        <h5>하위 상품</h5>
+                    </div>
+                    <div class="table_box_04_sc">
+                        <div class="tit">
+                            <p>Wi-FI 홈 무제한</p>
+                        </div>
+                        <div class="sub">
+                            <div class="subTit">
+                                <div class="subTit_text">
+                                    <button class="button_type_04 mgR10">
+                                       <span>단품상품</span>
+                                    </button>
+                                    <p class="mgR60 ">11/15/2022 ~ 11/15/2022</p>
+                                    <p class="mgR50">선불</p>
+                                    <button class="button_type_06">
+                                        <span>판매 불가</span>
+                                     </button>
+                                </div>
+                                <div class="subTit_btn">
+                                    <button class="button pen">
+                                        <i class="icon_pen"></i>
+                                    </button>
+                                    <button class="button">
+                                        <i class="icon_del_01"></i>
+                                    </button>
+                                    <button class="button underArrow">
+                                        <i class="icon_under_arrow"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="subTxt">
+                                <ul>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>상품 유형</p>
+                                            <span>정액</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 대상 국가</p>
+                                            <span>대한민국</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 통화</p>
+                                            <span>원</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>과금 주기</p>
+                                            <span>3개월</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비전 여부</p>
+                                            <span>예</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>프로비젼 URL</p>
+                                            <span>www.abce.com/eee/ddd/abcedfdfegfg.dmg</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 1</p>
+                                            <span>option1</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 2</p>
+                                            <span>option2</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 3</p>
+                                            <span>option3</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 4</p>
+                                            <span>option4</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="subInp">
+                                <ul>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>상품 유형</p>
+                                            <div class="inp_line">
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_01" checked> 
+                                                    <span class="rd_1_text">정액</span>
+                                                </label>
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_01"> 
+                                                    <span class="rd_1_text">단품</span>
+                                               </label>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 대상 국가</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>Repblic of Korea</option>
+                                                    <option>U.S.A</option>
+                                                    <option>India</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 통화</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>원</option>
+                                                    <option>달러</option>
+                                                    <option>유로</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>과금 주기</p>
+                                            <div class="inp_line">
+                                                <input type="text" class="inp_01 w120px" placeholder="3">
+                                                <select name="" id="" class="select_01 w123px">
+                                                    <option>시간</option>
+                                                    <option>일</option>
+                                                    <option>개월</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비전 여부</p>
+                                            <div class="inp_line">
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_02" checked> 
+                                                    <span class="rd_1_text">예</span>
+                                                </label>
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_02"> 
+                                                    <span class="rd_1_text">아니오</span>
+                                               </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>포로비전 URL</p>
+                                            <div class="inp_line">
+                                                <input type="text" class="inp_01" placeholder="www.abc.com">
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 1</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 2</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 3</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 4</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="flex_type_03 mgT30">
+                                            <button class="button_type_01 mgR10 cancelBtn">
+                                                <span>취소</span>
+                                            </button>
+                                            <button class="button_type_02 saveBtn">
+                                                <span>확인</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="subTable">
+                                <ul class="subTable_ul">
+                                    <li>
+                                        <div class="subTable_line">
+                                            <span>일회성 과금</span>
+                                            <button class="button addBtn">
+                                                <i class="icon_add_01"></i>
+                                            </button>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line02">
+                                           <div class="txt">
+                                            <p>
+                                                <span>무제한 가입비 Wi-FI</span>
+                                                10,000원 (과세) 
+                                            </p>
+                                            <p>
+                                                프로모션 할인 적용 (10/09/2019 - 09/09/2019) 500원 10회차
+                                            </p>
+                                           </div>
+                                           <div class="btn">
+                                               <button class="button"><i class="icon_pen btnPen"></i></button>
+                                               <button class="button"><i class="icon_del_01"></i></button>
+                                           </div>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line02">
+                                            <div class="txt">
+                                             <p>
+                                                 <span>무제한 가입비 Wi-FI</span>
+                                                 10,000원 (과세) 
+                                             </p>
+                                             <p>
+                                                 프로모션 할인 적용 (10/09/2019 - 09/09/2019) 500원 10회차
+                                             </p>
+                                            </div>
+                                            <div class="btn">
+                                                <button class="button"><i class="icon_pen btnPen"></i></button>
+                                                <button class="button"><i class="icon_del_01"></i></button>
+                                            </div>
+                                         </div>
+                                         <div class="subTable_dropdown">
+                                             <ul>
+                                                 <li>
+                                                     <p>과금명</p>
+                                                     <input type="text" class="inp_01 w_0_sp">
+                                                 </li>
+                                                 <li>
+                                                     <p>요율</p>
+                                                     <input type="text" class="inp_01 w120px">
+                                                     <span>원</span>
+                                                 </li>
+                                                 <li>
+                                                     <p>청구 항목</p>
+                                                     <select name="" id="" class="select_01 w300px">
+                                                         <option>선택</option>
+                                                         <option>2022/10</option>
+                                                         <option>2022/09</option>
+                                                         <option>2022/08</option>
+                                                         <option>2022/07</option>
+                                                         <option>2022/06</option>
+                                                         <option>2022/05</option>
+                                                         <option>2022/04</option>
+                                                         <option>2022/03</option>
+                                                         <option>2022/02</option>
+                                                         <option>2022/01</option>
+                                                     </select>
+                                                     <span>과세</span>
+                                                 </li>
+                                                 <li>
+                                                     <p>할인 </p>
+                                                     <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                 </li>
+                                                 <li>
+                                                     <p>할인 명</p>
+                                                     <input type="text" class="inp_01 w_0_sp">
+                                                 </li>
+                                                 <li>
+                                                     <p>할인 률</p>
+                                                     <select name="" id="" class="select_01 w120px">
+                                                         <option>선택</option>
+                                                         <option>2022/10</option>
+                                                         <option>2022/09</option>
+                                                         <option>2022/08</option>
+                                                         <option>2022/07</option>
+                                                         <option>2022/06</option>
+                                                         <option>2022/05</option>
+                                                         <option>2022/04</option>
+                                                         <option>2022/03</option>
+                                                         <option>2022/02</option>
+                                                         <option>2022/01</option>
+                                                     </select>
+                                                     <input type="text" class="inp_01 w120px">
+                                                     <span>원</span>
+                                                 </li>
+                                                 <li>
+                                                     <p>할인 적용 기간</p>
+                                                     <div class="input_box w_0_sp">
+                                                         <span class="input datepickerRange">
+                                                             <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                             <span>~</span>
+                                                             <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                         </span>
+                                                     </div>
+                                                 </li>
+                                                 <li>
+                                                     <p>할인 적용 회차</p>
+                                                     <input type="text" class="inp_01 w120px">
+                                                     <span>회 할인적용</span>
+                                                 </li>
+                                             </ul>
+                                             <div class="flex_type_03 pd20_sp">
+                                                 <button class="button_type_01 mgR10 cancelBtn02">
+                                                     <span>취소</span>
+                                                 </button>
+                                                 <button class="button_type_02 saveBtn02">
+                                                     <span>확인</span>
+                                                 </button>
+                                             </div>
+                                         </div> 
+                                    </li>
+                                    <li>
+                                        <div class="subTable_line">
+                                            <span>반복성 과금</span>
+                                            <button class="button addBtn">
+                                                <i class="icon_add_01"></i>
+                                            </button>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line03">
+                                            <p>등록하세요.</p>
+                                        </div>
+                                        <div class="subTable_line03">
+                                            <p>등록하세요.</p>
+                                        </div>
+                                        <div class="subTable_line03">
+                                            <p>등록하세요.</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table_box_04_sc">
+                        <div class="tit">
+                            <p>Wi-FI 30일 무제한</p>
+                        </div>
+                        <div class="sub">
+                            <div class="subTit">
+                                <div class="subTit_text">
+                                    <button class="button_type_04 mgR10">
+                                       <span>정액상품</span>
+                                    </button>
+                                    <p class="mgR60 ">11/15/2022 ~ 11/15/2022</p>
+                                    <p class="mgR50">선불</p>
+                                    <button class="button_type_05">
+                                        <span>판매 가능</span>
+                                     </button>
+                                </div>
+                                <div class="subTit_btn">
+                                    <button class="button pen">
+                                        <i class="icon_pen"></i>
+                                    </button>
+                                    <button class="button">
+                                        <i class="icon_del_01"></i>
+                                    </button>
+                                    <button class="button underArrow">
+                                        <i class="icon_under_arrow"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="subTxt">
+                                <ul>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>상품 유형</p>
+                                            <span>정액</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 대상 국가</p>
+                                            <span>대한민국</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 통화</p>
+                                            <span>원</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>과금 주기</p>
+                                            <span>3개월</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비전 여부</p>
+                                            <span>예</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>프로비젼 URL</p>
+                                            <span>www.abce.com/eee/ddd/abcedfdfegfg.dmg</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 1</p>
+                                            <span>option1</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 2</p>
+                                            <span>option2</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 3</p>
+                                            <span>option3</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 4</p>
+                                            <span>option4</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="subInp">
+                                <ul>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>상품 유형</p>
+                                            <div class="inp_line">
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_01" checked> 
+                                                    <span class="rd_1_text">정액</span>
+                                                </label>
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_01"> 
+                                                    <span class="rd_1_text">단품</span>
+                                               </label>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 대상 국가</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>Repblic of Korea</option>
+                                                    <option>U.S.A</option>
+                                                    <option>India</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 통화</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>원</option>
+                                                    <option>달러</option>
+                                                    <option>유로</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>과금 주기</p>
+                                            <div class="inp_line">
+                                                <input type="text" class="inp_01 w120px" placeholder="3">
+                                                <select name="" id="" class="select_01 w123px">
+                                                    <option>시간</option>
+                                                    <option>일</option>
+                                                    <option>개월</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비전 여부</p>
+                                            <div class="inp_line">
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_02" checked> 
+                                                    <span class="rd_1_text">예</span>
+                                                </label>
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_02"> 
+                                                    <span class="rd_1_text">아니오</span>
+                                               </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>포로비전 URL</p>
+                                            <div class="inp_line">
+                                                <input type="text" class="inp_01" placeholder="www.abc.com">
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 1</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 2</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 3</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 4</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="flex_type_03 mgT30">
+                                            <button class="button_type_01 mgR10 cancelBtn">
+                                                <span>취소</span>
+                                            </button>
+                                            <button class="button_type_02 saveBtn">
+                                                <span>확인</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="subTable">
+                                <ul class="subTable_ul">
+                                    <li>
+                                        <div class="subTable_line">
+                                            <span>일회성 과금</span>
+                                            <button class="button addBtn">
+                                                <i class="icon_add_01"></i>
+                                            </button>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line02">
+                                           <div class="txt">
+                                            <p>
+                                                <span>무제한 가입비 Wi-FI</span>
+                                                10,000원 (과세) 
+                                            </p>
+                                            <p>
+                                                프로모션 할인 적용 (10/09/2019 - 09/09/2019) 500원 10회차
+                                            </p>
+                                           </div>
+                                           <div class="btn">
+                                               <button class="button"><i class="icon_pen btnPen"></i></button>
+                                               <button class="button"><i class="icon_del_01"></i></button>
+                                           </div>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <li>
+                                        <div class="subTable_line">
+                                            <span>반복성 과금</span>
+                                            <button class="button addBtn">
+                                                <i class="icon_add_01"></i>
+                                            </button>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line03">
+                                            <p>등록하세요.</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table_box_04_sc">
+                        <div class="tit">
+                            <p>Wi-FI 홈 무제한</p>
+                        </div>
+                        <div class="sub">
+                            <div class="subTit">
+                                <div class="subTit_text">
+                                    <button class="button_type_04 mgR10">
+                                       <span>단품상품</span>
+                                    </button>
+                                    <p class="mgR60 ">11/15/2022 ~ 11/15/2022</p>
+                                    <p class="mgR50">선불</p>
+                                    <button class="button_type_05">
+                                        <span>판매 가능</span>
+                                     </button>
+                                </div>
+                                <div class="subTit_btn">
+                                    <button class="button pen">
+                                        <i class="icon_pen"></i>
+                                    </button>
+                                    <button class="button">
+                                        <i class="icon_del_01"></i>
+                                    </button>
+                                    <button class="button underArrow">
+                                        <i class="icon_under_arrow"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="subTxt">
+                                <ul>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>상품 유형</p>
+                                            <span>정액</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 대상 국가</p>
+                                            <span>대한민국</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 통화</p>
+                                            <span>원</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>과금 주기</p>
+                                            <span>3개월</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비전 여부</p>
+                                            <span>예</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>프로비젼 URL</p>
+                                            <span>www.abce.com/eee/ddd/abcedfdfegfg.dmg</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 1</p>
+                                            <span>option1</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 2</p>
+                                            <span>option2</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 3</p>
+                                            <span>option3</span>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비젼 항목 4</p>
+                                            <span>option4</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="subInp">
+                                <ul>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>상품 유형</p>
+                                            <div class="inp_line">
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_01" checked> 
+                                                    <span class="rd_1_text">정액</span>
+                                                </label>
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_01"> 
+                                                    <span class="rd_1_text">단품</span>
+                                               </label>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 대상 국가</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>Repblic of Korea</option>
+                                                    <option>U.S.A</option>
+                                                    <option>India</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>판매 통화</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>원</option>
+                                                    <option>달러</option>
+                                                    <option>유로</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>과금 주기</p>
+                                            <div class="inp_line">
+                                                <input type="text" class="inp_01 w120px" placeholder="3">
+                                                <select name="" id="" class="select_01 w123px">
+                                                    <option>시간</option>
+                                                    <option>일</option>
+                                                    <option>개월</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>프로비전 여부</p>
+                                            <div class="inp_line">
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_02" checked> 
+                                                    <span class="rd_1_text">예</span>
+                                                </label>
+                                                <label class="rd_1">
+                                                    <input type="radio" name="radio_02"> 
+                                                    <span class="rd_1_text">아니오</span>
+                                               </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="txt_line">
+                                            <p>포로비전 URL</p>
+                                            <div class="inp_line">
+                                                <input type="text" class="inp_01" placeholder="www.abc.com">
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 1</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 2</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 3</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="txt_line">
+                                            <p>포로비전 항목 4</p>
+                                            <div class="inp_line">
+                                                <select name="" id="" class="select_01">
+                                                    <option>option1</option>
+                                                    <option>option2</option>
+                                                    <option>option3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="flex_type_03 mgT30">
+                                            <button class="button_type_01 mgR10 cancelBtn">
+                                                <span>취소</span>
+                                            </button>
+                                            <button class="button_type_02 saveBtn">
+                                                <span>확인</span>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="subTable">
+                                <ul class="subTable_ul">
+                                    <li>
+                                        <div class="subTable_line">
+                                            <span>일회성 과금</span>
+                                            <button class="button addBtn">
+                                                <i class="icon_add_01"></i>
+                                            </button>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line02">
+                                           <div class="txt">
+                                            <p>
+                                                <span>무제한 가입비 Wi-FI</span>
+                                                10,000원 (과세) 
+                                            </p>
+                                            <p>
+                                                프로모션 할인 적용 (10/09/2019 - 09/09/2019) 500원 10회차
+                                            </p>
+                                           </div>
+                                           <div class="btn">
+                                               <button class="button"><i class="icon_pen btnPen"></i></button>
+                                               <button class="button"><i class="icon_del_01"></i></button>
+                                           </div>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <li>
+                                        <div class="subTable_line">
+                                            <span>반복성 과금</span>
+                                            <button class="button addBtn">
+                                                <i class="icon_add_01"></i>
+                                            </button>
+                                        </div>
+                                        <div class="subTable_dropdown">
+                                            <ul>
+                                                <li>
+                                                    <p>과금명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>요율</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>청구 항목</p>
+                                                    <select name="" id="" class="select_01 w300px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <span>과세</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 </p>
+                                                    <button class="switchBtn"><i class="icon_switch"></i></button>
+                                                </li>
+                                                <li>
+                                                    <p>할인 명</p>
+                                                    <input type="text" class="inp_01 w_0_sp">
+                                                </li>
+                                                <li>
+                                                    <p>할인 률</p>
+                                                    <select name="" id="" class="select_01 w120px">
+                                                        <option>선택</option>
+                                                        <option>2022/10</option>
+                                                        <option>2022/09</option>
+                                                        <option>2022/08</option>
+                                                        <option>2022/07</option>
+                                                        <option>2022/06</option>
+                                                        <option>2022/05</option>
+                                                        <option>2022/04</option>
+                                                        <option>2022/03</option>
+                                                        <option>2022/02</option>
+                                                        <option>2022/01</option>
+                                                    </select>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>원</span>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 기간</p>
+                                                    <div class="input_box w_0_sp">
+                                                        <span class="input datepickerRange">
+                                                            <input type="text" value="" class="inp_02 datepicker startDate from0 w120px">
+                                                            <span>~</span>
+                                                            <input type="text" value="" class="inp_02 datepicker endDate to0 w120px">
+                                                        </span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>할인 적용 회차</p>
+                                                    <input type="text" class="inp_01 w120px">
+                                                    <span>회 할인적용</span>
+                                                </li>
+                                            </ul>
+                                            <div class="flex_type_03 pd20_sp">
+                                                <button class="button_type_01 mgR10 cancelBtn02">
+                                                    <span>취소</span>
+                                                </button>
+                                                <button class="button_type_02 saveBtn02">
+                                                    <span>확인</span>
+                                                </button>
+                                            </div>
+                                        </div> 
+                                        <div class="subTable_line03">
+                                            <p>등록하세요.</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

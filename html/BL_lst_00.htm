@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청구 작업 목록</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script></script>
+<body>
+    <div class="wrap haveAside">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/BL_lst_00.htm">작업 관리</a>
+                <span> > </span>
+                <a href="../html/BL_lst_00">청구 작업 목록</a>
+            </div>
+            <div class="section_tit">
+                <h3>청구 작업 정보</h3>
+            </div>
+            <div class="type_05_wrap special">
+                <div class="txt">
+                    <div class="selectBox flex">
+                        <select name="" id="" class="select_01">
+                            <option>2022/11</option>
+                            <option>2022/10</option>
+                            <option>2022/09</option>
+                            <option>2022/08</option>
+                            <option>2022/07</option>
+                            <option>2022/06</option>
+                            <option>2022/05</option>
+                            <option>2022/04</option>
+                            <option>2022/03</option>
+                            <option>2022/02</option>
+                            <option>2022/01</option>
+                        </select>
+                        <div class="icon_wrap">
+                            <button><i class="icon_aroow_left_S"></i></button>
+                            <button><i class="icon_aroow_right_S"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="type_05">
+                    <div class="pg_text">
+                        <p>1 - 100</p>
+                        <span>of</span>
+                        <p>1000</p>
+                    </div>
+                    <div class="pg_number">
+                        <ul>
+                            <li>
+                                <button><i class="icon_aroow_left_L"></i></button>
+                            </li>
+                            <li>
+                                <button><i class="icon_aroow_left_S"></i></button>
+                            </li>
+                            <li class="active">
+                                <button>1</button>
+                            </li>
+                            <li>
+                                <button>2</button>
+                            </li>
+                            <li>
+                                <button>3</button>
+                            </li>
+                            <li>
+                                <button>4</button>
+                            </li>
+                            <li>
+                                <button>5</button>
+                            </li>
+                            <li>
+                                <button><i class="icon_aroow_right_S"></i></button>
+                            </li>
+                            <li>
+                                <button><i class="icon_aroow_right_L"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pg_list">
+                        <select>
+                            <option>100 row</option>
+                            <option>200 row</option>
+                            <option>300 row</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="table_type_01">
+                <table>
+                    <colgroup>
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button>
+                                    <span>청구 일</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>작업 관리 번호</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>작업 구분</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>작업 시작 일시</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>작업 종료 일시</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>작업 대상 건 수</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>성공 건 수</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>실패 건 수</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>관리</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022/11/15</td>
+                            <td>000000004</td>
+                            <td>청구 작업</td>
+                            <td>2022/11/15 00:00</td>
+                            <td>2022/11/15 00:00</td>
+                            <td class="txtLift">100</td>
+                            <td class="txtLift">97</td>
+                            <td>
+                                <span class="colorRed01">3</span>
+                                <button class="payment" onclick="javascript:openModal('../html/BL_lst_00_popup_00.htm', 'BL_lst_00_popup_00', '', '800')"><i class="icon_payment"></i>
+                                </button>
+                            </td>    
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2022/11/15</td>
+                            <td>000000004</td>
+                            <td>청구 작업</td>
+                            <td>2022/11/15 00:00</td>
+                            <td>2022/11/15 00:00</td>
+                            <td class="txtLift">100</td>
+                            <td class="txtLift">100</td>
+                            <td>-</td>   
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2022/11/15</td>
+                            <td>000000004</td>
+                            <td>청구 작업</td>
+                            <td>2022/11/15 00:00</td>
+                            <td>2022/11/15 00:00</td>
+                            <td class="txtLift">100</td>
+                            <td class="txtLift">100</td>
+                            <td>-</td>  
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2022/11/15</td>
+                            <td>000000004</td>
+                            <td>청구 작업</td>
+                            <td>2022/11/15 00:00</td>
+                            <td>2022/11/15 00:00</td>
+                            <td class="txtLift">100</td>
+                            <td class="txtLift">100</td>
+                            <td>-</td> 
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2022/11/15</td>
+                            <td>000000004</td>
+                            <td>청구 작업</td>
+                            <td>2022/11/15 00:00</td>
+                            <td>2022/11/15 00:00</td>
+                            <td class="txtLift">100</td>
+                            <td class="txtLift">97</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <aside>
+            <div class="stickyNote_type_1">
+                <div class="tickyNote_tit">
+                    <h5>청구 작업 현황</h5>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>발송 완료/예정 건</p>
+                    <span>00</span>
+                    <em>건 /</em>
+                    <span>00</span>
+                    <em>건</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>총 청구 금액</p>
+                    <span>999,999</span>
+                    <em>원(₩)</em>
+                </div>
+            </div>
+            <div class="stickyNote_type_1">
+                <div class="tickyNote_tit">
+                    <h5>수납 작업 현황</h5>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>수납/미납 건</p>
+                    <span>00</span>
+                    <em>건 /</em>
+                    <span>00</span>
+                    <em>건</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>수납 금액</p>
+                    <span>999,999</span>
+                    <em>원(₩)</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>미납 금액</p>
+                    <span>999,999</span>
+                    <em>원(₩)</em>
+                </div>
+            </div>
+            <div class="stickyNote_type_1">
+                <div class="tickyNote_tit">
+                    <h5>재 입금 요청 작업 현황</h5>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>재 요청 건/미납 건</p>
+                    <span>00</span>
+                    <em>건 /</em>
+                    <span>00</span>
+                    <em>건</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>재 요청 금액</p>
+                    <span>999,999</span>
+                    <em>원(₩)</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>미납 금액</p>
+                    <span>999,999</span>
+                    <em>원(₩)</em>
+                </div>
+            </div>
+         
+
+        </aside>
+    </div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자설정- Trouble관리</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script></script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../">관리자 설정</a>
+                <span> > </span>
+                <a href="../html/TB_lst_01.htm">Trouble 관리</a>
+            </div>
+            <div class="section_tit">
+                <h3>Trouble 관리</h3>
+            </div>
+            <div class="table_wrap mgT30 grid_70_30">
+                <div class="table_70 h660px">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <div class="type_04 mgT0">
+                                <div class="searchBar_wrap">
+                                    <div class="searchBar">
+                                        <input type="text" class="type_01">
+                                        <div class="searchIcon">
+                                            <i class="icon_search"></i>
+                                        </div>
+                                        <div class="fitterBtn">
+                                            <button class="filter">
+                                                <i class="icon_filter"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="dropDown_wrap">
+                                        <ul>
+                                            <li>
+                                                <label for="name">트러블 항목</label>
+                                                <input type="text" id="name" class="inp_01">
+                                            </li>
+                                            <li>
+                                                <label for="name2">트러블 코멘트</label>
+                                                <input type="text" id="name2" class="inp_01">
+                                            </li>
+                                            <li>
+                                                <label for="name3">등록자</label>
+                                                <input type="text" id="name3" class="inp_01">
+                                            </li>
+                                            <li>
+                                                <label for="name3">담당자</label>
+                                                <input type="text" id="name3" class="inp_01">
+                                            </li>
+                                            <li>
+                                                <p>등록 일시</p>
+                                                <div class="input_box">
+                                                    <span class="input datepickerRange">
+                                                        <input type="text" value="" class="inp_02 datepicker startDate from0">
+                                                        <span>~</span>
+                                                        <input type="text" value="" class="inp_02 datepicker endDate to0">
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>접수/처리 일시</p>
+                                                <div class="input_box">
+                                                    <span class="input datepickerRange">
+                                                        <input type="text" value="" class="inp_02 datepicker startDate from0">
+                                                        <span>~</span>
+                                                        <input type="text" value="" class="inp_02 datepicker endDate to0">
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="right">
+                                                <div class="dropDownBtn_wrap">
+                                                    <div class="searchBtn">
+                                                        <button>
+                                                            <i class="icon_search"></i>
+                                                            <span>Search</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="searchBtn">
+                                    <button class="button_type_01">
+                                        <span>Search</span>
+                                    </button>
+                                </div>
+                                <div class="reset">
+                                    <button class="reset_btn">
+                                        <i class="icon_reset"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="type_05">
+                                <div class="pg_text">
+                                    <p>1 - 100</p>
+                                    <span>of</span>
+                                    <p>1000</p>
+                                </div>
+                                <div class="pg_number">
+                                    <ul>
+                                        <li>
+                                            <button><i class="icon_aroow_left_L"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_left_S"></i></button>
+                                        </li>
+                                        <li class="active">
+                                            <button>1</button>
+                                        </li>
+                                        <li>
+                                            <button>2</button>
+                                        </li>
+                                        <li>
+                                            <button>3</button>
+                                        </li>
+                                        <li>
+                                            <button>4</button>
+                                        </li>
+                                        <li>
+                                            <button>5</button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_S"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_L"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pg_list">
+                                    <select>
+                                        <option>100 row</option>
+                                        <option>200 row</option>
+                                        <option>300 row</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_type_02">
+                            <table>
+                                <colgroup>
+                                    <col style="">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>Trouble 항목</th>
+                                        <th>코멘트</th>
+                                        <th class="txtLift">등록 일시</th>
+                                        <th>파트너사</th>
+                                        <th>등록자</th>
+                                        <th>상태</th>
+                                        <th>담당자</th>
+                                        <th>접수/처리 일시</th>
+                                        <th>접수/처리 코멘트</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>서비스 장애</td>
+                                        <td class="ellipsis">18:00시부터 30분동안 서비스 접수되었습니다</td>
+                                        <td>11/30/2022</td>
+                                        <td>(주)xxx</td>
+                                        <td>홍길동</td>
+                                        <td>완료</td>
+                                        <td>관리자</td>
+                                        <td>10/11/2019</td>
+                                        <td class="ellipsis">조치 완료 되었습니다</td>
+                                    </tr>
+                                    <tr>
+                                        <td>서비스 장애</td>
+                                        <td class="ellipsis">18:00시부터 30분동안 서비스 접수되었습니다</td>
+                                        <td>11/30/2022</td>
+                                        <td>(주)xxx</td>
+                                        <td>홍길동</td>
+                                        <td>완료</td>
+                                        <td>관리자</td>
+                                        <td>10/11/2019</td>
+                                        <td class="ellipsis">조치 완료 되었습니다</td>
+                                    </tr>
+                                    <tr>
+                                        <td>서비스 장애</td>
+                                        <td class="ellipsis">18:00시부터 30분동안 서비스 접수되었습니다</td>
+                                        <td>11/30/2022</td>
+                                        <td>(주)xxx</td>
+                                        <td>홍길동</td>
+                                        <td>완료</td>
+                                        <td>관리자</td>
+                                        <td>10/11/2019</td>
+                                        <td class="ellipsis">조치 완료 되었습니다</td>
+                                    </tr>
+                                    <tr>
+                                        <td>서비스 장애</td>
+                                        <td class="ellipsis">18:00시부터 30분동안 서비스 접수되었습니다</td>
+                                        <td>11/30/2022</td>
+                                        <td>(주)xxx</td>
+                                        <td>홍길동</td>
+                                        <td>완료</td>
+                                        <td>관리자</td>
+                                        <td>10/11/2019</td>
+                                        <td class="ellipsis">조치 완료 되었습니다</td>
+                                    </tr>
+                                    <tr>
+                                        <td>서비스 장애</td>
+                                        <td class="ellipsis">18:00시부터 30분동안 서비스 접수되었습니다</td>
+                                        <td>11/30/2022</td>
+                                        <td>(주)xxx</td>
+                                        <td>홍길동</td>
+                                        <td>완료</td>
+                                        <td>관리자</td>
+                                        <td>10/11/2019</td>
+                                        <td class="ellipsis">조치 완료 되었습니다</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table_30 h660px">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <h5>상세정보</h5>
+                            <button class="button">
+                                <i class="icon_add_02"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table_box_07">
+                        <ul>
+                            <li class="pdT0">
+                                <p>파트너 사</p>
+                                <span>(주) 000</span>
+                            </li>
+                            <li>
+                                <p>등록자</p>
+                                <span>홍길동</span>
+                            </li>
+                            <li>
+                                <p>Trouble 항목</p>
+                                <span>서비스 장애</span>
+                            </li>
+                            <li>
+                                <p>Trouble 코멘트</p>
+                                <span>18:00부터 30분동안 서비스 접속 안됨.</span>
+                            </li>
+                            <li>
+                                <p>상태</p>
+                                <select name="" id="" class="select_01">
+                                    <option>선택</option>
+                                    <option>option1</option>
+                                    <option>option2</option>
+                                    <option>option3</option>
+                                </select>
+                            </li>
+                            <li>
+                                <p>접수/처리 코멘트</p>
+                                <input type="text" class="inp_01">
+                            </li>
+                        </ul>
+                        <div class="last_btn">
+                            <div class="cancel_btn mgR10">
+                                <a href="">접수</a>
+                            </div>
+                            <div class="save_btn">
+                                <a href="">처리</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+           
+
+        </section>
+    </div>
+</body>
+</html>

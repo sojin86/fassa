@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일 설정</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/PC_vw_00.htm">설정 지원 관리</a>
+                <span> > </span>
+                <a href="../html/EM_add_00.htm">이메일 설정</a>
+            </div>
+            <div class="section_tit">
+                <h3>이메일 설정</h3>
+            </div>
+            <div class="table_box_wrap mgT30 inline">
+                <div class="table_box_03 pd30">
+                    <ul>
+                        <li class="pdT0">
+                            <p>보내는 메일 주소 설정
+                                <span class="colorBlue01">*</span>
+                            </p>
+                            <div class="inpTxT">
+                                <input type="text" class="inp_01 w380px pdR40">
+                                <button onclick="javascript:openModal('../html/EM_pop_00.htm', 'EM_pop_00', '', '630')">테스트</button>
+                            </div>
+                        </li>
+                        <li>
+                            <p>회원 정보 등록 및 셀프케어 안내</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                        <li>
+                            <p>상품 가입 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                        <li>
+                            <p>가입 상품 해지 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                        <li>
+                            <p>결제 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                        <li>
+                            <p>대납 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>  
+                        <li>
+                            <p>탈퇴 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                        <li>
+                            <p>청구서 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                        <li>
+                            <p>미납 발송</p>
+                            <button class="button_type_07" onclick="javascript:openModal('../html/EM_pop_01.htm', 'EM_pop_01', '', '820')">보기/다운로드</button>
+                        </li>
+                    </ul>
+                    <div class="flex_type_03 mgT30">
+                        <div class="cancel_btn mgR10">
+                            <a href="../html/EM_vw_00.htm">취소</a>
+                        </div>
+                        <div class="save_btn">
+                            <a href="../html/EM_vw_00.htm">저장</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

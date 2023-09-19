@@ -1,0 +1,829 @@
+<html lang="ko"><!--<![endif]--><head>
+<meta charset="utf-8">
+
+<title>퍼블리싱 작업 현황 리스트 (UI확인용)</title>
+
+<!-- common -->
+<!--<link rel="stylesheet" type="text/css" href="../css/css.css">-->
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="../js/html5shiv.min.js"></script>
+	<script type="text/javascript" src="../js/respond.js"></script>
+	<script tyep="text/javascript" src="../js/plugins/jquery-1.9.1.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../css/import.css">
+<script type="text/javascript" src="../js/plugins/jquery-3.6.0.js"></script>
+
+<!-- //공통 부분 -->
+
+<style type="text/css">
+	body,html {font-size:12px; background:#ffffff;}
+	h1 {padding:20px; font-size:16px; font-weight: 600; background:#3b4152; border-bottom:2px solid #00cccb; line-height:1.0em; color:#ffffff;}
+	.codeList > ul {padding-bottom:50px;}
+	.codeList ul {margin:20px; width:97%; line-height:14px; font-size:13px;}
+	.codeList ul li {clear:both; display:table; width:100%; border-bottom:1px solid #f1f1f1;}
+	.codeList ul li:hover {color:#000; font-weight:bold; background:#f1f1f1;}
+	.codeList ul li.ulHead {background:#f1f1f1; border-color:#aaa;}
+	.codeList ul li span {display:table-cell;padding:5px ; border-right:1px solid #f1f1f1; font-size:12px; word-break:break-all;}
+	.codeList ul li span:nth-child(1) {width:280px;}
+	.codeList ul li span:nth-child(2) {width:150px;}
+	/*.codeList ul li span.name {width:360px;}*/
+	.codeList ul li span.link {cursor:pointer; width:200px;}
+	.codeList ul li span.ex {color:#333; font-size:11px; width:350px;}
+	.codeList ul li span.end {width:60px;}
+	.codeList ul li span.date {font-weight:bold; width:80px; text-align:center;}
+	.codeList ul li span.date:before {display:none;}
+	.codeList ul li span.etc {border-right:none; position:relative;}
+
+	.codeList ul li span.etc > ul {display:block; position:absolute; left:2px; top:0px; padding:0; margin:0; height:25px; overflow:hidden;}
+	.codeList ul li span.etc ul li {padding:5px; border:none;}
+	.codeList ul li span.etc ul li {font-size:12px;}
+	.codeList ul li span.etc ul li strong {padding-right:5px;}
+	.codeList ul li span.etc ul:hover {border:1px solid #aaa; background:#f5f5f5; position:absolute; z-index:10; height:auto; margin-left:10px; box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+	.codeList ul li span.etc ul:hover li {border-bottom:1px solid #d7d7d7;}
+	.codeList ul li.wait span,
+	.codeList ul li.wait span a{color:rgb(255, 255, 255); background:rgb(68, 72, 84);}
+	.codeList ul li a {color:#000; font-size:12px; word-break:all;}
+	.codeList ul li.ulHead span.ex {color:#000 !important; font-size:12px;}
+    ul.line {margin: 0;border-top: 2px solid #000;}
+	.tab {border-bottom:1px solid #aaa; display:block; clear:both; margin:20px 15px; line-height:1.0em;}
+	.tab li {display:inline-block; position:relative;}
+	.tab li a {display:block; border:1px solid #aaa; border-bottom:0; padding:10px 10px; font-size:12px; line-height:16px;}
+	.tab li.active a {background:#3b4152; color:#fff; border-color:#3b4152;}
+
+	.tab li a span.new {display:inline-block; width:16px; height:16px; background:red; color:#fff; font-weight:600; margin-left:3px; text-align:center;}
+	.tab li a span.new {display:none;}
+	.tab li a span.new.open {display:inline-block;}
+	body:after {display:none;}
+	li.section{border-top:1px solid #000000;}
+</style>
+
+<script type="text/javascript">
+
+	var date = '2022.12.01 - 06';/////////////////
+
+	$(document).ready(function(){
+		$('.codeList span.link').each(function() {
+			var url = $(this).text();
+			var type = $(this).data('type');
+			$(this).wrapInner('<a href="#"></a>');
+
+			if (type == 'modal'){
+				$(this).children('a').attr("href", '');
+
+			} else if(type == 'inc') {
+				$(this).children('a').removeAttr("href");
+				$(this).children('a').attr("title","inc파일입니다");
+				$(this).children('a').append("<strong>&nbsp;&nbsp;(inculde파일)</strong>");
+			} else {
+				$(this).children('a').attr("href", url);
+				$(this).children('a').attr("target", '_blank');
+			}				
+		});
+	});
+
+	$(document).on("click", ".codeList span.link>a", function(){
+		var parent = $(this).parent('span');
+		var type = parent.data('type');
+		var width = parent.data('width');
+
+		var url = $(this).text();
+
+		if (type == 'modal'){
+			var win = window.open('index.html');
+			$(win).on('load', function() {
+				win.commonPopup(url, '', width);
+			});
+			
+		} else {
+			return;
+		}
+
+	});
+
+
+	$(document).on("click", "ul.tab>li>a", function(){
+		var parent = $(this).parent('li');
+		var tagetId = $(this).attr('name');
+		parent.siblings('li').removeClass('active');
+		parent.addClass('active');
+		$('body').find('.codeList').css('display','none');
+		$('#' + tagetId).css('display','block');
+
+	});
+
+	$(document).ready(function(){
+		$('.codeList li span.end').each(function() {
+			var text = $(this).text();
+			if (text == '완성') {
+				$(this).css( {'background':'red',	  'color':'#fff',	'font-weight':'bold'});
+			} else if (text == '수정') {
+				$(this).css( {'background':'orange',  'color':'#fff',	'font-weight':'bold'});
+			} else if (text == '삭제') {
+				$(this).css( {'background':'#e6e6e6',  'color':'#000',	'font-weight':'bold'});
+			} else if (text == '완성') {
+				$(this).css( {'background':'blue',  'color':'#fff',	'font-weight':'bold'});
+			} else if (text == '예정') {
+				$(this).css({'background' : 'rgb(40, 163, 163)', 'color' : '#fff'});
+			}			
+		});
+
+		$('.codeList li span.date').each(function() {
+			var text = $(this).text();
+			if (text == date) {
+				$(this).css( {'background':'black',   'color':'#fff',   'font-weight':'bold'});
+			}
+		});
+	});
+
+	$(document).ready( function(){
+		var $active = $('.tab > li.active');
+		var name = $active.find('a').attr('name');
+
+		$('.codeList').hide();
+		$('#' + name).show();
+
+		$('span.new').removeClass('open');
+		$('.codeList span.date').each(function() {
+			var text = $(this).text();			
+			if (text == date) {
+				var parents = $(this).parents('.codeList').attr('id');				
+				$('.' + parents).find('span.new').addClass('open');
+				return;
+			} 	
+		});
+	});
+</script>
+</head>
+
+<body class="" style="min-width:1280px;">
+    <h1>퍼블리싱 작업 현황 리스트 (UI확인용)1111</h1>
+    <ul class="tab">
+        <li class="active"><a href="#" class="inc_01" name="inc_01">메인<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_02" name="inc_02">고객 관리<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_03" name="inc_03">상품 관리<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_04" name="inc_04">청구 관리<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_05" name="inc_05">작업 관리<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_06" name="inc_06">설정<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_07" name="inc_07">관리자 설정<span class="new open">N</span></a></li>
+        <li class=""><a href="#" class="inc_20" name="inc_20">css & js<span class="new">N</span></a></li>
+        <li class=""><a href="#" class="inc_21" name="inc_21">images<span class="new">N</span></a></li>
+        <li class=""><a href="#" class="inc_22" name="inc_22">include<span class="new">N</span></a></li>
+    </ul>
+
+    <!-- 펀드 컨텐츠(pc, mobile) -->
+    <div id="inc_01" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>메인</span>
+                <span class="link"><a href="../html/MD_db_00.htm" target="_blank">MD_db_00.htm</a></span>
+                <span class="ex">로그인</span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul>
+                        <li><strong>스크롤 없애기</strong></li>
+                    </ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_02" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>고객 현황</span>
+                <span class="link"><a href="../html/AC_db_00.htm" target="_blank">AC_db_00.htm</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.03</span>
+                <span class="etc">
+                    <ul>
+                        <li><strong>수정사항 변경</strong></li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>고객 목록</span>
+                <span class="link"><a href="../html/AC_lst_00.htm" target="_blank">AC_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.01</span>
+                <span class="etc">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>고객 목록 - 고객등록</span>
+                <span class="link"><a href="../html/AC_add_00.htm" target="_blank">AC_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.02</span>
+                <span class="etc">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>고객 목록 - 고객정보</span>
+                <span class="link"><a href="../html/AC_vw_00.htm" target="_blank">AC_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul>
+                        <li>
+                            <strong>라디오 박스 text 수정, 
+                                table 선수정, 요금조정 버튼색 변경, section 크기 조정,
+                                pen 클릭시 하나만 열리기, 파일 이름 넣기
+                            </strong>
+                        </li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>가입 목록</span>
+                <span class="link"><a href="../html/SB_lst_00.htm" target="_blank">SB_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.08</span>
+                <span class="etc">
+                    <ul>
+                        
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>구매 목록</span>
+                <span class="link"><a href="../html/PC_lst_00.htm" target="_blank">PC_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.08</span>
+                <span class="etc">
+                    <ul>
+                        
+                    </ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_03" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>상품 목록</span>
+                <span class="link"><a href="../html/PD_lst_00.htm" target="_blank">PD_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul>
+                        <li>
+                            <strong>버튼을 span으로 변경, +아이콘 위치 수정</strong>
+                        </li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>상품 등록</span>
+                <span class="link"><a href="../html/PD_add_00.htm" target="_blank">PD_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul>
+                        <li>
+                            <strong>취소 버튼 링크 수정</strong>
+                        </li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>상세보기</span>
+                <span class="link"><a href="../html/PD_vw_00.htm" target="_blank">PD_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul>
+                       
+                    </ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_04" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>청구 현황</span>
+                <span class="link"><a href="../html/BL_db_00.htm" target="_blank">BL_db_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.10</span>
+                <span class="etc">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>조정 목록</span>
+                <span class="link"><a href="../html/AJ_lst_00.htm" target="_blank">AJ_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.10</span>
+                <span class="etc">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>수납 목록</span>
+                <span class="link"><a href="../html/PP_lst_00.htm" target="_blank">PP_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.10</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>미납 목록</span>
+                <span class="link"><a href="../html/UP_lst_00.htm" target="_blank">UP_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.10</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>PG결제목록</span>
+                <span class="link"><a href="../html/PM_lst_00.htm" target="_blank">PM_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.10</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_05" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>청구작업목록</span>
+                <span class="link"><a href="../html/BL_lst_00.htm" target="_blank">BL_lst_00.htm</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.15</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>자동결제목록</span>
+                <span class="link"><a href="../html/PM_lst_01.htm" target="_blank">PM_lst_01.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.15</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_06" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>파트너계약정보</span>
+                <span class="link"><a href="../html/PC_vw_00.htm" target="_blank">PC_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.22 - 24</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>파트너서비스설정</span>
+                <span class="link"><a href="../html/PS_add_00.htm" target="_blank">PS_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>파트너서비스설정-수정</span>
+                <span class="link"><a href="../html/PS_vw_00.htm" target="_blank">PS_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>화폐단위설정</span>
+                <span class="link"><a href="../html/BI_add_00.htm" target="_blank">BI_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>화폐단위설정-수정</span>
+                <span class="link"><a href="../html/BI_vw_00.htm" target="_blank">BI_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>청구항목설정</span>
+                <span class="link"><a href="../html/BI_add_01.htm" target="_blank">BI_add_01.html</a></span>
+                <span class="ex"></span>
+                <span class="end">수정</span>
+                <span class="date">2022.11.30</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>청구항목설정-수정</span>
+                <span class="link"><a href="../html/BI_vw_01.htm" target="_blank">BI_vw_01.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>이메일설정</span>
+                <span class="link"><a href="../html/EM_add_00.htm" target="_blank">EM_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.22 - 24</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>이메일설정-수정</span>
+                <span class="link"><a href="../html/EM_vw_00.htm" target="_blank">EM_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>Trouble관리</span>
+                <span class="link"><a href="../html/TB_lst_00.htm" target="_blank">TB_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.29 - 30</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>알림설정</span>
+                <span class="link"><a href="../html/AL_add_00.htm" target="_blank">AL_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.22 - 24</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>알림설정-수정</span>
+                <span class="link"><a href="../html/AL_vw_00.htm" target="_blank">AL_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>파트너공통코드설정</span>
+                <span class="link"><a href="../html/PC_add_00.htm" target="_blank">PC_add_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.22 - 24</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>파트너공통코드설정-수정</span>
+                <span class="link"><a href="../html/PC_vw_03.htm" target="_blank">PC_vw_03.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_07" class="codeList" style="">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>파트너 계약 정보</span>
+                <span class="link"><a href="../html/PC_lst_01.htm" target="_blank">PC_lst_01.htm</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>파트너 계약정보-등록</span>
+                <span class="link"><a href="../html/PC_add_01.htm" target="_blank">PC_add_01</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.25 - 28</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>Trouble 관리</span>
+                <span class="link"><a  href="../html/TB_lst_01.htm" target="_blank">TB_lst_01</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.11.29 - 30</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>계정관리</span>
+                <span class="link"><a href="../html/AM_lst_00.htm" target="_blank">AM_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.12.01 - 06</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>계정 그룹 관리</span>
+                <span class="link"><a href="../html/AG_lst_00.htm" target="_blank">AG_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.12.01 - 06</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>그룹별 권환 관리</span>
+                <span class="link"><a href="../html/GR_vw_00.htm"  target="_blank">GR_vw_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.12.01 - 06</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>PG관리</span>
+                <span class="link"><a href="../html/PG_lst_00.htm" target="_blank">PG_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.12.01 - 06</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>메뉴관리</span>
+                <span class="link"><a href="../html/MN_lst_00.htm" target="_blank">MN_lst_00.html</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.12.07 - 08</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+            <li>
+                <span>공통코드설정</span>
+                <span class="link"><a href="../html/CC_lst_00.htm"" target="_blank">CC_lst_00.htm</a></span>
+                <span class="ex"></span>
+                <span class="end">완성</span>
+                <span class="date">2022.12.07 - 08</span>
+                <span class="etc">
+                    <ul><li></li></ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div id="inc_08" class="codeList" style="">
+        <ul>
+
+        </ul>
+    </div>
+    <div id="inc_09" class="codeList" style="">
+        <ul>
+           
+        </ul>
+    </div>
+
+    <!---------------->
+    <!---------------->
+    <!---------------->
+    <!-------css--------->
+    <div id="inc_20" class="codeList">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+
+            <li>
+                <span>css파일 </span>
+                <span class="link"><a href="../css/amb_ui.css" target="_blank">../css/amb_ui.css</a></span>
+                <span class="ex">컨텐츠 제어 css 수정이 많이 되는 파일</span>
+                <span class="end">수정</span>
+                <span class="date"></span>
+                <span class="etc">
+                    <ul>
+                    </ul>
+                </span>
+            </li>
+            <ul class="line">
+                <li>
+                    <span>js파일 </span>
+                    <span class="link"><a href="../js/amb_ui_common.js" target="_blank" charset="UTF-8">../js/amb_ui_common.js</a></span>
+                    <span class="ex">컨텐츠 제어 js 수정이 많이 되는 파일</span>
+                    <span class="end">예정</span>
+                    <span class="date">2019.11.27</span>
+                    <span class="etc">
+                        <ul>
+                        </ul>
+                    </span>
+                </li>
+                <li>
+                    <span>js파일 </span>
+                    <span class="link"><a href="../js/plugins/bootstrap.js" target="_blank" charset="UTF-8">../js/plugins/bootstrap.js</a></span>
+                    <span class="ex">bootstrap js 파일</span>
+                    <span class="end">예정</span>
+                    <span class="date">2019.08.09</span>
+                    <span class="etc">
+                        <ul>
+                            
+                        </ul>
+                    </span>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <!-------images--------->
+    <div id="inc_21" class="codeList">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>이미지 파일</span>
+                <span class="link"><a href="../img/이하" target="_blank">../img/이하</a></span>
+                <span class="ex">모바일화면에 공통으로 필요한 이미지</span>
+                <span class="end">수정</span>
+                <span class="date">2020.03.25</span>
+                <span class="etc">
+                    <ul>
+                       
+                    </ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <!-------include--------->
+    <div id="inc_22" class="codeList">
+        <ul>
+            <li class="ulHead">
+                <span>구분</span>
+                <span class="link"><a href="파일명" target="_blank">파일명</a></span>
+                <span class="ex">설명</span>
+                <span class="end">작업현황</span>
+                <span class="date">최종 수정일</span>
+                <span class="etc">비고</span>
+            </li>
+            <li>
+                <span>인쿠르드 파일</span>
+                <span class="link"><a href="../html/include.htm" target="_blank">../html/include.htm</a></span>
+                <span class="ex">Header Nav에 해당하는 css js파일</span>
+                <span class="end">완성</span>
+                <span class="date">2022.10.26</span>
+                <span class="etc">
+                    <ul>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <span>인쿠르드 파일</span>
+                <span class="link"><a href="../html/common.htm" target="_blank">../html/common.htm</a></span>
+                <span class="ex">Header Nav에 해당하는 공통 파일</span>
+                <span class="end">완성</span>
+                <span class="date">2022.10.26</span>
+                <span class="etc">
+                    <ul>
+                    </ul>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <!---------------->
+    <!---------------->
+    <!---------------->
+    <!---------------->
+    <!---------------->
+
+
+
+
+
+
+
+</body>
+</html>

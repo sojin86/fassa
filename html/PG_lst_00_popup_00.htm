@@ -1,0 +1,125 @@
+<div id="PG_lst_00_popup_00" class="modalPopup modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal_header">
+                <h5>고객 검색</h5>
+                <a class="close" onclick="javascript:closeModal(this);">
+                    <i class="icon_close"></i>
+                </a>
+            </div>
+            <div class="inp_hd">
+                <div class="searchBar">
+                    <div class="searchIcon">
+                        <i class="icon_search"></i>
+                    </div>
+                    <input type="text" class="type_01">
+                    <span>Total 20</span>
+                </div>
+            </div>
+
+            <div class="modal_body">
+                <div class="table_type_03">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 60%;">
+                        </colgroup>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구 학동로 304 금하빌딩 7층 엔텔스 엔텔스 엔텔스 엔텔스
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구 학동로 304 금하빌딩 7층 엔텔스 엔텔스 엔텔스 엔텔스
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구 학동로 304 금하빌딩 7층 엔텔스 엔텔스 엔텔스 엔텔스
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구 학동로 304 금하빌딩 7층 엔텔스 엔텔스 엔텔스 엔텔스
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구 학동로 304 금하빌딩 7층 엔텔스 엔텔스 엔텔스 엔텔스
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                            <tr class="poupTr">
+                                <td>홍길동</td>
+                                <td>765434</td>
+                                <td class="txtLift ellipsis">서울시 강남구
+                                    <i class="checkIcon"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="cancel_btn02">
+                    <button class="close" onclick="javascript:closeModal(this);">선택 취소</button>
+                </div>
+                <div class="save_btn mgL10">
+                    <button class="close" onclick="javascript:closeModal(this);" >선택</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".poupTr").click(function(){
+        sibling = $(this).siblings("tr");
+        sibling.removeClass("clickTr");
+        $(this).addClass("clickTr");
+    });
+</script>
+

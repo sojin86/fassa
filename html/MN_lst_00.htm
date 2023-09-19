@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 관리</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script></script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../">관리자 설정</a>
+                <span> > </span>
+                <a href="../html/MN_lst_00.htm">메뉴 관리</a>
+            </div>
+            <div class="section_tit">
+                <h3>메뉴 관리</h3>
+            </div>
+            <div class="table_wrap mgT30 grid_30_70">
+                <div class="table_50_1 h660px">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <div class="searchBar_type_01">
+                                <div class="searchIcon">
+                                    <i class="icon_search"></i>
+                                </div>
+                                <input type="text" class="type_01" placeholder="메뉴 ID / 메뉴명">
+                            </div>
+                        </div>
+                        <div class="table_box_08">
+                            <ul>
+                                <li>
+                                    <div class="menu_list">
+                                        <button class="button_02">
+                                            <i class="folder menu"></i>
+                                        </button>
+                                        <p>메뉴</p>
+                                    </div>
+                                    <ul class="file_dropDown_01 open">
+                                        <li class="ani_fadein">
+                                            <div class="list mgL30 item0">
+                                                <button class="button_02 plusBtn">
+                                                    <i class="folder plus"></i>
+                                                </button>
+                                                <button class="button_02 folderBtn">
+                                                    <i class="folder"></i>
+                                                </button>
+                                                <span>고객 관리</span>
+                                            </div>
+                                            <ul class="file_dropDown_02">
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>고객 현황</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>가입 상품 관리</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>상품 관리</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ani_fadein">
+                                            <div class="list mgL30 item1">
+                                                <button class="button_02 plusBtn">
+                                                    <i class="folder plus"></i>
+                                                </button>
+                                                <button class="button_02 folderBtn">
+                                                    <i class="folder"></i>
+                                                </button>
+                                                <span>가입 상품 관리</span>
+                                            </div>
+                                            <ul class="file_dropDown_02">
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>상품 목록</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="ani_fadein">
+                                            <div class="list mgL55 item2">
+                                                <button class="button_02">
+                                                    <i class="folder"></i>
+                                                </button>
+                                                <span>상품 관리</span>
+                                            </div>
+                                        </li>
+                                        <li class="ani_fadein">
+                                            <div class="list mgL55 item3">
+                                                <button class="button_02">
+                                                    <i class="folder"></i>
+                                                </button>
+                                                <span>청구 관리</span>
+                                            </div>
+                                        </li>
+                                        <li class="ani_fadein">
+                                            <div class="list mgL30 item4">
+                                                <button class="button_02 plusBtn">
+                                                    <i class="folder plus"></i>
+                                                </button>
+                                                <button class="button_02 folderBtn">
+                                                    <i class="folder"></i>
+                                                </button>
+                                                <span>구매 관리</span>
+                                            </div>
+                                            <ul class="file_dropDown_02">
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>고객 현황</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>가입 상품 관리</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="list mgL60">
+                                                        <button class="button_02">
+                                                            <i class="folder file"></i>
+                                                        </button>
+                                                        <span>상품 관리</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_50_1 h660px">
+                    <div class="table_box_02">
+                        <div class="table_box_02_hd">
+                            <h5>메뉴 정보</h5>
+                            <div class="type_05">
+                                <div class="pg_text">
+                                    <p>1 - 10</p>
+                                    <span>of</span>
+                                    <p>1000</p>
+                                </div>
+                                <div class="pg_number">
+                                    <ul>
+                                        <li>
+                                            <button><i class="icon_aroow_left_L"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_left_S"></i></button>
+                                        </li>
+                                        <li class="active">
+                                            <button>1</button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_S"></i></button>
+                                        </li>
+                                        <li>
+                                            <button><i class="icon_aroow_right_L"></i></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="button">
+                                    <i class="icon_add_02"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table_type_03">
+                            <table>
+                                <colgroup>
+                                    <col style="">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>메뉴번호</th>
+                                        <th>메뉴명</th>
+                                        <th>출력순서</th>
+                                        <th>사용여부</th>
+                                        <th>수정자</th>
+                                        <th>수정일시</th>
+                                        <th>등록자</th>
+                                        <th>등록일시</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>902000</td>
+                                        <td>사용자 관리</td>
+                                        <td>1</td>
+                                        <td>Y</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>902000</td>
+                                        <td>사용자 관리</td>
+                                        <td>1</td>
+                                        <td>Y</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>902000</td>
+                                        <td>사용자 관리</td>
+                                        <td>1</td>
+                                        <td>Y</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>902000</td>
+                                        <td>사용자 관리</td>
+                                        <td>1</td>
+                                        <td>Y</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>902000</td>
+                                        <td>사용자 관리</td>
+                                        <td>1</td>
+                                        <td>Y</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>902000</td>
+                                        <td>사용자 관리</td>
+                                        <td>1</td>
+                                        <td>Y</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                        <td>ADMIN</td>
+                                        <td>12/05/2022</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text_box h335px">
+                            <ul>
+                                <li>
+                                    <p>상위메뉴 번호</p>
+                                    <input type="text" class="inp_01">
+                                </li>
+                                <li>
+                                    <p>상위메뉴명</p>
+                                    <input type="text" class="inp_01">
+                                </li>
+                                <li>
+                                    <p>메뉴번호
+                                        <em class="colorGreen">*</em>
+                                    </p>
+                                    <input type="text" class="inp_01">
+                                </li>
+                                <li>
+                                    <p>메뉴명
+                                        <em class="colorGreen">*</em>
+                                    </p>
+                                    <input type="text" class="inp_01">
+                                </li>
+                                <li>
+                                    <p>출력순서
+                                        <em class="colorGreen">*</em>
+                                    </p>
+                                    <input type="text" class="inp_01">
+                                </li>
+                                <li>
+                                    <p>사용여부
+                                        <em class="colorGreen">*</em>
+                                    </p>
+                                    <select name="country" id="country" class="select_01">
+                                        <option>선택</option>
+                                        <option>사용</option>
+                                        <option>미사용</option>
+                                    </select>
+                                </li>
+                                <li class="w100p">
+                                    <p>설명</p>
+                                    <input type="text" class="inp_01">
+                                </li>
+                                <li class="w100p">
+                                    <p>프로그램명</p>
+                                    <input type="text" class="inp_01 w120px">
+                                    <input type="text" class="inp_01 w120px mgL10">
+                                    <div class="inpTxT mgL10">
+                                        <input type="text" class="inp_01 w170px">
+                                        <button class="button top0">
+                                            <i class="icon_search"></i>
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="last_btn mgT0">
+                                <div class="cancel_btn mgR10">
+                                    <a href="">삭제</a>
+                                </div>
+                                <div class="save_btn">
+                                    <a href="">수정</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

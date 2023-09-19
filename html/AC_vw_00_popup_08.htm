@@ -1,0 +1,41 @@
+<div id="AC_vw_00_popup_08" class="modalPopup modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal_header">
+                <h5>알림</h5>
+                <a class="close" onclick="javascript:closeModal(this);">
+                    <i class="icon_close"></i>
+                </a>
+            </div>
+        
+            <div class="modal_body">
+                <div class="main_txt">
+                    <p>선택하신 계약을 해지하시겠습니까?</p>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="cancel_btn02">
+                    <button class="close" onclick="javascript:closeModal(this);">취소</button>
+                </div>
+                <div class="save_btn mgL10">
+                    <button class="close" onclick="javascript:openModal('../html/AC_vw_00_popup_09.htm', 'AC_vw_00_popup_09', '', '400'), closeModal(this);"  >확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+
+        $(document).on("click", ".saveBtn", function(){
+            if($(".table_box_01").hasClass("haveTxt")){
+                $(".table_box_01").removeClass("haveTxt");
+                $(".table_box_01").addClass("notTxt");
+            }
+        });
+    });
+</script>
+

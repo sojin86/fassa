@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객현황</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+    <script src="../js/charts/chart-01.js"></script>
+    <script src="../js/charts/chart-02.js"></script>
+    <script src="../js/charts/chart-03.js"></script>
+    <script src="../js/charts/chart-04.js"></script>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/AC_db_00.htm">고객 관리</a>
+                <span> > </span>
+                <a href="../html/AC_db_00.htm">고객 현황</a>
+            </div>
+            <div class="section_tit">
+                <h3>청구 현황</h3>
+            </div>
+            <div class="type_01">
+                <ul>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_user"></i>
+                                <span>총 고객 수</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>10,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_users"></i>
+                                <span>누적 고객 수</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>11,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_noUser"></i>
+                                <span>탈퇴 고객 수</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>1,000</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_moneys"></i>
+                                <span>잔고 총액</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>99,999,999</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="type_01_box">
+                            <div class="type_01_tit">
+                                <i class="icon_userMoney"></i>
+                                <span>잔고 보유 고객 수</span>
+                            </div>
+                            <div class="type_01_number">
+                                <p>99,900</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>지난 30일 고객 현황</h4>
+                        <span>2022.10.31 - 2022.11.31</span> 
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>person(e)</p>
+                </div>
+                <div id="chart_01" class="chart_type_01"></div>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>지난 30일 고객 잔고 현황</h4>
+                        <span>2022.10.31 - 2022.11.31</span> 
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>원</p>
+                </div>
+                <div id="chart_02" class="chart_type_01"></div>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>지난 30일 정액 계약 현황</h4>
+                        <span>2022.10.31 - 2022.11.31</span> 
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>case(s)</p>
+                </div>
+                <div id="chart_03" class="chart_type_01"></div>
+            </div>
+            <div class="chart_wrap">
+                <div class="chart_hd">
+                    <div class="chart_tit">
+                        <h4>지난 30일 구매 현황</h4>
+                        <span>2022.09.27 - 2022.10.27</span> 
+                    </div>
+                </div>
+                <div class="chart_text">
+                    <p>원</p>
+                </div>
+                <div id="chart_04" class="chart_type_01"></div>
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>

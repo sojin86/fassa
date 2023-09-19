@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청구 항목 설정</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script>
+
+</script>
+<body>
+    <div class="wrap">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/PC_vw_00.htm">설정 지원 관리</a>
+                <span> > </span>
+                <a href="../html/BI_add_01.htm">청구 항목 설정</a>
+            </div>
+            <div class="section_tit">
+                <h3>청구 항목 설정</h3>
+            </div>
+            <div class="table_box_wrap mgT30 inline">
+                <div class="table_box_03 pd30">
+                    <div class="type_05_wrap special mgT0">
+                        <div class="txt">
+                            <p class="colorGray">청구 항목은 상품 등록 시 상품의 과금 항목에 매핑되어 관리되며,</p>
+                            <span class="colorGray mgL20">고객이 가입한 상품에 대한 과금 처리 후 청구항목으로 집계하여 발행되는 청구서에 기재 됩니다.</span>
+                        </div>
+                    </div>
+                    <div class="radio_wrap">
+                        <p>청구 항목 구분</p>
+                        <ul>
+                            <li>
+                                <input type="text" class="inp_01 w170px mgR10">
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_01" checked> 
+                                    <span class="rd_1_text wAuto mgR10">과세</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_01"> 
+                                    <span class="rd_1_text wAuto mgR10">비과세</span>
+                                </label>
+                                <button class="button delBtn">
+                                    <i class="icon_del_02"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <input type="text" class="inp_01 w170px mgR10">
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_02" checked> 
+                                    <span class="rd_1_text wAuto mgR10">과세</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_02"> 
+                                    <span class="rd_1_text wAuto mgR10">비과세</span>
+                                </label>
+                                <button class="button delBtn">
+                                    <i class="icon_del_02"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <input type="text" class="inp_01 w170px mgR10">
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_03" checked> 
+                                    <span class="rd_1_text wAuto mgR10">과세</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_03"> 
+                                    <span class="rd_1_text wAuto mgR10">비과세</span>
+                                </label>
+                                <button class="button delBtn">
+                                    <i class="icon_del_02"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <input type="text" class="inp_01 w170px mgR10">
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_04" checked> 
+                                    <span class="rd_1_text wAuto mgR10">과세</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_04"> 
+                                    <span class="rd_1_text wAuto mgR10">비과세</span>
+                                </label>
+                                <button class="button delBtn">
+                                    <i class="icon_del_02"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <input type="text" class="inp_01 w170px mgR10">
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_05" checked> 
+                                    <span class="rd_1_text wAuto mgR10">과세</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_05"> 
+                                    <span class="rd_1_text wAuto mgR10">비과세</span>
+                                </label>
+                                <button class="button delBtn">
+                                    <i class="icon_del_02"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <input type="text" class="inp_01 w170px mgR10">
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_06" checked> 
+                                    <span class="rd_1_text wAuto mgR10">과세</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_06"> 
+                                    <span class="rd_1_text wAuto mgR10">비과세</span>
+                                </label>
+                                <button class="button delBtn">
+                                    <i class="icon_del_02"></i>
+                                </button>
+                            </li>
+                            <li class="copy">
+                                <div class="addition clone_01">
+                                    <button class="button">
+                                        <i class="icon_add_01"></i>
+                                    </button>
+                                    <span>세금 추가</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    </ul>
+                    <div class="flex_type_03 mgT30">
+                        <div class="cancel_btn mgR10">
+                            <a href="../html/BI_vw_01.htm">취소</a>
+                        </div>
+                        <div class="save_btn">
+                            <a href="../html/BI_vw_01.htm">저장</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

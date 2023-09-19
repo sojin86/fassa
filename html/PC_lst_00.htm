@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매 목록</title>
+    <!-- 공통 css -->
+    <? include "./include.htm" ?>
+</head>
+<script></script>
+<body>
+    <div class="wrap haveAside">
+        <? include "./header.htm" ?>
+        <? include "./nav.htm" ?>
+        <section>
+            <div class="section_hd">
+                <a href="../html/MD_db_00.htm">Home</a>
+                <span> > </span>
+                <a href="../html/AC_lst_00.htm">고객 관리</a>
+                <span> > </span>
+                <a href="../html/PC_lst_00.htm">구매 목록</a>
+            </div>
+            <div class="section_tit">
+                <h3>구매 정보</h3>
+            </div>
+            <div class="type_04">
+                <div class="searchBar_wrap">
+                    <div class="searchBar">
+                        <input type="text" placeholder="검색어입력">
+                        <div class="searchIcon">
+                            <i class="icon_search"></i>
+                        </div>
+                        <div class="fitterBtn">
+                            <button class="filter">
+                                <i class="icon_filter"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dropDown_wrap">
+                        <ul>
+                            <li>
+                                <label for="name">상품 명</label>
+                                <input type="text" id="name" class="inp_01">
+                            </li>
+                            <li>
+                                <label for="name2">고객 명</label>
+                                <input type="text" id="name2" class="inp_01">
+                            </li>
+                            <li>
+                                <label for="name3">PG 명</label>
+                                <input type="text" id="name3" class="inp_01">
+                            </li>
+                            <li class="flex_type_04">
+                                <p>결제 상태</p>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_01"> 
+                                    <span class="rd_1_text">성공</span>
+                                </label>
+                                <label class="rd_1">
+                                    <input type="radio" name="radio_01"> 
+                                    <span class="rd_1_text">실패</span>
+                                </label>
+                            </li>
+                            <li>
+                                <p>구매 일자</p>
+                                <div class="input_box">
+                                    <span class="input datepickerRange">
+                                        <input type="text" value="" class="inp_02 datepicker startDate">
+                                        <span>~</span>
+                                        <input type="text" value="" class="inp_02 datepicker endDate">
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="searchBtn">
+                    <button>
+                        <i class="icon_search"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+                <div class="resetBtn">
+                    <button class="reset">
+                        <i class="icon_reset"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="type_05_wrap special">
+                <div class="txt">
+                    <p>금일데이터: 입금 일자 기준</p>
+                </div>
+                <div class="type_05">
+                    <div class="pg_text">
+                        <p>1 - 100</p>
+                        <span>of</span>
+                        <p>1000</p>
+                    </div>
+                    <div class="pg_number">
+                        <ul>
+                            <li>
+                                <button><i class="icon_aroow_left_L"></i></button>
+                            </li>
+                            <li>
+                                <button><i class="icon_aroow_left_S"></i></button>
+                            </li>
+                            <li class="active">
+                                <button>1</button>
+                            </li>
+                            <li>
+                                <button>2</button>
+                            </li>
+                            <li>
+                                <button>3</button>
+                            </li>
+                            <li>
+                                <button>4</button>
+                            </li>
+                            <li>
+                                <button>5</button>
+                            </li>
+                            <li>
+                                <button><i class="icon_aroow_right_S"></i></button>
+                            </li>
+                            <li>
+                                <button><i class="icon_aroow_right_L"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pg_list">
+                        <select>
+                            <option>100 row</option>
+                            <option>200 row</option>
+                            <option>300 row</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="table_type_01">
+                <table>
+                    <colgroup>
+                        <col style=" ">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <button>
+                                    <span>구매 일시</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>상품 명</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>고객 명</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>결제 금액</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>상태</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>PG 사</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>결제 정보</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                            <th>
+                                <button>
+                                    <span>관리</span>
+                                    <i class="icon_updown"></i>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>다날</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>이니시스</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>다날</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>이니시스</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>다날</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>이니시스</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>다날</td>
+                            <td>신용 카드</td>
+                            <td>
+                               <button class="payment"><i class="icon_payment"></i>
+                               </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>이니시스</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td>결제 완료</td>
+                            <td>다날</td>
+                            <td>신용 카드</td>
+                            <td>
+                                <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                                </button>
+                           </td>            
+                        </tr>
+                        <tr>
+                            <td>2022/11/09 00:00</td>
+                            <td>wI-fi 무제한</td>
+                            <td>홍길동</td>
+                            <td class="txtRight">55,000원</td>
+                            <td class="colorRed01">결제 취소 (2022/11/09 00:00)</td>
+                            <td>이니시스</td>
+                            <td>신용 카드</td>
+                            <td>
+                               <button class="payment" onclick="javascript:openModal('../html/AC_vw_00_popup_07.htm', 'AC_vw_00_popup_07', '', '500')"><i class="icon_payment"></i>
+                               </button>
+                           </td>            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <aside>
+            <div class="stickyNote_type_1">
+                <div class="tickyNote_tit">
+                    <h5>금일 가입 계약 현황</h5>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>가입 계약</p>
+                    <span>0</span>
+                    <em>건</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>계약 해지</p>
+                    <span>0</span>
+                    <em>원</em>
+                </div>
+            </div>
+            <div class="stickyNote_type_1">
+                <div class="tickyNote_tit">
+                    <h5>지난 7일간 가입 계약 현황</h5>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>가입 계약</p>
+                    <span>5</span>
+                    <em>건</em>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>계약 해지</p>
+                    <span>0</span>
+                    <em>원</em>
+                </div>
+            </div>
+            <div class="stickyNote_type_1">
+                <div class="tickyNote_tit">
+                    <h5>취소 현황</h5>
+                </div>
+                <div class="tickyNote_sub">
+                    <p>취소</p>
+                    <span>50</span>
+                    <em>건</em>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
